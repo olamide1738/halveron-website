@@ -46,13 +46,21 @@ export function FeaturedShowcase() {
 
   return (
     <Section paper className="relative overflow-hidden py-24">
-      {/* Ambient Liquid Orbs */}
+      {/* Dynamic Moving Ambient Glow Canvas */}
       <div
-        className="pointer-events-none absolute -left-24 top-1/4 h-96 w-96 rounded-full bg-cobalt/15 blur-3xl animate-fluid-blob"
+        className="pointer-events-none absolute -left-20 top-6 h-[480px] w-[480px] rounded-full bg-gradient-to-tr from-cobalt/35 via-cobalt/20 to-sky-400/25 blur-3xl animate-glow-wander-1"
         aria-hidden="true"
       />
       <div
-        className="pointer-events-none absolute -right-24 bottom-1/4 h-96 w-96 rounded-full bg-cobalt-light/20 blur-3xl animate-fluid-blob-slow"
+        className="pointer-events-none absolute -right-20 bottom-6 h-[520px] w-[520px] rounded-full bg-gradient-to-bl from-cobalt-light/35 via-indigo-500/25 to-cobalt/20 blur-3xl animate-glow-wander-2"
+        aria-hidden="true"
+      />
+      <div
+        className="pointer-events-none absolute left-1/3 top-1/4 h-[400px] w-[400px] rounded-full bg-gradient-to-r from-sky-400/20 via-cobalt/25 to-indigo-400/20 blur-3xl animate-glow-wander-3"
+        aria-hidden="true"
+      />
+      <div
+        className="pointer-events-none absolute right-1/4 top-1/2 h-[350px] w-[350px] rounded-full bg-cobalt/20 dark:bg-cobalt-light/20 blur-3xl animate-glow-pulse"
         aria-hidden="true"
       />
 
