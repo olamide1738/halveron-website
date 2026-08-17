@@ -140,61 +140,61 @@ const toolIcons = {
 const techCategories = [
   {
     id: "frontend",
-    title: "Front-end & Motion",
+    title: "Web & Mobile Design",
     count: "6 tools",
-    description: "Sub-second web performance, fluid scroll animations, and responsive layouts.",
+    description: "Fast loading speeds, smooth animations, and clean layouts that work on any screen.",
     accent: "from-blue-500/20 to-cobalt/30",
     tools: [
-      { name: "React", tag: "UI Architecture", iconKey: "react" },
-      { name: "Next.js", tag: "App Router & SSR", iconKey: "next" },
-      { name: "TypeScript", tag: "Type-Safe Code", iconKey: "typescript" },
-      { name: "Tailwind CSS", tag: "Design Tokens", iconKey: "tailwind" },
-      { name: "React Native", tag: "iOS & Android", iconKey: "mobile" },
-      { name: "Flutter", tag: "Cross-Platform", iconKey: "zap" },
+      { name: "React", tag: "Modern Web Apps", iconKey: "react" },
+      { name: "Next.js", tag: "Instant Page Loads", iconKey: "next" },
+      { name: "TypeScript", tag: "Error-Free Code", iconKey: "typescript" },
+      { name: "Tailwind CSS", tag: "Custom Styling", iconKey: "tailwind" },
+      { name: "React Native", tag: "iPhone & Android", iconKey: "mobile" },
+      { name: "Flutter", tag: "Mobile Framework", iconKey: "zap" },
     ],
   },
   {
     id: "design",
-    title: "Design & Product",
+    title: "Design & Experience",
     count: "5 tools",
-    description: "Wireframes, high-fidelity UI prototypes, and scalable component libraries.",
+    description: "Clickable prototypes, custom logos, and clear interfaces designed for real people.",
     accent: "from-purple-500/20 to-cobalt/30",
     tools: [
-      { name: "Figma", tag: "Design Systems", iconKey: "figma" },
-      { name: "Storybook", tag: "UI Component Library", iconKey: "book" },
-      { name: "Linear", tag: "Sprint Management", iconKey: "ruler" },
-      { name: "PostHog", tag: "Product Analytics", iconKey: "chart" },
-      { name: "Plausible", tag: "Privacy Analytics", iconKey: "chart" },
+      { name: "Figma", tag: "Interactive Prototypes", iconKey: "figma" },
+      { name: "Storybook", tag: "Design Library", iconKey: "book" },
+      { name: "Linear", tag: "Project Schedule", iconKey: "ruler" },
+      { name: "PostHog", tag: "Customer Insights", iconKey: "chart" },
+      { name: "Plausible", tag: "Visitor Analytics", iconKey: "chart" },
     ],
   },
   {
     id: "backend",
-    title: "Back-end & APIs",
+    title: "Secure Data & Accounts",
     count: "6 tools",
-    description: "Scalable serverless endpoints, real-time WebSockets, and secure databases.",
+    description: "Safe customer logins, automated payments, and reliable cloud databases.",
     accent: "from-emerald-500/20 to-cobalt/30",
     tools: [
-      { name: "Node.js", tag: "Server Runtime", iconKey: "server" },
-      { name: "Python", tag: "Data & Automation", iconKey: "terminal" },
-      { name: "PostgreSQL", tag: "Relational DB", iconKey: "database" },
-      { name: "Redis", tag: "In-Memory Cache", iconKey: "zap" },
-      { name: "GraphQL", tag: "Flexible Querying", iconKey: "graphql" },
-      { name: "REST APIs", tag: "Standard Endpoints", iconKey: "refresh" },
+      { name: "Node.js", tag: "Fast Server Engine", iconKey: "server" },
+      { name: "Python", tag: "Automation & Data", iconKey: "terminal" },
+      { name: "PostgreSQL", tag: "Secure Database", iconKey: "database" },
+      { name: "Redis", tag: "Instant Data Cache", iconKey: "zap" },
+      { name: "GraphQL", tag: "Smart Data Loading", iconKey: "graphql" },
+      { name: "REST APIs", tag: "Payment Sync", iconKey: "refresh" },
     ],
   },
   {
     id: "cloud",
-    title: "Cloud & Infrastructure",
+    title: "Reliable Cloud Hosting",
     count: "6 tools",
-    description: "Automated CI/CD pipelines, edge deployment, and enterprise security.",
+    description: "99.9% uptime, global speed networks, and automated daily backups.",
     accent: "from-amber-500/20 to-cobalt/30",
     tools: [
-      { name: "Vercel", tag: "Edge Deployment", iconKey: "next" },
-      { name: "AWS", tag: "Cloud Infrastructure", iconKey: "cloud" },
-      { name: "Docker", tag: "Containerization", iconKey: "container" },
-      { name: "GitHub Actions", tag: "CI/CD Automation", iconKey: "gear" },
-      { name: "Cloudflare", tag: "CDN & Edge Security", iconKey: "shield" },
-      { name: "Terraform", tag: "Infra as Code", iconKey: "cube" },
+      { name: "Vercel", tag: "Global Speed Network", iconKey: "next" },
+      { name: "AWS", tag: "Secure Cloud Storage", iconKey: "cloud" },
+      { name: "Docker", tag: "Reliable Containers", iconKey: "container" },
+      { name: "GitHub Actions", tag: "Automated Checks", iconKey: "gear" },
+      { name: "Cloudflare", tag: "Security & Shield", iconKey: "shield" },
+      { name: "Terraform", tag: "Cloud Setup", iconKey: "cube" },
     ],
   },
 ];
@@ -211,9 +211,9 @@ export function TechToolkit() {
     <div className="relative">
       <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
         <SectionHeading
-          eyebrow="Our Design & Dev Toolkit"
-          title="Tools we've mastered to build exceptional products."
-          lead="The design software, prototyping tools, and engineering frameworks we reach for to deliver world-class digital experiences."
+          eyebrow="Our Trusted Tools"
+          title="Industry-standard technology for reliable results."
+          lead="We use the world's most trusted design tools and modern software to ensure your website or app is fast, secure, and easy to maintain."
         />
 
         {/* Category Filter Pills */}

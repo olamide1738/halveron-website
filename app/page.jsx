@@ -93,11 +93,11 @@ export default function HomePage() {
                 </div>
                 <span className="hidden sm:inline text-white/20">·</span>
                 <div>
-                  <span className="text-white font-medium">Senior-Only</span> Engineers
+                  <span className="text-white font-medium">Seasoned Experts</span> Only
                 </div>
                 <span className="hidden sm:inline text-white/20">·</span>
                 <div>
-                  <span className="text-white font-medium">Week 1</span> Staging URL
+                  <span className="text-white font-medium">Week 1</span> Live Preview
                 </div>
               </div>
             </div>
@@ -108,10 +108,10 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* Bottom Capabilities Marquee Strip */}
+          {/* Bottom Capabilities Strip */}
           <div className="mt-16 border-t border-white/10 pt-8">
             <p className="font-mono text-xs uppercase tracking-[0.18em] text-[#8C98B3]">
-              Web Design · Mobile Apps · SaaS Engineering · Branding · MVP Builds · Design Systems
+              Websites · Mobile Apps · Online Portals · Brand Design · Fast Product Launches
             </p>
           </div>
         </div>
@@ -119,10 +119,10 @@ export default function HomePage() {
 
       {/* 2. TRUSTED BY (CLIENT LOGOS) */}
       <Section paper className="relative overflow-hidden">
-        <ClientLogos title="Trusted by brands & visionary companies" />
+        <ClientLogos title="Trusted by ambitious brands & growing companies" />
       </Section>
 
-      {/* 3. WHO WE ARE & STAT BAND */}
+      {/* 3. WHO WE ARE */}
       <Section className="relative overflow-hidden">
         <div
           className="pointer-events-none absolute -left-20 top-1/4 h-80 w-80 rounded-full bg-cobalt/10 blur-3xl animate-fluid-blob"
@@ -131,8 +131,8 @@ export default function HomePage() {
         <div className="max-w-3xl">
           <SectionHeading
             eyebrow="Who we are"
-            title="A dedicated web design agency crafting digital experiences that win."
-            lead="Halveron is a Lagos-based web design studio partnering with ambitious brands worldwide. Strategy, UI/UX, branding, and front-end development under one roof — delivering exceptional design without vendor friction."
+            title="A dedicated digital studio crafting websites and apps that succeed."
+            lead="Halveron is a product design and development studio partnering with ambitious founders and businesses worldwide. Planning, visual design, branding, and custom building under one roof — delivering exceptional results without confusion."
           />
           <div className="mt-6">
             <Button href="/about" variant="glass" className="group">
@@ -145,7 +145,7 @@ export default function HomePage() {
       {/* 4. FEATURED DESIGN SHOWCASE */}
       <FeaturedShowcase />
 
-      {/* 5. PROMISES (CONTRACT DESIGN COMMITMENTS) */}
+      {/* 5. PROMISES */}
       <section className="relative overflow-hidden bg-ink text-white py-24 md:py-32">
         <div
           className="pointer-events-none absolute -right-20 top-1/4 h-96 w-96 rounded-full bg-cobalt/20 blur-3xl animate-fluid-blob"
@@ -158,9 +158,9 @@ export default function HomePage() {
         <div className="container-hal relative z-10">
           <SectionHeading
             dark
-            eyebrow="What you can hold us to"
-            title="Design commitments, not sales pitch."
-            lead="Every one of these promises is something we put into our contract. Specifics you can verify beat superlatives you can't."
+            eyebrow="What you can count on"
+            title="Real commitments, not sales talk."
+            lead="Every one of these promises is written into our agreement. Clear deliverables and honest work you can always rely on."
           />
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {promises.map((p, idx) => (
@@ -183,7 +183,7 @@ export default function HomePage() {
       {/* 6. TEAM & LEADERSHIP */}
       <TeamSection />
 
-      {/* 7. WEB DESIGN SERVICES & STACK */}
+      {/* 7. SERVICES */}
       <Section className="relative overflow-hidden">
         <div
           className="pointer-events-none absolute right-0 top-1/3 h-96 w-96 rounded-full bg-cobalt/10 blur-3xl animate-fluid-blob"
@@ -191,9 +191,9 @@ export default function HomePage() {
         />
         <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
           <SectionHeading
-            eyebrow="Capabilities"
-            title="Full-service web design & digital craft."
-            lead="Everything it takes to elevate your digital presence — from initial Figma wireframes to production front-end code."
+            eyebrow="What We Offer"
+            title="Full-service digital design & product creation."
+            lead="Everything it takes to make your business shine online — from first visual concepts to a finished, working website or app."
           />
           <Button href="/services" variant="glass" className="group shrink-0">
             Explore all services

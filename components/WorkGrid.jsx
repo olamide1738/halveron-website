@@ -5,7 +5,7 @@ import Image from "next/image";
 import { Reveal } from "./Reveal";
 import { workSlots } from "../lib/site";
 
-const CATEGORIES = ["All Work", "Fintech", "SaaS", "E-Commerce", "Logistics"];
+const CATEGORIES = ["All Work", "Finance", "Software", "E-Commerce", "Logistics"];
 
 export function WorkGrid() {
   const [activeCategory, setActiveCategory] = useState("All Work");

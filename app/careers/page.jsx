@@ -32,13 +32,13 @@ export default function CareersPage() {
           <div className="max-w-3xl">
             <Eyebrow className="text-cobalt-light">Careers at Halveron</Eyebrow>
             <h1 className="h-display mt-4 text-4xl leading-[1.08] text-white md:text-6xl lg:text-7xl font-bold tracking-tight">
-              Senior engineers & designers, doing work they{" "}
+              Join a team building products that{" "}
               <span className="bg-gradient-to-r from-white via-cobalt-light to-white bg-clip-text text-transparent">
-                own.
+                matter.
               </span>
             </h1>
             <p className="mt-6 max-w-2xl text-lg text-[#B9C1D0] md:text-xl leading-relaxed">
-              We hire experienced practitioners and give them direct ownership. No layers of middle management, no junior handoffs — just shipping products that work.
+              We work directly with founders and ambitious companies worldwide, creating modern websites and mobile apps with genuine care, autonomy, and craft.
             </p>
           </div>
         </div>

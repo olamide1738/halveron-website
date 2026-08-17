@@ -32,15 +32,15 @@ export default function ServicesPage() {
 
         <div className="container-hal relative z-10">
           <div className="max-w-3xl">
-            <Eyebrow className="text-cobalt-light">Full-Service Studio Matrix</Eyebrow>
+            <Eyebrow className="text-cobalt-light">What We Do</Eyebrow>
             <h1 className="h-display mt-4 text-4xl leading-[1.08] text-white md:text-6xl lg:text-7xl font-bold tracking-tight">
               Everything it takes to design, build, and{" "}
               <span className="bg-gradient-to-r from-white via-cobalt-light to-white bg-clip-text text-transparent">
-                ship your product.
+                launch your product.
               </span>
             </h1>
             <p className="mt-6 max-w-2xl text-lg text-[#B9C1D0] md:text-xl leading-relaxed">
-              Six core product disciplines, one accountable senior team. Engage us for a single service or the full journey from concept to market.
+              Six core services, one friendly expert team. Work with us on a single project or take your idea all the way from concept to market.
             </p>
           </div>
         </div>

@@ -9,34 +9,34 @@ const showcaseProjects = [
   {
     id: "web-design",
     name: "Aura Luxury",
-    tagline: "Bespoke Brand Storefront & Experience",
-    metric: "+180% Engagement",
-    accent: "Web Design & E-Commerce",
+    tagline: "Custom Luxury Online Storefront",
+    metric: "+180% More Sales",
+    accent: "Web Design & Online Store",
     description:
-      "A high-converting, immersive e-commerce experience designed in Figma and built with Next.js, featuring fluid web motion, bespoke typography, and sub-second page transitions.",
-    highlights: ["Figma Design System", "Liquid Motion & Glass", "Headless Shopify"],
+      "An elegant, easy-to-use online store designed to showcase high-end products and make shopping seamless on phones and computers.",
+    highlights: ["Custom Visual Design", "Mobile-First Layout", "Fast & Secure Checkout"],
     mockupType: "design",
   },
   {
     id: "saas-ui",
     name: "Apex Analytics",
-    tagline: "SaaS Dashboard & Interface Design",
-    metric: "40% Higher Conversion",
-    accent: "UI/UX & Web App",
+    tagline: "Customer Dashboard & Software Portal",
+    metric: "40% Faster Onboarding",
+    accent: "Web App & Dashboard",
     description:
-      "An intuitive, multi-tenant web app interface designed for complex data visualization, role-based workflows, and effortless onboarding.",
-    highlights: ["Component Design System", "Data Visualization UI", "Dark/Light Mode"],
+      "A clean, modern web portal that helps users easily view their business data, manage accounts, and navigate complex tools effortlessly.",
+    highlights: ["Simple Visual Charts", "Easy User Navigation", "Dark & Light Mode"],
     mockupType: "dashboard",
   },
   {
     id: "branding",
     name: "Kola & Co",
-    tagline: "Brand Identity & Corporate Site",
-    metric: "Design Award Featured",
-    accent: "Branding & Web Design",
+    tagline: "Complete Brand Identity & Website",
+    metric: "Featured Brand Redesign",
+    accent: "Brand & Web Design",
     description:
-      "Full digital brand transformation — logo system, color architecture, motion guidelines, and a high-impact marketing website built to establish market authority.",
-    highlights: ["Brand Identity System", "Custom Interactive Front-end", "SEO Architecture"],
+      "A full brand makeover — memorable logo, cohesive colors, professional typography, and a modern marketing website built to win customer trust.",
+    highlights: ["Distinctive Logo Package", "Custom Website Design", "Google Search Setup"],
     mockupType: "branding",
   },
 ];
@@ -67,9 +67,9 @@ export function FeaturedShowcase() {
       <div className="relative z-10">
         <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
           <SectionHeading
-            eyebrow="Featured Design Work"
-            title="Web design crafted for impact — built to convert."
-            lead="Explore interactive previews of bespoke websites, brand systems, and digital experiences we've designed and launched."
+            eyebrow="Featured Work"
+            title="Design crafted to engage and convert."
+            lead="Explore real examples of custom websites, online stores, and brand systems we've created and launched."
           />
 
           {/* Interactive Liquid Glass Tabs */}
@@ -118,7 +118,7 @@ export function FeaturedShowcase() {
 
                   <div className="mt-6">
                     <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-mute dark:text-[#8C98B3]">
-                      Design Scope & Deliverables
+                      What We Delivered
                     </p>
                     <ul className="mt-3 flex flex-wrap gap-2">
                       {activeTab.highlights.map((h) => (
@@ -135,12 +135,12 @@ export function FeaturedShowcase() {
 
                 <div className="mt-8 pt-6 border-t border-line/60">
                   <Button href="/work" variant="glassCobalt">
-                    View design case study
+                    View project details
                   </Button>
                 </div>
               </div>
 
-              {/* Right Column: Liquid Glass Interactive Web Design Mockup */}
+              {/* Right Column: Interactive Mockup */}
               <div className="glass-card-dark relative overflow-hidden rounded-2xl border border-white/20 p-6 shadow-2xl">
                 {/* Browser Header */}
                 <div className="flex items-center justify-between border-b border-white/10 pb-4">
@@ -160,13 +160,13 @@ export function FeaturedShowcase() {
                   {/* Hero Banner Mockup */}
                   <div className="rounded-xl border border-white/10 bg-gradient-to-r from-cobalt/20 via-white/5 to-cobalt-light/20 p-5 backdrop-blur-md">
                     <span className="font-mono text-[10px] uppercase tracking-wider text-cobalt-light">
-                      Bespoke Web Design Layout
+                      Modern Website Layout
                     </span>
                     <h4 className="h-display mt-2 text-lg font-bold text-white">
-                      Crafting Distinctive Brands
+                      Built to Convert Visitors
                     </h4>
                     <p className="mt-1 text-xs text-[#B9C1D0]">
-                      Fluid animations, pixel-perfect typography & responsive layouts.
+                      Fast loading, clean typography & seamless mobile layout.
                     </p>
                   </div>
 
@@ -174,18 +174,18 @@ export function FeaturedShowcase() {
                   <div className="grid grid-cols-2 gap-3">
                     <div className="rounded-xl border border-white/10 bg-white/5 p-4">
                       <span className="block font-mono text-[10px] uppercase text-mute">
-                        UI Component System
+                        Visual Design
                       </span>
                       <span className="h-display mt-1 block text-sm font-semibold text-white">
-                        240+ Tokens
+                        100% Custom
                       </span>
                     </div>
                     <div className="rounded-xl border border-white/10 bg-white/5 p-4">
                       <span className="block font-mono text-[10px] uppercase text-mute">
-                        Page Performance
+                        Page Load Speed
                       </span>
                       <span className="h-display mt-1 block text-sm font-semibold text-emerald-400">
-                        100/100 Lighthouse
+                        Under 1 Second
                       </span>
                     </div>
                   </div>
@@ -194,7 +194,7 @@ export function FeaturedShowcase() {
                   <div className="rounded-xl border border-white/10 bg-white/5 p-4">
                     <div className="flex items-center justify-between">
                       <span className="font-mono text-xs text-white">
-                        Design System Specimen
+                        Color & Button Styling
                       </span>
                       <span className="h-2 w-2 rounded-full bg-cobalt animate-pulse" />
                     </div>

@@ -28,7 +28,7 @@ export function HeroVisual() {
           <div className="flex rounded-xl border border-white/10 bg-white/5 p-1 backdrop-blur-md">
             <button
               onClick={() => setActiveTab("design")}
-              className={`rounded-lg px-2.5 py-1 font-mono text-[10px] font-semibold uppercase tracking-wider transition-all ${
+              className={`rounded-lg px-3 py-1 font-mono text-[11px] font-semibold uppercase tracking-wider transition-all ${
                 activeTab === "design"
                   ? "bg-cobalt text-white shadow-md shadow-cobalt/30"
                   : "text-[#8C98B3] hover:text-white"
@@ -37,161 +37,170 @@ export function HeroVisual() {
               Design
             </button>
             <button
-              onClick={() => setActiveTab("code")}
-              className={`rounded-lg px-2.5 py-1 font-mono text-[10px] font-semibold uppercase tracking-wider transition-all ${
-                activeTab === "code"
+              onClick={() => setActiveTab("features")}
+              className={`rounded-lg px-3 py-1 font-mono text-[11px] font-semibold uppercase tracking-wider transition-all ${
+                activeTab === "features"
                   ? "bg-cobalt text-white shadow-md shadow-cobalt/30"
                   : "text-[#8C98B3] hover:text-white"
               }`}
             >
-              Code
+              Features
             </button>
             <button
-              onClick={() => setActiveTab("performance")}
-              className={`rounded-lg px-2.5 py-1 font-mono text-[10px] font-semibold uppercase tracking-wider transition-all ${
-                activeTab === "performance"
+              onClick={() => setActiveTab("results")}
+              className={`rounded-lg px-3 py-1 font-mono text-[11px] font-semibold uppercase tracking-wider transition-all ${
+                activeTab === "results"
                   ? "bg-cobalt text-white shadow-md shadow-cobalt/30"
                   : "text-[#8C98B3] hover:text-white"
               }`}
             >
-              Metrics
+              Results
             </button>
           </div>
         </div>
 
-        {/* Tab 1: Design System & UI View */}
+        {/* Tab 1: Design Preview */}
         {activeTab === "design" && (
           <div className="mt-6 space-y-4 animate-riseIn">
-            {/* Live Component Banner */}
             <div className="rounded-2xl border border-white/10 bg-gradient-to-r from-cobalt/25 via-white/5 to-cobalt-light/20 p-5 backdrop-blur-md">
               <div className="flex items-center justify-between">
                 <span className="font-mono text-[10px] uppercase tracking-widest text-cobalt-light font-semibold">
-                  UI / UX Design System
+                  Custom Look & Feel
                 </span>
-                <span className="flex items-center gap-1.5 rounded-full bg-emerald-500/20 px-2 py-0.5 font-mono text-[10px] font-medium text-emerald-300">
+                <span className="flex items-center gap-1.5 rounded-full bg-emerald-500/20 px-2.5 py-0.5 font-mono text-[10px] font-medium text-emerald-300">
                   <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                  Live Preview
+                  Mobile & Desktop
                 </span>
               </div>
               <h4 className="h-display mt-2 text-lg font-bold text-white">
-                Bespoke Digital Experience
+                Modern, Tailored Design
               </h4>
               <p className="mt-1 text-xs text-[#B9C1D0] leading-relaxed">
-                Atomic Figma design tokens synced directly to production Next.js & Tailwind components.
+                Custom visual styling made specifically for your brand — easy to navigate and built to build trust.
               </p>
             </div>
 
-            {/* Design Tokens Color Palette Specimen */}
+            {/* Visual Color Harmony Strip */}
             <div className="grid grid-cols-4 gap-2">
               <div className="rounded-xl border border-white/10 bg-[#2F6BFF]/30 p-2.5 text-center">
                 <div className="mx-auto h-5 w-5 rounded-md bg-[#2F6BFF] shadow-xs" />
-                <span className="mt-1.5 block font-mono text-[9px] text-[#B9C1D0]">Cobalt</span>
+                <span className="mt-1.5 block font-mono text-[10px] text-[#B9C1D0]">Primary</span>
               </div>
               <div className="rounded-xl border border-white/10 bg-[#7FA4FF]/20 p-2.5 text-center">
                 <div className="mx-auto h-5 w-5 rounded-md bg-[#7FA4FF] shadow-xs" />
-                <span className="mt-1.5 block font-mono text-[9px] text-[#B9C1D0]">Cobalt Light</span>
+                <span className="mt-1.5 block font-mono text-[10px] text-[#B9C1D0]">Accent</span>
               </div>
               <div className="rounded-xl border border-white/10 bg-[#161E2E] p-2.5 text-center">
                 <div className="mx-auto h-5 w-5 rounded-md bg-[#0E131F] border border-white/20 shadow-xs" />
-                <span className="mt-1.5 block font-mono text-[9px] text-[#B9C1D0]">Ink Dark</span>
+                <span className="mt-1.5 block font-mono text-[10px] text-[#B9C1D0]">Dark Theme</span>
               </div>
               <div className="rounded-xl border border-white/10 bg-emerald-500/20 p-2.5 text-center">
                 <div className="mx-auto h-5 w-5 rounded-md bg-emerald-500 shadow-xs" />
-                <span className="mt-1.5 block font-mono text-[9px] text-[#B9C1D0]">Success</span>
+                <span className="mt-1.5 block font-mono text-[10px] text-[#B9C1D0]">Buttons</span>
               </div>
             </div>
 
-            {/* Interactive Mock Specimen Strip */}
+            {/* Specimen Strip */}
             <div className="flex items-center justify-between rounded-xl border border-white/10 bg-white/5 p-3.5">
               <div className="flex items-center gap-3">
                 <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-cobalt/20 text-cobalt-light font-mono text-xs font-bold">
-                  H
+                  ✓
                 </div>
                 <div>
-                  <div className="h-display text-xs font-semibold text-white">Halveron Glass Spec</div>
-                  <div className="font-mono text-[10px] text-[#8C98B3]">240+ Components & Tokens</div>
+                  <div className="h-display text-xs font-semibold text-white">Interactive Prototype</div>
+                  <div className="font-mono text-[10px] text-[#8C98B3]">Click & test before we build</div>
                 </div>
               </div>
-              <span className="rounded-lg bg-cobalt/20 border border-cobalt/40 px-2.5 py-1 font-mono text-[10px] font-semibold text-cobalt-light">
-                Figma v2.4
+              <span className="rounded-lg bg-emerald-500/20 border border-emerald-500/40 px-2.5 py-1 font-mono text-[10px] font-semibold text-emerald-300">
+                Approved
               </span>
             </div>
           </div>
         )}
 
-        {/* Tab 2: Clean Code & Architecture View */}
-        {activeTab === "code" && (
-          <div className="mt-6 font-mono text-[12px] leading-relaxed text-[#B9C1D0] space-y-2 animate-riseIn">
-            <div className="rounded-2xl border border-white/10 bg-black/40 p-4 font-mono">
-              <div className="flex items-center justify-between border-b border-white/10 pb-2 text-[10px] text-[#8C98B3]">
-                <span>App.tsx (Next.js 14 App Router)</span>
-                <span className="text-emerald-400">TypeScript strict</span>
+        {/* Tab 2: Easy Features */}
+        {activeTab === "features" && (
+          <div className="mt-6 space-y-3 animate-riseIn">
+            <div className="flex items-center justify-between rounded-xl border border-white/10 bg-white/5 p-3.5">
+              <div className="flex items-center gap-3">
+                <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-cobalt/20 text-cobalt-light text-sm">
+                  💳
+                </span>
+                <div>
+                  <div className="text-xs font-semibold text-white">Online Payments & Billing</div>
+                  <div className="text-[10px] text-[#8C98B3]">Accept credit cards, Apple Pay & bank transfers</div>
+                </div>
               </div>
-              <pre className="mt-3 overflow-x-auto text-[11px] leading-5 text-[#E2E8F0]">
-                <code>
-                  <span className="text-pink-400">export async function</span>{" "}
-                  <span className="text-yellow-300">ProductExperience</span>() &#123;{"\n"}
-                  {"  "}
-                  <span className="text-pink-400">const</span> studio ={" "}
-                  <span className="text-cyan-300">await</span> getHalveronEngine();{"\n"}
-                  {"  "}
-                  <span className="text-pink-400">return</span> ({"\n"}
-                  {"    "}&lt;<span className="text-blue-400">StudioSuite</span>{"\n"}
-                  {"      "}theme=<span className="text-emerald-300">&quot;liquid-glass&quot;</span>{"\n"}
-                  {"      "}delivery=<span className="text-emerald-300">&quot;senior-only&quot;</span>{"\n"}
-                  {"      "}ownership=<span className="text-emerald-300">&quot;100% IP transfer&quot;</span>{"\n"}
-                  {"    "}/&gt;{"\n"}
-                  {"  "});{"\n"}
-                  &#125;
-                </code>
-              </pre>
+              <span className="font-mono text-[10px] text-emerald-400 font-semibold">Automatic</span>
             </div>
-            <div className="flex items-center justify-between rounded-xl border border-white/10 bg-white/5 px-4 py-2.5 text-[11px]">
-              <span className="text-[#8C98B3]">Stack: Next.js · TypeScript · Tailwind · Node</span>
-              <span className="text-cobalt-light font-semibold">Ready to Ship</span>
+
+            <div className="flex items-center justify-between rounded-xl border border-white/10 bg-white/5 p-3.5">
+              <div className="flex items-center gap-3">
+                <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-emerald-500/20 text-emerald-400 text-sm">
+                  👤
+                </span>
+                <div>
+                  <div className="text-xs font-semibold text-white">Customer Logins & Portals</div>
+                  <div className="text-[10px] text-[#8C98B3]">Easy accounts and order history for clients</div>
+                </div>
+              </div>
+              <span className="font-mono text-[10px] text-emerald-400 font-semibold">Secure</span>
+            </div>
+
+            <div className="flex items-center justify-between rounded-xl border border-white/10 bg-white/5 p-3.5">
+              <div className="flex items-center gap-3">
+                <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-amber-500/20 text-amber-400 text-sm">
+                  📊
+                </span>
+                <div>
+                  <div className="text-xs font-semibold text-white">Simple Business Dashboard</div>
+                  <div className="text-[10px] text-[#8C98B3]">Track your sales, signups, and customer growth</div>
+                </div>
+              </div>
+              <span className="font-mono text-[10px] text-emerald-400 font-semibold">Real-time</span>
             </div>
           </div>
         )}
 
-        {/* Tab 3: Performance & Core Web Vitals View */}
-        {activeTab === "performance" && (
+        {/* Tab 3: Real Business Results */}
+        {activeTab === "results" && (
           <div className="mt-6 space-y-4 animate-riseIn">
             <div className="grid grid-cols-2 gap-3">
               <div className="rounded-2xl border border-white/10 bg-emerald-500/10 p-4 text-center">
                 <span className="font-mono text-[10px] uppercase tracking-wider text-emerald-400 font-semibold">
-                  Lighthouse Score
+                  Page Load Speed
                 </span>
-                <div className="h-display mt-1 text-3xl font-bold text-emerald-400">100/100</div>
-                <span className="font-mono text-[10px] text-[#B9C1D0]">Performance & SEO</span>
+                <div className="h-display mt-1 text-3xl font-bold text-emerald-400">&lt; 1 sec</div>
+                <span className="font-mono text-[10px] text-[#B9C1D0]">Instant loading</span>
               </div>
               <div className="rounded-2xl border border-white/10 bg-cobalt/15 p-4 text-center">
                 <span className="font-mono text-[10px] uppercase tracking-wider text-cobalt-light font-semibold">
-                  Largest Contentful Paint
+                  Google Search Ready
                 </span>
-                <div className="h-display mt-1 text-3xl font-bold text-white">0.4s</div>
-                <span className="font-mono text-[10px] text-[#B9C1D0]">Sub-second loading</span>
+                <div className="h-display mt-1 text-3xl font-bold text-white">100%</div>
+                <span className="font-mono text-[10px] text-[#B9C1D0]">Optimized to be found</span>
               </div>
             </div>
 
             <div className="rounded-2xl border border-white/10 bg-white/5 p-4 space-y-2">
-              <div className="flex justify-between font-mono text-xs">
-                <span className="text-[#8C98B3]">Cumulative Layout Shift (CLS)</span>
-                <span className="font-bold text-emerald-400">0.00 (Zero Shift)</span>
+              <div className="flex justify-between text-xs">
+                <span className="text-[#8C98B3]">Mobile Phone Compatibility</span>
+                <span className="font-bold text-emerald-400">100% Responsive</span>
               </div>
-              <div className="flex justify-between font-mono text-xs">
-                <span className="text-[#8C98B3]">Interaction to Next Paint (INP)</span>
-                <span className="font-bold text-emerald-400">32ms (Instant)</span>
+              <div className="flex justify-between text-xs">
+                <span className="text-[#8C98B3]">Uptime & Reliability</span>
+                <span className="font-bold text-emerald-400">99.9% Always Online</span>
               </div>
-              <div className="flex justify-between font-mono text-xs">
-                <span className="text-[#8C98B3]">WCAG Accessibility</span>
-                <span className="font-bold text-emerald-400">Level AA Compliant</span>
+              <div className="flex justify-between text-xs">
+                <span className="text-[#8C98B3]">Easy Content Updates</span>
+                <span className="font-bold text-emerald-400">Simple Admin Panel</span>
               </div>
             </div>
           </div>
         )}
       </div>
 
-      {/* Floating Satellite Badge 1: 9-Week Delivery */}
+      {/* Floating Satellite Badge 1: Fast Delivery */}
       <div className="absolute -bottom-6 -left-6 hidden sm:flex items-center gap-3 rounded-2xl border border-white/20 bg-[#161E2E]/95 px-4 py-3 shadow-2xl backdrop-blur-xl animate-fluid-blob">
         <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-cobalt/20 text-cobalt-light">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -199,8 +208,8 @@ export function HeroVisual() {
           </svg>
         </div>
         <div>
-          <div className="h-display text-xs font-bold text-white">Rapid Studio Sprints</div>
-          <div className="font-mono text-[10px] text-[#8C98B3]">Week 1 live staging access</div>
+          <div className="h-display text-xs font-bold text-white">Fast Turnaround</div>
+          <div className="font-mono text-[10px] text-[#8C98B3]">Live preview from week one</div>
         </div>
       </div>
 
@@ -212,8 +221,8 @@ export function HeroVisual() {
           </svg>
         </div>
         <div>
-          <div className="h-display text-xs font-bold text-white">100% IP Ownership</div>
-          <div className="font-mono text-[10px] text-emerald-400 font-semibold">Signed in contract</div>
+          <div className="h-display text-xs font-bold text-white">100% Yours</div>
+          <div className="font-mono text-[10px] text-emerald-400 font-semibold">You own all files & accounts</div>
         </div>
       </div>
     </div>

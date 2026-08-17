@@ -13,19 +13,19 @@ export const metadata = {
 
 const companyValues = [
   {
-    title: "Precise",
-    tagline: "Specific over vague",
-    description: "Concrete metrics, clean code, and scoped proposals — no hand-waving or agency jargon.",
+    title: "Clear & Specific",
+    tagline: "No confusing jargon",
+    description: "Clear timelines, transparent fixed pricing, and honest advice — no hand-waving or confusing agency buzzwords.",
   },
   {
-    title: "Confident",
+    title: "High Standards",
     tagline: "Uncompromising quality",
-    description: "We state what works, push back on bloated scope, and deliver senior engineering rigor.",
+    description: "We build digital products that look beautiful, load fast, and work reliably for your real customers.",
   },
   {
-    title: "Human",
-    tagline: "Direct & transparent",
-    description: "Clear communication founders and CTOs can read without needing an agency decoder ring.",
+    title: "Friendly & Human",
+    tagline: "Direct & approachable",
+    description: "Direct communication with the actual creators building your project, with regular updates in plain English.",
   },
 ];
 
@@ -55,13 +55,13 @@ export default function AboutPage() {
           <div className="max-w-3xl">
             <Eyebrow className="text-cobalt-light">About Halveron</Eyebrow>
             <h1 className="h-display mt-4 text-4xl leading-[1.08] text-white md:text-6xl lg:text-7xl font-bold tracking-tight">
-              We close the gap between{" "}
+              We turn your ideas into{" "}
               <span className="bg-gradient-to-r from-white via-cobalt-light to-white bg-clip-text text-transparent">
-                idea & shipped product.
+                finished, working products.
               </span>
             </h1>
             <p className="mt-6 max-w-2xl text-lg text-[#B9C1D0] md:text-xl leading-relaxed">
-              Halveron is a full-service digital product studio and agency. We unite strategy, UI/UX design, mobile apps, SaaS engineering, and branding — taking your idea from concept to market.
+              Halveron is a full-service digital product studio. We unite strategy, visual design, mobile apps, websites, and branding — taking you from a napkin sketch to a successful launch.
             </p>
           </div>
         </div>
@@ -72,7 +72,7 @@ export default function AboutPage() {
         <SectionHeading
           eyebrow="Why We Exist"
           title="One roof, one accountable team."
-          lead="Too much good software dies in the handoffs between disconnected design agencies and offshore dev shops."
+          lead="Great business ideas shouldn't get lost between disconnected freelancers and slow development agencies."
         />
 
         <div className="mt-12 grid gap-6 md:grid-cols-3">
@@ -83,10 +83,10 @@ export default function AboutPage() {
                   01
                 </span>
                 <h3 className="h-display mt-5 text-xl font-bold text-ink dark:text-white">
-                  The Fractured Agency Problem
+                  The Disconnected Vendor Problem
                 </h3>
                 <p className="mt-3 text-sm text-slate dark:text-[#B9C1D0] leading-relaxed">
-                  Most projects are split across a design shop, a dev contractor, and a branding freelancer. Context leaks at every handoff, quality degrades, and no one takes full accountability.
+                  Most projects get split between a freelance designer, an offshore coder, and a branding agency. Details get lost in translation, quality drops, and nobody takes full responsibility.
                 </p>
               </div>
             </div>
@@ -99,10 +99,10 @@ export default function AboutPage() {
                   02
                 </span>
                 <h3 className="h-display mt-5 text-xl font-bold text-ink dark:text-white">
-                  The One-Roof Studio Solution
+                  The All-in-One Studio Solution
                 </h3>
                 <p className="mt-3 text-sm text-slate dark:text-[#B9C1D0] leading-relaxed">
-                  Halveron is built differently: strategy, Figma design, engineering, QA, and launch under one roof. One point of contact, one shared roadmap, and senior accountability.
+                  Halveron handles everything together: planning, visual design, custom development, testing, and launch. One friendly point of contact, one shared schedule, and senior accountability.
                 </p>
               </div>
             </div>
@@ -115,10 +115,10 @@ export default function AboutPage() {
                   03
                 </span>
                 <h3 className="h-display mt-5 text-xl font-bold text-ink dark:text-white">
-                  Lagos Hub & Global Overlap
+                  Global Quality & Great Value
                 </h3>
                 <p className="mt-3 text-sm text-slate dark:text-[#B9C1D0] leading-relaxed">
-                  Based in Lagos (UTC+1), we combine deep engineering talent, full real-time overlap with Europe & US mornings, and a ~50% cost-to-quality advantage.
+                  Based in Lagos (UTC+1), we provide seamless real-time communication with Europe, the UK, and US mornings — offering world-class design at up to 50% better value.
                 </p>
               </div>
             </div>
