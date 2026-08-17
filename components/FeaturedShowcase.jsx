@@ -1,0 +1,207 @@
+"use client";
+
+import { useState } from "react";
+import { Section, SectionHeading } from "./Section";
+import { Reveal } from "./Reveal";
+import { Button } from "./Button";
+
+const showcaseProjects = [
+  {
+    id: "web-design",
+    name: "Aura Luxury",
+    tagline: "Bespoke Brand Storefront & Experience",
+    metric: "+180% Engagement",
+    accent: "Web Design & E-Commerce",
+    description:
+      "A high-converting, immersive e-commerce experience designed in Figma and built with Next.js, featuring fluid web motion, bespoke typography, and sub-second page transitions.",
+    highlights: ["Figma Design System", "Liquid Motion & Glass", "Headless Shopify"],
+    mockupType: "design",
+  },
+  {
+    id: "saas-ui",
+    name: "Apex Analytics",
+    tagline: "SaaS Dashboard & Interface Design",
+    metric: "40% Higher Conversion",
+    accent: "UI/UX & Web App",
+    description:
+      "An intuitive, multi-tenant web app interface designed for complex data visualization, role-based workflows, and effortless onboarding.",
+    highlights: ["Component Design System", "Data Visualization UI", "Dark/Light Mode"],
+    mockupType: "dashboard",
+  },
+  {
+    id: "branding",
+    name: "Kola & Co",
+    tagline: "Brand Identity & Corporate Site",
+    metric: "Design Award Featured",
+    accent: "Branding & Web Design",
+    description:
+      "Full digital brand transformation — logo system, color architecture, motion guidelines, and a high-impact marketing website built to establish market authority.",
+    highlights: ["Brand Identity System", "Custom Interactive Front-end", "SEO Architecture"],
+    mockupType: "branding",
+  },
+];
+
+export function FeaturedShowcase() {
+  const [activeTab, setActiveTab] = useState(showcaseProjects[0]);
+
+  return (
+    <Section paper className="relative overflow-hidden py-24">
+      {/* Ambient Liquid Orbs */}
+      <div
+        className="pointer-events-none absolute -left-24 top-1/4 h-96 w-96 rounded-full bg-cobalt/15 blur-3xl animate-fluid-blob"
+        aria-hidden="true"
+      />
+      <div
+        className="pointer-events-none absolute -right-24 bottom-1/4 h-96 w-96 rounded-full bg-cobalt-light/20 blur-3xl animate-fluid-blob-slow"
+        aria-hidden="true"
+      />
+
+      <div className="relative z-10">
+        <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
+          <SectionHeading
+            eyebrow="Featured Design Work"
+            title="Web design crafted for impact — built to convert."
+            lead="Explore interactive previews of bespoke websites, brand systems, and digital experiences we've designed and launched."
+          />
+
+          {/* Interactive Liquid Glass Tabs */}
+          <div className="flex flex-wrap gap-2 rounded-2xl border border-white/80 dark:border-white/15 bg-white/70 dark:bg-white/10 p-2 backdrop-blur-xl shadow-sm">
+            {showcaseProjects.map((p) => (
+              <button
+                key={p.id}
+                onClick={() => setActiveTab(p)}
+                className={`rounded-xl px-4 py-2 font-mono text-xs font-semibold uppercase tracking-[0.12em] transition-all duration-300 ${
+                  activeTab.id === p.id
+                    ? "bg-cobalt text-white shadow-md shadow-cobalt/25"
+                    : "text-slate dark:text-[#B9C1D0] hover:bg-white/80 dark:hover:bg-white/20 hover:text-ink dark:hover:text-white"
+                }`}
+              >
+                {p.name}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        {/* Featured Showcase Display Card */}
+        <div className="mt-10">
+          <Reveal key={activeTab.id}>
+            <div className="glass-card-light grid gap-8 rounded-3xl p-8 lg:grid-cols-[1fr_1.2fr] lg:items-center lg:p-12">
+              {/* Left Column: Details */}
+              <div className="flex flex-col justify-between">
+                <div>
+                  <div className="flex items-center gap-3">
+                    <span className="glass-pill">{activeTab.accent}</span>
+                    <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-500/10 dark:bg-emerald-500/20 px-3 py-1 font-mono text-[10px] font-semibold uppercase tracking-[0.12em] text-emerald-600 dark:text-emerald-400 border border-emerald-500/20">
+                      <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                      {activeTab.metric}
+                    </span>
+                  </div>
+
+                  <h3 className="h-display mt-5 text-2xl font-bold text-ink dark:text-white md:text-3xl">
+                    {activeTab.name}
+                  </h3>
+                  <p className="mt-1 font-mono text-xs font-semibold uppercase tracking-[0.14em] text-cobalt dark:text-cobalt-light">
+                    {activeTab.tagline}
+                  </p>
+
+                  <p className="mt-4 text-base text-slate dark:text-[#B9C1D0] leading-relaxed">
+                    {activeTab.description}
+                  </p>
+
+                  <div className="mt-6">
+                    <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-mute dark:text-[#8C98B3]">
+                      Design Scope & Deliverables
+                    </p>
+                    <ul className="mt-3 flex flex-wrap gap-2">
+                      {activeTab.highlights.map((h) => (
+                        <li
+                          key={h}
+                          className="rounded-lg border border-line/80 dark:border-white/15 bg-white/90 dark:bg-white/10 px-3 py-1.5 font-mono text-xs text-slate dark:text-[#B9C1D0] shadow-2xs"
+                        >
+                          {h}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+
+                <div className="mt-8 pt-6 border-t border-line/60">
+                  <Button href="/work" variant="glassCobalt">
+                    View design case study
+                  </Button>
+                </div>
+              </div>
+
+              {/* Right Column: Liquid Glass Interactive Web Design Mockup */}
+              <div className="glass-card-dark relative overflow-hidden rounded-2xl border border-white/20 p-6 shadow-2xl">
+                {/* Browser Header */}
+                <div className="flex items-center justify-between border-b border-white/10 pb-4">
+                  <div className="flex items-center gap-2">
+                    <span className="h-3 w-3 rounded-full bg-red-500/70" />
+                    <span className="h-3 w-3 rounded-full bg-amber-500/70" />
+                    <span className="h-3 w-3 rounded-full bg-emerald-500/70" />
+                  </div>
+                  <span className="font-mono text-[11px] text-[#8C98B3]">
+                    {activeTab.name.toLowerCase().replace(/\s+/g, "")}.design
+                  </span>
+                  <div className="h-3 w-3 opacity-0" />
+                </div>
+
+                {/* Web Design Layout Canvas */}
+                <div className="mt-6 space-y-4">
+                  {/* Hero Banner Mockup */}
+                  <div className="rounded-xl border border-white/10 bg-gradient-to-r from-cobalt/20 via-white/5 to-cobalt-light/20 p-5 backdrop-blur-md">
+                    <span className="font-mono text-[10px] uppercase tracking-wider text-cobalt-light">
+                      Bespoke Web Design Layout
+                    </span>
+                    <h4 className="h-display mt-2 text-lg font-bold text-white">
+                      Crafting Distinctive Brands
+                    </h4>
+                    <p className="mt-1 text-xs text-[#B9C1D0]">
+                      Fluid animations, pixel-perfect typography & responsive layouts.
+                    </p>
+                  </div>
+
+                  {/* Design Cards Grid */}
+                  <div className="grid grid-cols-2 gap-3">
+                    <div className="rounded-xl border border-white/10 bg-white/5 p-4">
+                      <span className="block font-mono text-[10px] uppercase text-mute">
+                        UI Component System
+                      </span>
+                      <span className="h-display mt-1 block text-sm font-semibold text-white">
+                        240+ Tokens
+                      </span>
+                    </div>
+                    <div className="rounded-xl border border-white/10 bg-white/5 p-4">
+                      <span className="block font-mono text-[10px] uppercase text-mute">
+                        Page Performance
+                      </span>
+                      <span className="h-display mt-1 block text-sm font-semibold text-emerald-400">
+                        100/100 Lighthouse
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Interactive Layout Strip */}
+                  <div className="rounded-xl border border-white/10 bg-white/5 p-4">
+                    <div className="flex items-center justify-between">
+                      <span className="font-mono text-xs text-white">
+                        Design System Specimen
+                      </span>
+                      <span className="h-2 w-2 rounded-full bg-cobalt animate-pulse" />
+                    </div>
+                    <div className="mt-3 flex items-center gap-3">
+                      <div className="h-8 flex-1 rounded-lg bg-cobalt/40 border border-cobalt/60" />
+                      <div className="h-8 flex-1 rounded-lg bg-white/10 border border-white/20" />
+                      <div className="h-8 flex-1 rounded-lg bg-cobalt-light/30 border border-cobalt-light/50" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </Reveal>
+        </div>
+      </div>
+    </Section>
+  );
+}

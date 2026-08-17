@@ -1,0 +1,208 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light dark;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-white dark:bg-[#0E131F] font-body text-slate dark:text-[#B9C1D0] antialiased transition-colors duration-300;
+  }
+
+  ::selection {
+    @apply bg-cobalt text-white;
+  }
+
+  /* Visible, on-brand focus ring for keyboard users */
+  :focus-visible {
+    @apply outline-none ring-2 ring-cobalt ring-offset-2 ring-offset-white dark:ring-offset-ink;
+  }
+}
+
+@layer components {
+  /* Monospace label above headings — the engineering-spec cue */
+  .eyebrow {
+    @apply font-mono text-[11px] uppercase tracking-eyebrow text-cobalt dark:text-cobalt-light;
+  }
+
+  .h-display {
+    @apply font-display font-semibold tracking-[-0.02em] text-ink dark:text-white;
+  }
+
+  /* Standard page gutter, used by <Section> and the header/footer */
+  .container-hal {
+    @apply mx-auto w-full max-w-[1180px] px-6 md:px-10;
+  }
+
+  /* Seamless keyword marquee. The track holds the word list twice and slides a
+     full half-width, so the second copy lands exactly where the first began.
+     Pauses on hover; stops completely under prefers-reduced-motion (below). */
+  .marquee-track {
+    animation: marquee 32s linear infinite;
+  }
+  .group:hover .marquee-track {
+    animation-play-state: paused;
+  }
+
+  /* Faint dot grid — engineering-graph-paper texture for light sections.
+     Purely decorative; sits behind content at low opacity. */
+  .bg-dotgrid {
+    background-image: radial-gradient(
+      circle at 1px 1px,
+      rgba(22, 30, 46, 0.06) 1px,
+      transparent 0
+    );
+    background-size: 22px 22px;
+  }
+
+  /* Same grid, tuned for dark (ink) sections. */
+  .bg-dotgrid-dark {
+    background-image: radial-gradient(
+      circle at 1px 1px,
+      rgba(255, 255, 255, 0.05) 1px,
+      transparent 0
+    );
+    background-size: 24px 24px;
+  }
+
+  /* Soft cobalt spotlight for dark hero/CTA bands — adds depth without a new
+     colour. Layer under content with a relative wrapper. */
+  .glow-cobalt {
+    background-image: radial-gradient(
+      60% 60% at 50% 0%,
+      rgba(47, 107, 255, 0.18) 0%,
+      transparent 70%
+    );
+  }
+
+  /* Card lift on hover — consistent, gentle, respects reduced-motion. */
+  .card-lift {
+    @apply transition-all duration-300 ease-out;
+  }
+  .card-lift:hover {
+    @apply -translate-y-1 border-cobalt/40 shadow-[0_16px_40px_-12px_rgba(22,30,46,0.18)];
+  }
+
+  /* Liquid Glass Panels */
+  .glass-card-light {
+    @apply bg-white/90 dark:bg-[#161E2E]/80 backdrop-blur-xl border border-line/80 dark:border-white/10 shadow-[0_8px_24px_rgba(22,30,46,0.04)] dark:shadow-[0_8px_32px_rgba(0,0,0,0.37)] transition-all duration-300;
+  }
+  .glass-card-light:hover {
+    @apply bg-white dark:bg-[#161E2E]/95 border-cobalt/40 dark:border-cobalt-light/40 shadow-[0_16px_48px_rgba(47,107,255,0.12)] dark:shadow-[0_16px_48px_rgba(47,107,255,0.2)] -translate-y-1;
+  }
+
+  .glass-card-dark {
+    @apply bg-[#161E2E]/70 backdrop-blur-xl border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.37)] transition-all duration-300;
+  }
+  .glass-card-dark:hover {
+    @apply bg-[#161E2E]/85 border-cobalt-light/40 shadow-[0_16px_48px_rgba(47,107,255,0.2)] -translate-y-1;
+  }
+
+  .glass-pill {
+    @apply inline-flex items-center gap-2 rounded-full border border-cobalt/20 bg-cobalt/10 px-3.5 py-1.5 font-mono text-[11px] uppercase tracking-[0.14em] text-cobalt backdrop-blur-md;
+  }
+
+  .glass-pill-dark {
+    @apply inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3.5 py-1.5 font-mono text-[11px] uppercase tracking-[0.14em] text-cobalt-light backdrop-blur-md;
+  }
+
+  /* Liquid Gradient Blob Animations */
+  .animate-fluid-blob {
+    animation: fluidBlob 10s ease-in-out infinite alternate;
+  }
+  .animate-fluid-blob-slow {
+    animation: fluidBlob 16s ease-in-out infinite alternate-reverse;
+  }
+
+  /* Gradient hairline used to separate stacked dark bands. */
+  .rule-fade {
+    height: 1px;
+    background-image: linear-gradient(
+      90deg,
+      transparent,
+      rgba(47, 107, 255, 0.5),
+      transparent
+    );
+  }
+}
+
+@layer utilities {
+  /* Automatic Dark Mode Palette Adaptations */
+  .text-ink {
+    @apply dark:text-white;
+  }
+  .text-slate {
+    @apply dark:text-[#B9C1D0];
+  }
+  .text-mute {
+    @apply dark:text-[#8C98B3];
+  }
+  .bg-paper {
+    @apply dark:bg-[#121826];
+  }
+  .bg-white {
+    @apply dark:bg-[#0E131F];
+  }
+  .border-line {
+    @apply dark:border-white/10;
+  }
+}
+
+@keyframes fluidBlob {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  50% {
+    transform: translate(30px, -20px) scale(1.1);
+  }
+  100% {
+    transform: translate(-20px, 20px) scale(0.95);
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@supports ((animation-timeline: view()) and (animation-range: entry)) {
+  .reveal-native {
+    animation: reveal-entry auto ease-out forwards;
+    animation-timeline: view(block);
+    /* 5% from entry edge, finishes 15% from entry edge */
+    animation-range: entry 5% cover 15%;
+    transition: none !important;
+  }
+  
+  @keyframes reveal-entry {
+    from {
+      opacity: 0;
+      transform: translateY(12px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
