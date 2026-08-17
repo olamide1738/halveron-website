@@ -10,6 +10,7 @@ import { Icon } from "../components/Icon";
 import { PageLoader } from "../components/PageLoader";
 import { TeamSection } from "../components/TeamSection";
 import { FeaturedShowcase } from "../components/FeaturedShowcase";
+import { HeroVisual } from "../components/HeroVisual";
 import { TechToolkit } from "../components/TechToolkit";
 import { ComparisonSection } from "../components/ComparisonSection";
 import {
@@ -28,15 +29,19 @@ export default function HomePage() {
     <>
       <PageLoader />
 
-      {/* 1. HERO SECTION WITH LIQUID GLASS — WEB DESIGN AGENCY POSITIONING */}
-      <section className="relative overflow-hidden bg-ink text-white py-28 md:py-36">
-        {/* Layered Liquid Background Orbs */}
+      {/* 1. HERO SECTION WITH LIQUID GLASS & INTERACTIVE STUDIO VISUAL */}
+      <section className="relative overflow-hidden bg-ink text-white py-24 md:py-32 lg:py-36">
+        {/* Dynamic Moving Ambient Glow Canvas */}
         <div
-          className="pointer-events-none absolute -left-20 -top-20 h-[450px] w-[450px] rounded-full bg-cobalt/25 blur-3xl animate-fluid-blob"
+          className="pointer-events-none absolute -left-20 -top-20 h-[520px] w-[520px] rounded-full bg-gradient-to-tr from-cobalt/35 via-cobalt/20 to-sky-400/25 blur-3xl animate-glow-wander-1"
           aria-hidden="true"
         />
         <div
-          className="pointer-events-none absolute -right-20 top-1/3 h-[500px] w-[500px] rounded-full bg-cobalt-light/20 blur-3xl animate-fluid-blob-slow"
+          className="pointer-events-none absolute -right-20 top-1/4 h-[560px] w-[560px] rounded-full bg-gradient-to-bl from-cobalt-light/35 via-indigo-500/25 to-cobalt/20 blur-3xl animate-glow-wander-2"
+          aria-hidden="true"
+        />
+        <div
+          className="pointer-events-none absolute left-1/3 bottom-10 h-[420px] w-[420px] rounded-full bg-gradient-to-r from-sky-400/20 via-cobalt/25 to-indigo-400/20 blur-3xl animate-glow-wander-3"
           aria-hidden="true"
         />
         <div
@@ -45,32 +50,68 @@ export default function HomePage() {
         />
 
         <div className="container-hal relative z-10">
-          <div className="max-w-3xl">
-            <h1 className="h-display mt-4 text-4xl leading-[1.08] text-white md:text-6xl lg:text-7xl font-bold tracking-tight">
-              Bring your idea to us —{" "}
-              <span className="bg-gradient-to-r from-white via-cobalt-light to-white bg-clip-text text-transparent">
-                we design & build
-              </span>{" "}
-              everything for you.
-            </h1>
-            <p className="mt-6 max-w-xl text-lg text-[#B9C1D0] md:text-xl leading-relaxed">
-              One accountable team taking you from concept to shipped product. Web design, mobile apps, SaaS engineering, and brand systems — engineered under one roof.
-            </p>
+          <div className="grid gap-12 lg:grid-cols-[1.15fr_1fr] lg:items-center">
+            {/* Left Column: Core Value Proposition & CTAs */}
+            <div>
+              {/* Status Eyebrow Badge */}
+              <div className="inline-flex items-center gap-2.5 rounded-full border border-white/15 bg-white/10 px-4 py-1.5 backdrop-blur-md">
+                <span className="flex h-2 w-2 relative">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
+                </span>
+                <span className="font-mono text-xs font-medium tracking-wide text-white">
+                  Available for new projects · Q3/Q4 2026
+                </span>
+              </div>
 
-            <div className="mt-9 flex flex-col gap-4 sm:flex-row">
-              <Button href={site.bookingUrl} external variant="glassCobalt" className="group">
-                Book a discovery call
-              </Button>
-              <Button href="/work" variant="glassDark" className="group">
-                See our work
-              </Button>
+              <h1 className="h-display mt-6 text-4xl leading-[1.08] text-white md:text-5xl lg:text-6xl font-bold tracking-tight">
+                Bring your idea to us —{" "}
+                <span className="bg-gradient-to-r from-white via-cobalt-light to-white bg-clip-text text-transparent">
+                  we design & build
+                </span>{" "}
+                everything for you.
+              </h1>
+
+              <p className="mt-6 max-w-xl text-lg text-[#B9C1D0] md:text-xl leading-relaxed">
+                One accountable team taking you from concept to shipped product. Web design, mobile apps, SaaS engineering, and brand systems — engineered under one roof.
+              </p>
+
+              <div className="mt-9 flex flex-col gap-4 sm:flex-row">
+                <Button href={site.bookingUrl} external variant="glassCobalt" className="group shadow-lg shadow-cobalt/25">
+                  Book a discovery call
+                </Button>
+                <Button href="/work" variant="glassDark" className="group">
+                  See our work
+                </Button>
+              </div>
+
+              {/* Trust Indicators */}
+              <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-2 border-t border-white/10 pt-6 text-xs text-[#8C98B3]">
+                <div className="flex items-center gap-2">
+                  <span className="text-amber-400">★★★★★</span>
+                  <span className="text-white font-medium">5.0 Client Rating</span>
+                </div>
+                <span className="hidden sm:inline text-white/20">·</span>
+                <div>
+                  <span className="text-white font-medium">Senior-Only</span> Engineers
+                </div>
+                <span className="hidden sm:inline text-white/20">·</span>
+                <div>
+                  <span className="text-white font-medium">Week 1</span> Staging URL
+                </div>
+              </div>
             </div>
 
-            <div className="mt-14">
-              <GapDivider />
+            {/* Right Column: Interactive Liquid Glass Studio Visual */}
+            <div className="mt-4 lg:mt-0">
+              <HeroVisual />
             </div>
-            <p className="mt-6 font-mono text-xs uppercase tracking-[0.16em] text-[#8C98B3]">
-              Web Design · Mobile Apps · SaaS Engineering · Branding · MVP Builds
+          </div>
+
+          {/* Bottom Capabilities Marquee Strip */}
+          <div className="mt-16 border-t border-white/10 pt-8">
+            <p className="font-mono text-xs uppercase tracking-[0.18em] text-[#8C98B3]">
+              Web Design · Mobile Apps · SaaS Engineering · Branding · MVP Builds · Design Systems
             </p>
           </div>
         </div>
