@@ -9,24 +9,24 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        // Swiss fahrenheit.ch inspired palette
+        // Halveron Brand Palette with Swiss architectural styling
         "swiss-bg": "#FEFAF7",
-        "swiss-dark": "#0E1117",
-        "swiss-card-dark": "#161922",
-        "swiss-key": "#FF512F",
-        "swiss-key-hover": "#E04020",
+        "swiss-dark": "#0B0F17",
+        "swiss-card-dark": "#121826",
+        "swiss-key": "#2F6BFF",
+        "swiss-key-hover": "#1A4FD9",
         "swiss-text": "#111111",
-        "swiss-muted": "#666666",
-        "swiss-line": "#E2DED9",
-        "swiss-line-dark": "#262933",
-        // Legacy fallbacks
-        ink: "#111111",
-        slate: "#333333",
+        "swiss-muted": "#667085",
+        "swiss-line": "#E2E8F0",
+        "swiss-line-dark": "#1E293B",
+        // Halveron Signature Tokens
+        ink: "#0B0F17",
+        slate: "#667085",
         paper: "#FEFAF7",
-        cobalt: "#FF512F",
-        "cobalt-light": "#FF7558",
-        line: "#E2DED9",
-        mute: "#777777",
+        cobalt: "#2F6BFF",
+        "cobalt-light": "#5B8EFF",
+        line: "#E2E8F0",
+        mute: "#94A3B8",
       },
       fontFamily: {
         serif: ["Instrument Serif", "Newsreader", "Playfair Display", "Georgia", "serif"],
@@ -34,6 +34,9 @@ module.exports = {
         body: ["Plus Jakarta Sans", "Inter", "Helvetica Neue", "sans-serif"],
         sans: ["Plus Jakarta Sans", "Inter", "Helvetica Neue", "sans-serif"],
         mono: ["JetBrains Mono", "ui-monospace", "SFMono-Regular", "monospace"],
+      },
+      borderRadius: {
+        xs: "2px",
       },
       letterSpacing: {
         eyebrow: "0.2em",

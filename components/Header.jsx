@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ThemeToggle } from "./ThemeToggle";
+import { Logomark } from "./Logo";
 import { nav, site } from "../lib/site";
 
 export function Header() {
@@ -34,17 +35,18 @@ export function Header() {
     <header
       className={`sticky top-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "border-b border-[#111111]/10 dark:border-white/10 bg-[#FEFAF7]/85 dark:bg-[#0E1117]/85 backdrop-blur-md shadow-xs py-3"
-          : "border-b border-transparent bg-transparent py-4 md:py-6"
+          ? "border-b border-[#111111]/10 dark:border-white/10 bg-[#FEFAF7]/90 dark:bg-[#0B0F17]/90 backdrop-blur-md shadow-xs py-3.5"
+          : "border-b border-transparent bg-transparent py-5 md:py-6"
       }`}
     >
       <div className="container-hal flex items-center justify-between">
-        {/* Brand Logo in Swiss Style */}
-        <Link href="/" aria-label="Halveron Home" className="group flex items-center gap-1.5 shrink-0">
-          <span className="font-mono text-xl font-bold tracking-tight text-[#111111] dark:text-white uppercase transition-colors group-hover:text-[#FF512F]">
+        {/* Halveron Brand Mark & Wordmark */}
+        <Link href="/" aria-label="Halveron Home" className="group flex items-center gap-2.5 shrink-0">
+          <Logomark size={32} />
+          <span className="font-mono text-xl font-bold tracking-tight text-[#111111] dark:text-white uppercase transition-colors group-hover:text-[#2F6BFF]">
             HALVERON
           </span>
-          <span className="font-mono text-xs font-bold text-[#FF512F]">®</span>
+          <span className="font-mono text-xs font-bold text-[#2F6BFF]">®</span>
         </Link>
 
         {/* Numbered Swiss Navigation */}
@@ -58,11 +60,11 @@ export function Header() {
                 aria-current={active ? "page" : undefined}
                 className={`line-btm-ani group flex items-center gap-1.5 font-mono text-[13px] uppercase tracking-[0.14em] transition-colors ${
                   active
-                    ? "active font-bold text-[#FF512F]"
-                    : "text-[#111111] dark:text-[#CCCCCC] hover:text-[#FF512F] dark:hover:text-[#FF512F]"
+                    ? "active font-bold text-[#2F6BFF]"
+                    : "text-[#111111] dark:text-[#CCCCCC] hover:text-[#2F6BFF] dark:hover:text-[#2F6BFF]"
                 }`}
               >
-                <span className="text-[10px] text-[#FF512F] opacity-70 group-hover:opacity-100">
+                <span className="text-[10px] text-[#2F6BFF] opacity-70 group-hover:opacity-100">
                   0{idx + 1}
                 </span>
                 <span>{item.label}</span>
@@ -80,7 +82,7 @@ export function Header() {
             rel="noopener noreferrer"
             className="link-button text-[11px]"
           >
-            Inquire Project <span className="text-[#FF512F]">↗</span>
+            Inquire Project <span className="text-[#2F6BFF]">↗</span>
           </a>
         </div>
 
@@ -88,7 +90,7 @@ export function Header() {
         <div className="flex items-center gap-3 md:hidden">
           <ThemeToggle />
           <button
-            className="flex h-10 w-10 items-center justify-center rounded-sm border border-[#111111]/30 dark:border-white/30 text-[#111111] dark:text-white"
+            className="flex h-10 w-10 items-center justify-center rounded-xs border border-[#111111]/30 dark:border-white/30 text-[#111111] dark:text-white"
             aria-label={open ? "Close menu" : "Open menu"}
             aria-expanded={open}
             onClick={() => setOpen((v) => !v)}
@@ -114,21 +116,21 @@ export function Header() {
         </div>
       </div>
 
-      {/* Mobile Swiss Drawer Menu */}
+      {/* Mobile Drawer Menu */}
       {open && (
-        <div className="fixed inset-x-0 top-[65px] bottom-0 z-40 flex flex-col justify-between border-t border-[#111111]/15 dark:border-white/10 bg-[#FEFAF7] dark:bg-[#0E1117] p-8 md:hidden overflow-y-auto animate-riseIn">
+        <div className="fixed inset-x-0 top-[65px] bottom-0 z-40 flex flex-col justify-between border-t border-[#111111]/15 dark:border-white/10 bg-[#FEFAF7] dark:bg-[#0B0F17] p-8 md:hidden overflow-y-auto animate-riseIn">
           <nav className="flex flex-col space-y-4 pt-4" aria-label="Mobile Navigation">
             {nav.map((item, idx) => (
               <Link
                 key={item.href}
                 href={item.href}
                 className={`flex items-baseline justify-between border-b border-[#111111]/10 dark:border-white/10 pb-4 font-mono text-lg uppercase tracking-wider ${
-                  isActive(item.href) ? "text-[#FF512F] font-bold" : "text-[#111111] dark:text-white"
+                  isActive(item.href) ? "text-[#2F6BFF] font-bold" : "text-[#111111] dark:text-white"
                 }`}
                 onClick={() => setOpen(false)}
               >
                 <span>{item.label}</span>
-                <span className="text-xs text-[#FF512F]">0{idx + 1}</span>
+                <span className="text-xs text-[#2F6BFF]">0{idx + 1}</span>
               </Link>
             ))}
           </nav>

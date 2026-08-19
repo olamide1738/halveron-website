@@ -63,8 +63,8 @@ export function ComparisonSection() {
             {/* Table Header */}
             <div className="grid grid-cols-[1.2fr_1.3fr_1fr_1fr] items-center gap-4 rounded-xs border border-[#111111]/20 dark:border-white/15 bg-white/60 dark:bg-white/5 p-4 font-mono text-xs uppercase tracking-[0.14em]">
               <div className="text-[#777777]">Feature</div>
-              <div className="flex items-center gap-2 text-[#FF512F] font-bold">
-                <span className="h-1.5 w-1.5 rounded-full bg-[#FF512F]" />
+              <div className="flex items-center gap-2 text-[#2F6BFF] font-bold">
+                <span className="h-1.5 w-1.5 rounded-full bg-[#2F6BFF]" />
                 Halveron Studio
               </div>
               <div className="text-[#555555] dark:text-[#CCCCCC]">Traditional Agency</div>
@@ -75,7 +75,7 @@ export function ComparisonSection() {
             <div className="mt-3 space-y-2">
               {comparisonRows.map((row, idx) => (
                 <Reveal key={row.feature} delay={idx * 50}>
-                  <div className="grid grid-cols-[1.2fr_1.3fr_1fr_1fr] items-center gap-4 rounded-xs border border-[#111111]/10 dark:border-white/10 bg-white dark:bg-[#161922] p-5 shadow-2xs transition-all duration-200 hover:border-[#FF512F]/40">
+                  <div className="grid grid-cols-[1.2fr_1.3fr_1fr_1fr] items-center gap-4 rounded-xs border border-[#111111]/10 dark:border-white/10 bg-white dark:bg-[#121826] p-5 shadow-2xs transition-all duration-200 hover:border-[#2F6BFF]/40">
                     {/* Feature Name */}
                     <div>
                       <h4 className="serif-display text-lg font-normal text-[#111111] dark:text-white">
@@ -84,8 +84,8 @@ export function ComparisonSection() {
                     </div>
 
                     {/* Halveron Column (Highlighted) */}
-                    <div className="rounded-xs border border-[#FF512F]/30 bg-[#FF512F]/5 dark:bg-[#FF512F]/10 p-3">
-                      <span className="serif-display block text-lg font-bold text-[#FF512F]">
+                    <div className="rounded-xs border border-[#2F6BFF]/30 bg-[#2F6BFF]/5 dark:bg-[#2F6BFF]/10 p-3">
+                      <span className="serif-display block text-lg font-bold text-[#2F6BFF]">
                         ✓ {row.halveron}
                       </span>
                       <span className="mt-0.5 block font-mono text-[11px] text-[#666666] dark:text-[#AAAAAA]">

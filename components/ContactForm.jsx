@@ -57,8 +57,8 @@ export function ContactForm() {
 
   if (status === "success") {
     return (
-      <div className="rounded-md border border-[#111111]/15 dark:border-white/10 bg-white dark:bg-[#161922] p-8 md:p-10 text-[#111111] dark:text-white shadow-sm">
-        <div className="flex h-10 w-10 items-center justify-center rounded-xs bg-[#FF512F]/10 text-[#FF512F] font-bold font-mono">
+      <div className="rounded-md border border-[#111111]/15 dark:border-white/10 bg-white dark:bg-[#121826] p-8 md:p-10 text-[#111111] dark:text-white shadow-sm">
+        <div className="flex h-10 w-10 items-center justify-center rounded-xs bg-[#2F6BFF]/10 text-[#2F6BFF] font-bold font-mono">
           ✓
         </div>
         <h2 className="serif-display mt-5 text-3xl font-normal text-[#111111] dark:text-white">Brief received.</h2>
@@ -71,7 +71,7 @@ export function ContactForm() {
             href={site.bookingUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-[#FF512F] font-bold hover:underline"
+            className="text-[#2F6BFF] font-bold hover:underline"
           >
             Book a call directly ↗
           </a>
@@ -83,9 +83,9 @@ export function ContactForm() {
   const sending = status === "sending";
 
   return (
-    <div className="rounded-md border border-[#111111]/15 dark:border-white/10 bg-white dark:bg-[#161922] p-8 md:p-10 text-[#111111] dark:text-white shadow-sm">
+    <div className="rounded-md border border-[#111111]/15 dark:border-white/10 bg-white dark:bg-[#121826] p-8 md:p-10 text-[#111111] dark:text-white shadow-sm">
       <div className="flex items-center justify-between border-b border-[#111111]/10 dark:border-white/10 pb-4">
-        <span className="font-mono text-xs font-bold uppercase tracking-[0.16em] text-[#FF512F]">
+        <span className="font-mono text-xs font-bold uppercase tracking-[0.16em] text-[#2F6BFF]">
           Project Inquiry Brief
         </span>
         <span className="font-mono text-xs text-[#888888]">
@@ -139,7 +139,7 @@ export function ContactForm() {
             required
             aria-invalid={field === "brief" || undefined}
             placeholder="What are you building, and what does success look like for your business?"
-            className={`w-full rounded-xs border bg-transparent px-4 py-3 text-sm text-[#111111] dark:text-white placeholder:text-[#888888] focus:outline-none focus:border-[#FF512F] transition-colors ${
+            className={`w-full rounded-xs border bg-transparent px-4 py-3 text-sm text-[#111111] dark:text-white placeholder:text-[#888888] focus:outline-none focus:border-[#2F6BFF] transition-colors ${
               field === "brief"
                 ? "border-red-500"
                 : "border-[#111111]/20 dark:border-white/20 hover:border-[#111111]/50 dark:hover:border-white/40"
@@ -170,7 +170,7 @@ export function ContactForm() {
             href={site.bookingUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-[#FF512F] font-bold hover:underline"
+            className="text-[#2F6BFF] font-bold hover:underline"
           >
             Book a call instead ↗
           </a>
@@ -200,7 +200,7 @@ function Field({
         required={required}
         placeholder={placeholder}
         aria-invalid={invalid || undefined}
-        className={`w-full rounded-xs border bg-transparent px-4 py-3 text-sm text-[#111111] dark:text-white placeholder:text-[#888888] focus:outline-none focus:border-[#FF512F] transition-colors ${
+        className={`w-full rounded-xs border bg-transparent px-4 py-3 text-sm text-[#111111] dark:text-white placeholder:text-[#888888] focus:outline-none focus:border-[#2F6BFF] transition-colors ${
           invalid
             ? "border-red-500"
             : "border-[#111111]/20 dark:border-white/20 hover:border-[#111111]/50 dark:hover:border-white/40"
@@ -220,10 +220,10 @@ function SelectField({ label, name, options }) {
         <select
           id={name}
           name={name}
-          className="w-full appearance-none rounded-xs border border-[#111111]/20 dark:border-white/20 hover:border-[#111111]/50 dark:hover:border-white/40 bg-transparent px-4 py-3 pr-10 text-sm text-[#111111] dark:text-white focus:border-[#FF512F] focus:outline-none cursor-pointer transition-colors"
+          className="w-full appearance-none rounded-xs border border-[#111111]/20 dark:border-white/20 hover:border-[#111111]/50 dark:hover:border-white/40 bg-transparent px-4 py-3 pr-10 text-sm text-[#111111] dark:text-white focus:border-[#2F6BFF] focus:outline-none cursor-pointer transition-colors"
         >
           {options.map((o) => (
-            <option key={o} className="bg-[#FEFAF7] dark:bg-[#161922] text-[#111111] dark:text-white">
+            <option key={o} className="bg-[#FEFAF7] dark:bg-[#121826] text-[#111111] dark:text-white">
               {o}
             </option>
           ))}

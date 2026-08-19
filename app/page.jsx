@@ -24,19 +24,19 @@ export default function HomePage() {
       <PageLoader />
 
       {/* 1. HERO SECTION IN SWISS EDITORIAL STYLE */}
-      <section className="relative overflow-hidden bg-[#FEFAF7] dark:bg-[#0E1117] text-[#111111] dark:text-white pt-24 pb-28 md:pt-36 md:pb-40 transition-colors duration-300">
+      <section className="relative overflow-hidden bg-[#FEFAF7] dark:bg-[#0B0F17] text-[#111111] dark:text-white pt-24 pb-28 md:pt-36 md:pb-40 transition-colors duration-300">
         <div className="container-hal relative z-10">
           <div className="max-w-4xl">
             {/* Top Swiss Tag */}
             <div className="inline-flex items-center gap-2 rounded-xs border border-[#111111]/20 dark:border-white/20 px-3.5 py-1.5 font-mono text-[11px] uppercase tracking-[0.16em] text-[#111111] dark:text-white">
-              <span className="h-1.5 w-1.5 rounded-full bg-[#FF512F] animate-pulse" />
+              <span className="h-1.5 w-1.5 rounded-full bg-[#2F6BFF] animate-pulse" />
               <span>01 / Digital Product Studio &amp; Web Agency</span>
             </div>
 
             {/* Giant Editorial Serif Headline */}
             <h1 className="serif-display mt-8 text-5xl leading-[1.04] tracking-tight md:text-7xl lg:text-8xl text-[#111111] dark:text-white">
               Bring your idea to us —{" "}
-              <span className="serif-italic text-[#FF512F]">we design &amp; build</span>{" "}
+              <span className="serif-italic text-[#2F6BFF]">we design &amp; build</span>{" "}
               everything for you.
             </h1>
 
@@ -74,7 +74,7 @@ export default function HomePage() {
             {/* Architectural Trust Strip */}
             <div className="mt-16 flex flex-wrap items-center gap-x-8 gap-y-3 border-t border-[#111111]/15 dark:border-white/10 pt-8 font-mono text-xs text-[#666666] dark:text-[#AAAAAA]">
               <div className="flex items-center gap-2">
-                <span className="text-[#FF512F]">★★★★★</span>
+                <span className="text-[#2F6BFF]">★★★★★</span>
                 <span className="font-bold text-[#111111] dark:text-white">5.0 Client Rating</span>
               </div>
               <span>·</span>
@@ -121,15 +121,15 @@ export default function HomePage() {
               >
                 <div>
                   <div className="flex items-center justify-between border-b border-[#111111]/10 dark:border-white/10 pb-4">
-                    <span className="font-mono text-xs font-bold text-[#FF512F]">
+                    <span className="font-mono text-xs font-bold text-[#2F6BFF]">
                       0{idx + 1}
                     </span>
-                    <span className="font-mono text-[11px] uppercase tracking-wider text-[#888888] group-hover:text-[#FF512F] transition-colors">
+                    <span className="font-mono text-[11px] uppercase tracking-wider text-[#888888] group-hover:text-[#2F6BFF] transition-colors">
                       Explore ↗
                     </span>
                   </div>
 
-                  <h3 className="serif-display mt-6 text-2xl font-normal text-[#111111] dark:text-white group-hover:text-[#FF512F] transition-colors">
+                  <h3 className="serif-display mt-6 text-2xl font-normal text-[#111111] dark:text-white group-hover:text-[#2F6BFF] transition-colors">
                     {s.title}
                   </h3>
 
@@ -174,7 +174,7 @@ export default function HomePage() {
               <div className="swiss-card flex h-full flex-col justify-between">
                 <div>
                   <div className="flex items-center justify-between border-b border-[#111111]/10 dark:border-white/10 pb-3">
-                    <span className="font-mono text-xs font-bold text-[#FF512F]">
+                    <span className="font-mono text-xs font-bold text-[#2F6BFF]">
                       STEP 0{i + 1}
                     </span>
                     <span className="font-mono text-[11px] uppercase tracking-wider text-[#888888]">
@@ -209,9 +209,9 @@ export default function HomePage() {
           <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {promises.map((p, idx) => (
               <Reveal key={p.title} delay={idx * 70}>
-                <div className="rounded-md border border-white/15 bg-white/5 p-8 flex h-full flex-col justify-between transition-all hover:border-[#FF512F]/60">
+                <div className="rounded-md border border-white/15 bg-white/5 p-8 flex h-full flex-col justify-between transition-all hover:border-[#2F6BFF]/60">
                   <div>
-                    <span className="serif-display text-4xl md:text-5xl font-bold text-[#FF512F]">
+                    <span className="serif-display text-4xl md:text-5xl font-bold text-[#2F6BFF]">
                       {p.stat}
                     </span>
                     <h3 className="serif-display mt-4 text-xl font-normal text-white">
@@ -251,14 +251,14 @@ export default function HomePage() {
               <div
                 className={`rounded-md border p-8 flex h-full flex-col justify-between transition-all duration-300 ${
                   m.featured
-                    ? "border-[#FF512F] bg-white dark:bg-[#161922] shadow-xl"
-                    : "border-[#111111]/15 dark:border-white/10 bg-white/70 dark:bg-[#161922]"
+                    ? "border-[#2F6BFF] bg-white dark:bg-[#121826] shadow-xl"
+                    : "border-[#111111]/15 dark:border-white/10 bg-white/70 dark:bg-[#121826]"
                 }`}
               >
                 <div>
                   {m.featured && (
-                    <span className="mb-4 inline-flex items-center gap-2 rounded-xs border border-[#FF512F]/40 bg-[#FF512F]/10 px-3 py-1 font-mono text-[11px] uppercase tracking-wider text-[#FF512F]">
-                      <span className="h-1.5 w-1.5 rounded-full bg-[#FF512F] animate-pulse" />
+                    <span className="mb-4 inline-flex items-center gap-2 rounded-xs border border-[#2F6BFF]/40 bg-[#2F6BFF]/10 px-3 py-1 font-mono text-[11px] uppercase tracking-wider text-[#2F6BFF]">
+                      <span className="h-1.5 w-1.5 rounded-full bg-[#2F6BFF] animate-pulse" />
                       Most Popular
                     </span>
                   )}
@@ -267,7 +267,7 @@ export default function HomePage() {
                     {m.name}
                   </h3>
 
-                  <p className="mt-2 font-mono text-sm font-bold text-[#FF512F]">
+                  <p className="mt-2 font-mono text-sm font-bold text-[#2F6BFF]">
                     {m.price}
                   </p>
 
@@ -278,7 +278,7 @@ export default function HomePage() {
                   <ul className="mt-6 space-y-3 border-t border-[#111111]/10 dark:border-white/10 pt-6">
                     {m.includes.map((item) => (
                       <li key={item} className="flex items-start gap-2.5 font-mono text-xs text-[#444444] dark:text-[#CCCCCC]">
-                        <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-[#FF512F]" />
+                        <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-[#2F6BFF]" />
                         <span>{item}</span>
                       </li>
                     ))}
@@ -325,10 +325,10 @@ export default function HomePage() {
             {faqs.map((f) => (
               <details key={f.q} className="group py-6">
                 <summary className="flex cursor-pointer list-none items-center justify-between gap-6 text-left [&::-webkit-details-marker]:hidden">
-                  <span className="serif-display text-xl md:text-2xl font-normal text-[#111111] dark:text-white group-hover:text-[#FF512F] transition-colors">
+                  <span className="serif-display text-xl md:text-2xl font-normal text-[#111111] dark:text-white group-hover:text-[#2F6BFF] transition-colors">
                     {f.q}
                   </span>
-                  <span className="font-mono text-xl text-[#FF512F] transition-transform duration-200 group-open:rotate-45">
+                  <span className="font-mono text-xl text-[#2F6BFF] transition-transform duration-200 group-open:rotate-45">
                     +
                   </span>
                 </summary>

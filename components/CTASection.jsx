@@ -8,8 +8,8 @@ export function CTASection({
   return (
     <section className="relative overflow-hidden bg-[#111111] dark:bg-[#07090D] text-white py-24 md:py-32 border-t border-white/10">
       <div className="container-hal relative z-10 text-center max-w-3xl mx-auto">
-        <div className="inline-flex items-center gap-2 rounded-xs border border-white/20 px-3.5 py-1.5 font-mono text-[11px] uppercase tracking-[0.16em] text-[#FF512F]">
-          <span className="h-1.5 w-1.5 rounded-full bg-[#FF512F]" />
+        <div className="inline-flex items-center gap-2 rounded-xs border border-white/20 px-3.5 py-1.5 font-mono text-[11px] uppercase tracking-[0.16em] text-[#2F6BFF]">
+          <span className="h-1.5 w-1.5 rounded-full bg-[#2F6BFF]" />
           <span>Start Your Project</span>
         </div>
 

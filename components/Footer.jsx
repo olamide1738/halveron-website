@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Logomark } from "./Logo";
 import { NewsletterForm } from "./NewsletterForm";
 import { nav, services, site } from "../lib/site";
 
@@ -6,15 +7,18 @@ export function Footer() {
   return (
     <footer className="border-t border-[#111111]/15 dark:border-white/10 bg-[#FEFAF7] dark:bg-[#07090D] text-[#111111] dark:text-white transition-colors duration-300">
       <div className="container-hal pt-20 pb-12">
-        {/* Giant Swiss Typographic Wordmark */}
+        {/* Giant Typographic Wordmark & Halveron Brand Mark */}
         <div className="border-b border-[#111111]/15 dark:border-white/10 pb-12">
           <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
             <div>
-              <span className="font-mono text-xs uppercase tracking-[0.2em] text-[#FF512F]">
-                Digital Product Studio & Web Agency
-              </span>
-              <h2 className="serif-display mt-2 text-6xl font-normal tracking-tight md:text-8xl lg:text-9xl text-[#111111] dark:text-white">
-                HALVERON<span className="text-[#FF512F]">®</span>
+              <div className="flex items-center gap-3 mb-4">
+                <Logomark size={36} />
+                <span className="font-mono text-xs uppercase tracking-[0.2em] text-[#2F6BFF]">
+                  Digital Product Studio &amp; Web Agency
+                </span>
+              </div>
+              <h2 className="serif-display text-6xl font-normal tracking-tight md:text-8xl lg:text-9xl text-[#111111] dark:text-white">
+                HALVERON<span className="text-[#2F6BFF]">®</span>
               </h2>
             </div>
             <div className="max-w-xs pb-2">
@@ -28,7 +32,7 @@ export function Footer() {
         {/* Numbered Columns */}
         <div className="grid gap-10 py-16 md:grid-cols-4">
           <div>
-            <div className="flex items-center gap-2 font-mono text-xs uppercase tracking-[0.18em] text-[#FF512F]">
+            <div className="flex items-center gap-2 font-mono text-xs uppercase tracking-[0.18em] text-[#2F6BFF]">
               <span>01</span>
               <span>Studio</span>
             </div>
@@ -37,7 +41,7 @@ export function Footer() {
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className="line-btm-ani text-[#444444] dark:text-[#CCCCCC] hover:text-[#FF512F]"
+                    className="line-btm-ani text-[#444444] dark:text-[#CCCCCC] hover:text-[#2F6BFF]"
                   >
                     {item.label}
                   </Link>
@@ -46,7 +50,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/careers"
-                  className="line-btm-ani text-[#444444] dark:text-[#CCCCCC] hover:text-[#FF512F]"
+                  className="line-btm-ani text-[#444444] dark:text-[#CCCCCC] hover:text-[#2F6BFF]"
                 >
                   Careers
                 </Link>
@@ -55,7 +59,7 @@ export function Footer() {
           </div>
 
           <div>
-            <div className="flex items-center gap-2 font-mono text-xs uppercase tracking-[0.18em] text-[#FF512F]">
+            <div className="flex items-center gap-2 font-mono text-xs uppercase tracking-[0.18em] text-[#2F6BFF]">
               <span>02</span>
               <span>Services</span>
             </div>
@@ -64,7 +68,7 @@ export function Footer() {
                 <li key={s.slug}>
                   <Link
                     href={`/services#${s.slug}`}
-                    className="line-btm-ani text-[#444444] dark:text-[#CCCCCC] hover:text-[#FF512F]"
+                    className="line-btm-ani text-[#444444] dark:text-[#CCCCCC] hover:text-[#2F6BFF]"
                   >
                     {s.title}
                   </Link>
@@ -74,7 +78,7 @@ export function Footer() {
           </div>
 
           <div>
-            <div className="flex items-center gap-2 font-mono text-xs uppercase tracking-[0.18em] text-[#FF512F]">
+            <div className="flex items-center gap-2 font-mono text-xs uppercase tracking-[0.18em] text-[#2F6BFF]">
               <span>03</span>
               <span>Contact</span>
             </div>
@@ -82,7 +86,7 @@ export function Footer() {
               <p>
                 <a
                   href={`mailto:${site.email}`}
-                  className="line-btm-ani hover:text-[#FF512F]"
+                  className="line-btm-ani hover:text-[#2F6BFF]"
                 >
                   {site.email}
                 </a>
@@ -92,7 +96,7 @@ export function Footer() {
                   href={site.bookingUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="line-btm-ani text-[#FF512F] font-bold"
+                  className="line-btm-ani text-[#2F6BFF] font-bold"
                 >
                   Book Discovery Call ↗
                 </a>
@@ -104,7 +108,7 @@ export function Footer() {
           </div>
 
           <div>
-            <div className="flex items-center gap-2 font-mono text-xs uppercase tracking-[0.18em] text-[#FF512F]">
+            <div className="flex items-center gap-2 font-mono text-xs uppercase tracking-[0.18em] text-[#2F6BFF]">
               <span>04</span>
               <span>Updates</span>
             </div>
@@ -124,10 +128,10 @@ export function Footer() {
           </span>
 
           <nav aria-label="Legal" className="flex flex-wrap gap-x-6 gap-y-2">
-            <Link href="/privacy" className="line-btm-ani hover:text-[#FF512F]">
+            <Link href="/privacy" className="line-btm-ani hover:text-[#2F6BFF]">
               Privacy Policy
             </Link>
-            <Link href="/terms" className="line-btm-ani hover:text-[#FF512F]">
+            <Link href="/terms" className="line-btm-ani hover:text-[#2F6BFF]">
               Terms of Service
             </Link>
           </nav>

@@ -16,17 +16,17 @@ export default function AboutPage() {
   return (
     <>
       {/* 1. HERO BANNER */}
-      <section className="relative overflow-hidden bg-[#FEFAF7] dark:bg-[#0E1117] text-[#111111] dark:text-white pt-24 pb-20 md:pt-36 md:pb-28 border-b border-[#111111]/10 dark:border-white/10 transition-colors duration-300">
+      <section className="relative overflow-hidden bg-[#FEFAF7] dark:bg-[#0B0F17] text-[#111111] dark:text-white pt-24 pb-20 md:pt-36 md:pb-28 border-b border-[#111111]/10 dark:border-white/10 transition-colors duration-300">
         <div className="container-hal relative z-10">
           <div className="max-w-4xl">
-            <div className="inline-flex items-center gap-2 rounded-xs border border-[#111111]/20 dark:border-white/20 px-3.5 py-1.5 font-mono text-[11px] uppercase tracking-[0.16em] text-[#FF512F]">
-              <span className="h-1.5 w-1.5 rounded-full bg-[#FF512F]" />
+            <div className="inline-flex items-center gap-2 rounded-xs border border-[#111111]/20 dark:border-white/20 px-3.5 py-1.5 font-mono text-[11px] uppercase tracking-[0.16em] text-[#2F6BFF]">
+              <span className="h-1.5 w-1.5 rounded-full bg-[#2F6BFF]" />
               <span>03 / About Halveron Studio</span>
             </div>
 
             <h1 className="serif-display mt-8 text-5xl leading-[1.04] tracking-tight md:text-7xl lg:text-8xl text-[#111111] dark:text-white">
               We turn your ideas into{" "}
-              <span className="serif-italic text-[#FF512F]">finished, working</span> products.
+              <span className="serif-italic text-[#2F6BFF]">finished, working</span> products.
             </h1>
 
             <p className="mt-8 max-w-2xl text-lg md:text-xl font-light text-[#444444] dark:text-[#CCCCCC] leading-relaxed">
@@ -46,9 +46,9 @@ export default function AboutPage() {
 
         <div className="mt-14 grid gap-6 md:grid-cols-3">
           <Reveal delay={0}>
-            <div className="rounded-md border border-[#111111]/15 dark:border-white/10 bg-white dark:bg-[#161922] p-8 flex h-full flex-col justify-between shadow-sm">
+            <div className="rounded-md border border-[#111111]/15 dark:border-white/10 bg-white dark:bg-[#121826] p-8 flex h-full flex-col justify-between shadow-sm">
               <div>
-                <span className="font-mono text-xs font-bold text-[#FF512F]">
+                <span className="font-mono text-xs font-bold text-[#2F6BFF]">
                   01 / The Challenge
                 </span>
                 <h3 className="serif-display mt-5 text-2xl font-normal text-[#111111] dark:text-white">
@@ -62,9 +62,9 @@ export default function AboutPage() {
           </Reveal>
 
           <Reveal delay={60}>
-            <div className="rounded-md border border-[#FF512F] bg-white dark:bg-[#161922] p-8 flex h-full flex-col justify-between shadow-md">
+            <div className="rounded-md border border-[#2F6BFF] bg-white dark:bg-[#121826] p-8 flex h-full flex-col justify-between shadow-md">
               <div>
-                <span className="font-mono text-xs font-bold text-[#FF512F]">
+                <span className="font-mono text-xs font-bold text-[#2F6BFF]">
                   02 / The Solution
                 </span>
                 <h3 className="serif-display mt-5 text-2xl font-normal text-[#111111] dark:text-white">
@@ -78,9 +78,9 @@ export default function AboutPage() {
           </Reveal>
 
           <Reveal delay={120}>
-            <div className="rounded-md border border-[#111111]/15 dark:border-white/10 bg-white dark:bg-[#161922] p-8 flex h-full flex-col justify-between shadow-sm">
+            <div className="rounded-md border border-[#111111]/15 dark:border-white/10 bg-white dark:bg-[#121826] p-8 flex h-full flex-col justify-between shadow-sm">
               <div>
-                <span className="font-mono text-xs font-bold text-[#FF512F]">
+                <span className="font-mono text-xs font-bold text-[#2F6BFF]">
                   03 / The Advantage
                 </span>
                 <h3 className="serif-display mt-5 text-2xl font-normal text-[#111111] dark:text-white">
@@ -108,7 +108,7 @@ export default function AboutPage() {
             <Reveal key={d.title} delay={idx * 60}>
               <div className="swiss-card flex h-full flex-col justify-between">
                 <div>
-                  <span className="font-mono text-xs font-bold text-[#FF512F]">
+                  <span className="font-mono text-xs font-bold text-[#2F6BFF]">
                     0{idx + 1}
                   </span>
                   <h3 className="serif-display mt-4 text-2xl font-normal text-[#111111] dark:text-white">

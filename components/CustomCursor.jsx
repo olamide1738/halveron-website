@@ -55,8 +55,8 @@ export function CustomCursor() {
     <div
       className={`pointer-events-none fixed left-0 top-0 z-[9999] rounded-full transition-transform duration-100 ease-out ${
         hovered
-          ? "h-10 w-10 bg-[#FF512F]/40 border border-[#FF512F] mix-blend-multiply dark:mix-blend-screen -translate-x-1/2 -translate-y-1/2 backdrop-blur-[1px]"
-          : "h-3.5 w-3.5 bg-[#FF512F] -translate-x-1/2 -translate-y-1/2 shadow-sm"
+          ? "h-10 w-10 bg-[#2F6BFF]/35 border border-[#2F6BFF] mix-blend-multiply dark:mix-blend-screen -translate-x-1/2 -translate-y-1/2 backdrop-blur-[1px]"
+          : "h-3.5 w-3.5 bg-[#2F6BFF] -translate-x-1/2 -translate-y-1/2 shadow-sm"
       }`}
       style={{
         transform: `translate3d(${position.x}px, ${position.y}px, 0) translate(-50%, -50%)`,

@@ -59,7 +59,7 @@ export function NewsletterForm() {
             type="email"
             required
             placeholder="your-email@company.com"
-            className="min-w-0 flex-1 rounded-sm border border-[#111111]/30 dark:border-white/20 bg-transparent px-3.5 py-2.5 font-mono text-xs text-[#111111] dark:text-white placeholder:text-[#888888] focus:border-[#FF512F] focus:outline-none"
+            className="min-w-0 flex-1 rounded-xs border border-[#111111]/30 dark:border-white/20 bg-transparent px-3.5 py-2.5 font-mono text-xs text-[#111111] dark:text-white placeholder:text-[#888888] focus:border-[#2F6BFF] focus:outline-none"
           />
           <button
             type="submit"
@@ -75,7 +75,7 @@ export function NewsletterForm() {
           {message && (
             <p
               className={`mt-2 font-mono text-xs ${
-                status === "error" ? "text-red-500" : "text-[#FF512F]"
+                status === "error" ? "text-red-500" : "text-[#2F6BFF]"
               }`}
             >
               {message}

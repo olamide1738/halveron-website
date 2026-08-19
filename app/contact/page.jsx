@@ -13,18 +13,18 @@ export default function ContactPage() {
   return (
     <>
       {/* 1. HERO BANNER & CONTACT FORM */}
-      <section className="relative overflow-hidden bg-[#FEFAF7] dark:bg-[#0E1117] text-[#111111] dark:text-white pt-24 pb-20 md:pt-36 md:pb-28 border-b border-[#111111]/10 dark:border-white/10 transition-colors duration-300">
+      <section className="relative overflow-hidden bg-[#FEFAF7] dark:bg-[#0B0F17] text-[#111111] dark:text-white pt-24 pb-20 md:pt-36 md:pb-28 border-b border-[#111111]/10 dark:border-white/10 transition-colors duration-300">
         <div className="container-hal relative z-10">
           <div className="grid gap-12 lg:grid-cols-2 lg:items-start">
             <div>
-              <div className="inline-flex items-center gap-2 rounded-xs border border-[#111111]/20 dark:border-white/20 px-3.5 py-1.5 font-mono text-[11px] uppercase tracking-[0.16em] text-[#FF512F]">
-                <span className="h-1.5 w-1.5 rounded-full bg-[#FF512F]" />
+              <div className="inline-flex items-center gap-2 rounded-xs border border-[#111111]/20 dark:border-white/20 px-3.5 py-1.5 font-mono text-[11px] uppercase tracking-[0.16em] text-[#2F6BFF]">
+                <span className="h-1.5 w-1.5 rounded-full bg-[#2F6BFF]" />
                 <span>04 / Inquire Project</span>
               </div>
 
               <h1 className="serif-display mt-8 text-5xl leading-[1.04] tracking-tight md:text-7xl font-normal text-[#111111] dark:text-white">
                 Tell us what you&apos;re{" "}
-                <span className="serif-italic text-[#FF512F]">building.</span>
+                <span className="serif-italic text-[#2F6BFF]">building.</span>
               </h1>
 
               <p className="mt-6 max-w-md text-base md:text-lg text-[#555555] dark:text-[#CCCCCC] leading-relaxed">
@@ -48,7 +48,7 @@ export default function ContactPage() {
                   <span className="text-[#888888] uppercase">Email</span>
                   <a
                     href={`mailto:${site.email}`}
-                    className="line-btm-ani text-[#111111] dark:text-white font-bold hover:text-[#FF512F]"
+                    className="line-btm-ani text-[#111111] dark:text-white font-bold hover:text-[#2F6BFF]"
                   >
                     {site.email}
                   </a>
@@ -66,7 +66,7 @@ export default function ContactPage() {
 
                 <div className="flex items-baseline justify-between pb-1">
                   <span className="text-[#888888] uppercase">Response Time</span>
-                  <span className="text-[#FF512F] font-bold">Within 24 Hours</span>
+                  <span className="text-[#2F6BFF] font-bold">Within 24 Hours</span>
                 </div>
               </div>
             </div>
@@ -95,10 +95,10 @@ export default function ContactPage() {
               <Reveal key={f.q} delay={idx * 60}>
                 <details className="group py-6">
                   <summary className="flex cursor-pointer list-none items-center justify-between gap-6 rounded-xl text-left [&::-webkit-details-marker]:hidden">
-                    <span className="serif-display text-xl md:text-2xl font-normal text-[#111111] dark:text-white group-hover:text-[#FF512F] transition-colors">
+                    <span className="serif-display text-xl md:text-2xl font-normal text-[#111111] dark:text-white group-hover:text-[#2F6BFF] transition-colors">
                       {f.q}
                     </span>
-                    <span className="font-mono text-xl text-[#FF512F] transition-transform duration-200 group-open:rotate-45">
+                    <span className="font-mono text-xl text-[#2F6BFF] transition-transform duration-200 group-open:rotate-45">
                       +
                     </span>
                   </summary>

@@ -22,19 +22,19 @@ export function Section({
 
 export function Eyebrow({ children, className = "" }) {
   return (
-    <div className={`flex items-center gap-2 mb-4 font-mono text-[11px] uppercase tracking-[0.2em] text-[#FF512F] ${className}`}>
-      <span className="h-1.5 w-1.5 rounded-full bg-[#FF512F]" />
+    <div className={`flex items-center gap-2 mb-4 font-mono text-[11px] uppercase tracking-[0.2em] text-[#2F6BFF] ${className}`}>
+      <span className="h-1.5 w-1.5 rounded-full bg-[#2F6BFF]" />
       <span>{children}</span>
     </div>
   );
 }
 
-// The signature Swiss motif: crisp 1px rule with red-orange accent
+// The signature Halveron Swiss motif: crisp 1px rule with cobalt accent
 export function GapDivider({ className = "" }) {
   return (
     <div className={`flex items-center gap-2 ${className}`} aria-hidden="true">
       <span className="h-[1px] w-12 bg-[#111111]/30 dark:bg-white/30" />
-      <span className="h-1.5 w-1.5 rounded-full bg-[#FF512F]" />
+      <span className="h-1.5 w-1.5 rounded-full bg-[#2F6BFF]" />
       <span className="h-[1px] w-12 bg-[#111111]/30 dark:bg-white/30" />
     </div>
   );

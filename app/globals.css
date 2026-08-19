@@ -6,8 +6,8 @@
   :root {
     --color-bg: #FEFAF7;
     --color-text: #111111;
-    --color-key: #FF512F;
-    --color-line: #E2DED9;
+    --color-key: #2F6BFF;
+    --color-line: #E2E8F0;
     color-scheme: light dark;
   }
 
@@ -16,15 +16,15 @@
   }
 
   body {
-    @apply bg-[#FEFAF7] dark:bg-[#0E1117] font-body text-[#111111] dark:text-[#EDEDED] antialiased transition-colors duration-300;
+    @apply bg-[#FEFAF7] dark:bg-[#0B0F17] font-body text-[#111111] dark:text-[#EDEDED] antialiased transition-colors duration-300;
   }
 
   ::selection {
-    @apply bg-[#FF512F] text-white;
+    @apply bg-[#2F6BFF] text-white;
   }
 
   :focus-visible {
-    @apply outline-none ring-2 ring-[#FF512F] ring-offset-2 ring-offset-[#FEFAF7] dark:ring-offset-[#0E1117];
+    @apply outline-none ring-2 ring-[#2F6BFF] ring-offset-2 ring-offset-[#FEFAF7] dark:ring-offset-[#0B0F17];
   }
 }
 
@@ -46,34 +46,38 @@
   }
 
   .eyebrow {
-    @apply font-mono text-[11px] uppercase tracking-[0.2em] text-[#FF512F];
+    @apply font-mono text-[11px] uppercase tracking-[0.2em] text-[#2F6BFF];
   }
 
   .container-hal {
     @apply mx-auto w-full max-w-[1240px] px-6 md:px-12;
   }
 
-  /* Swiss 3D Shadow-Pop Button */
+  /* Swiss 3D Shadow-Pop Button with Halveron Cobalt Accent */
   .link-button {
-    @apply relative inline-flex items-center justify-center gap-2 rounded-sm border border-[#111111] dark:border-white/30 bg-transparent px-8 py-3.5 font-mono text-[12px] font-bold uppercase tracking-[0.14em] text-[#111111] dark:text-white transition-all duration-150 cursor-pointer;
+    @apply relative inline-flex items-center justify-center gap-2 rounded-xs border border-[#111111] dark:border-white/30 bg-transparent px-8 py-3.5 font-mono text-[12px] font-bold uppercase tracking-[0.14em] text-[#111111] dark:text-white transition-all duration-150 cursor-pointer;
   }
 
   .link-button:hover {
     transform: translate(-3px, -3px);
-    box-shadow: 4px 4px 0px #111111;
+    box-shadow: 4px 4px 0px #2F6BFF;
   }
 
   .dark .link-button:hover {
-    box-shadow: 4px 4px 0px #FF512F;
+    box-shadow: 4px 4px 0px #2F6BFF;
   }
 
   .link-button-solid {
-    @apply relative inline-flex items-center justify-center gap-2 rounded-sm border border-[#111111] dark:border-[#FF512F] bg-[#111111] dark:bg-[#FF512F] px-8 py-3.5 font-mono text-[12px] font-bold uppercase tracking-[0.14em] text-white transition-all duration-150 cursor-pointer;
+    @apply relative inline-flex items-center justify-center gap-2 rounded-xs border border-[#2F6BFF] bg-[#2F6BFF] px-8 py-3.5 font-mono text-[12px] font-bold uppercase tracking-[0.14em] text-white transition-all duration-150 cursor-pointer shadow-sm;
   }
 
   .link-button-solid:hover {
     transform: translate(-3px, -3px);
-    box-shadow: 4px 4px 0px #FF512F;
+    box-shadow: 4px 4px 0px #111111;
+  }
+
+  .dark .link-button-solid:hover {
+    box-shadow: 4px 4px 0px #ffffff;
   }
 
   /* Animated Underline Effect */
@@ -89,7 +93,7 @@
     right: 0;
     width: 0;
     height: 1.5px;
-    background-color: #FF512F;
+    background-color: #2F6BFF;
     transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1), left 0.3s, right 0.3s;
   }
 
@@ -102,16 +106,16 @@
 
   /* Editorial Pill Tags */
   .tag-pill {
-    @apply inline-flex items-center rounded-sm border border-[#111111]/25 dark:border-white/20 bg-transparent px-3 py-1 font-mono text-[11px] uppercase tracking-wider text-[#111111] dark:text-[#CCCCCC];
+    @apply inline-flex items-center rounded-xs border border-[#111111]/25 dark:border-white/20 bg-transparent px-3 py-1 font-mono text-[11px] uppercase tracking-wider text-[#111111] dark:text-[#CCCCCC];
   }
 
   /* Swiss Architectural Bento Cards */
   .swiss-card {
-    @apply rounded-md border border-[#111111]/15 dark:border-white/10 bg-white/70 dark:bg-[#161922] p-8 transition-all duration-300;
+    @apply rounded-md border border-[#111111]/15 dark:border-white/10 bg-white/70 dark:bg-[#121826] p-8 transition-all duration-300;
   }
 
   .swiss-card:hover {
-    @apply border-[#FF512F]/60 shadow-lg -translate-y-0.5;
+    @apply border-[#2F6BFF]/60 shadow-lg -translate-y-0.5;
   }
 
   /* Liquid Gradient Blob Animations */

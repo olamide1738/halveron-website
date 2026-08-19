@@ -30,7 +30,7 @@ export function WorkGrid() {
               onClick={() => setActiveCategory(cat)}
               className={`rounded-xs px-5 py-2.5 font-mono text-xs font-bold uppercase tracking-[0.14em] transition-all duration-150 cursor-pointer ${
                 isActive
-                  ? "bg-[#111111] dark:bg-[#FF512F] text-white shadow-sm"
+                  ? "bg-[#2F6BFF] text-white shadow-sm"
                   : "border border-[#111111]/20 dark:border-white/20 text-[#444444] dark:text-[#CCCCCC] hover:border-[#111111] dark:hover:border-white"
               }`}
             >
@@ -44,12 +44,12 @@ export function WorkGrid() {
       <div className="mt-14 grid gap-8 lg:grid-cols-2">
         {filteredWork.map((w, idx) => (
           <Reveal key={w.label} delay={idx * 60}>
-            <article className="rounded-md border border-[#111111]/15 dark:border-white/10 bg-white dark:bg-[#161922] p-6 md:p-8 flex flex-col justify-between shadow-sm transition-all duration-300 hover:border-[#FF512F]/60">
+            <article className="rounded-md border border-[#111111]/15 dark:border-white/10 bg-white dark:bg-[#121826] p-6 md:p-8 flex flex-col justify-between shadow-sm transition-all duration-300 hover:border-[#2F6BFF]/60">
               <div>
                 {/* Visual Project Frame */}
-                <div className="relative aspect-[16/10] w-full overflow-hidden rounded-xs border border-[#111111]/20 dark:border-white/10 bg-[#111111]">
+                <div className="relative aspect-[16/10] w-full overflow-hidden rounded-xs border border-[#111111]/20 dark:border-white/10 bg-[#0B0F17]">
                   {/* Browser Chrome Header */}
-                  <div className="absolute top-0 left-0 right-0 z-20 flex items-center justify-between border-b border-white/10 bg-[#111111]/90 px-4 py-2 backdrop-blur-md">
+                  <div className="absolute top-0 left-0 right-0 z-20 flex items-center justify-between border-b border-white/10 bg-[#0B0F17]/90 px-4 py-2 backdrop-blur-md">
                     <div className="flex items-center gap-1.5">
                       <span className="h-2 w-2 rounded-full bg-red-500/80" />
                       <span className="h-2 w-2 rounded-full bg-amber-500/80" />
@@ -58,7 +58,7 @@ export function WorkGrid() {
                     <div className="truncate font-mono text-[10px] text-white/50">
                       halveron.studio/case/{w.sector.toLowerCase().replace(/\s+/g, "-")}
                     </div>
-                    <span className="font-mono text-[10px] text-[#FF512F] font-bold">
+                    <span className="font-mono text-[10px] text-[#2F6BFF] font-bold">
                       {w.year}
                     </span>
                   </div>
@@ -84,7 +84,7 @@ export function WorkGrid() {
                       {w.industry}
                     </span>
                     {w.result && (
-                      <span className="tag-pill bg-[#FF512F] text-white border-[#FF512F] font-bold">
+                      <span className="tag-pill bg-[#2F6BFF] text-white border-[#2F6BFF] font-bold">
                         {w.result}
                       </span>
                     )}
@@ -94,7 +94,7 @@ export function WorkGrid() {
                 {/* Project Copy Details */}
                 <div className="mt-6">
                   <div className="flex items-center justify-between">
-                    <span className="font-mono text-xs font-bold uppercase tracking-[0.14em] text-[#FF512F]">
+                    <span className="font-mono text-xs font-bold uppercase tracking-[0.14em] text-[#2F6BFF]">
                       {w.type}
                     </span>
                     <span className="font-mono text-xs text-[#888888]">
@@ -143,15 +143,15 @@ export function WorkGrid() {
       {/* Case Study Modal */}
       {selectedProject && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md animate-fade-in">
-          <div className="relative w-full max-w-2xl rounded-md border border-[#111111]/20 dark:border-white/20 bg-[#FEFAF7] dark:bg-[#161922] p-8 shadow-2xl">
+          <div className="relative w-full max-w-2xl rounded-md border border-[#111111]/20 dark:border-white/20 bg-[#FEFAF7] dark:bg-[#121826] p-8 shadow-2xl">
             <button
               onClick={() => setSelectedProject(null)}
-              className="absolute top-6 right-6 flex h-8 w-8 items-center justify-center rounded-xs border border-[#111111]/20 dark:border-white/20 font-mono text-sm font-bold text-[#111111] dark:text-white hover:bg-[#FF512F] hover:text-white hover:border-[#FF512F] transition-colors"
+              className="absolute top-6 right-6 flex h-8 w-8 items-center justify-center rounded-xs border border-[#111111]/20 dark:border-white/20 font-mono text-sm font-bold text-[#111111] dark:text-white hover:bg-[#2F6BFF] hover:text-white hover:border-[#2F6BFF] transition-colors"
             >
               ✕
             </button>
 
-            <span className="font-mono text-xs font-bold uppercase tracking-[0.14em] text-[#FF512F]">
+            <span className="font-mono text-xs font-bold uppercase tracking-[0.14em] text-[#2F6BFF]">
               {selectedProject.industry} · {selectedProject.year}
             </span>
             <h3 className="serif-display mt-2 text-4xl font-normal text-[#111111] dark:text-white">
@@ -161,7 +161,7 @@ export function WorkGrid() {
               {selectedProject.type}
             </p>
 
-            <div className="relative mt-6 aspect-video w-full overflow-hidden rounded-xs border border-[#111111]/20 dark:border-white/10 bg-[#111111]">
+            <div className="relative mt-6 aspect-video w-full overflow-hidden rounded-xs border border-[#111111]/20 dark:border-white/10 bg-[#0B0F17]">
               <Image
                 src={selectedProject.image}
                 alt={selectedProject.sector}
@@ -176,7 +176,7 @@ export function WorkGrid() {
               </p>
               <p>{selectedProject.summary}</p>
               {selectedProject.result && (
-                <div className="inline-flex items-center gap-2 rounded-xs bg-[#FF512F]/10 border border-[#FF512F]/30 px-4 py-2 font-mono text-xs font-bold text-[#FF512F]">
+                <div className="inline-flex items-center gap-2 rounded-xs bg-[#2F6BFF]/10 border border-[#2F6BFF]/30 px-4 py-2 font-mono text-xs font-bold text-[#2F6BFF]">
                   Key Result: {selectedProject.result}
                 </div>
               )}

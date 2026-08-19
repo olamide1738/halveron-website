@@ -59,14 +59,14 @@ export function FeaturedShowcase() {
           />
 
           {/* Swiss Minimal Tabs */}
-          <div className="flex flex-wrap gap-2 rounded-sm border border-[#111111]/20 dark:border-white/15 bg-white/40 dark:bg-white/5 p-1.5 backdrop-blur-md shrink-0">
+          <div className="flex flex-wrap gap-2 rounded-xs border border-[#111111]/20 dark:border-white/15 bg-white/40 dark:bg-white/5 p-1.5 backdrop-blur-md shrink-0">
             {showcaseProjects.map((p) => (
               <button
                 key={p.id}
                 onClick={() => setActiveTab(p)}
                 className={`rounded-xs px-4 py-2 font-mono text-xs font-bold uppercase tracking-[0.14em] transition-all duration-150 ${
                   activeTab.id === p.id
-                    ? "bg-[#111111] dark:bg-[#FF512F] text-white"
+                    ? "bg-[#2F6BFF] text-white shadow-sm"
                     : "text-[#444444] dark:text-[#CCCCCC] hover:text-[#111111] dark:hover:text-white"
                 }`}
               >
@@ -79,13 +79,13 @@ export function FeaturedShowcase() {
         {/* Featured Showcase Display Card */}
         <div className="mt-12">
           <Reveal key={activeTab.id}>
-            <div className="rounded-md border border-[#111111]/15 dark:border-white/10 bg-white dark:bg-[#161922] grid gap-8 p-8 lg:grid-cols-[1.1fr_1.3fr] lg:items-center lg:p-12 shadow-sm transition-all duration-300">
+            <div className="rounded-md border border-[#111111]/15 dark:border-white/10 bg-white dark:bg-[#121826] grid gap-8 p-8 lg:grid-cols-[1.1fr_1.3fr] lg:items-center lg:p-12 shadow-sm transition-all duration-300">
               {/* Left Column: Editorial Details */}
               <div className="flex flex-col justify-between">
                 <div>
                   <div className="flex items-center gap-3">
                     <span className="tag-pill">{activeTab.accent}</span>
-                    <span className="tag-pill text-[#FF512F] border-[#FF512F]/40 font-bold">
+                    <span className="tag-pill text-[#2F6BFF] border-[#2F6BFF]/40 font-bold bg-[#2F6BFF]/5">
                       {activeTab.metric}
                     </span>
                     <span className="font-mono text-xs text-[#888888]">
@@ -96,7 +96,7 @@ export function FeaturedShowcase() {
                   <h3 className="serif-display mt-6 text-4xl font-normal text-[#111111] dark:text-white md:text-5xl">
                     {activeTab.name}
                   </h3>
-                  <p className="mt-1 font-mono text-xs font-semibold uppercase tracking-[0.14em] text-[#FF512F]">
+                  <p className="mt-1 font-mono text-xs font-semibold uppercase tracking-[0.14em] text-[#2F6BFF]">
                     {activeTab.tagline}
                   </p>
 
@@ -123,13 +123,13 @@ export function FeaturedShowcase() {
 
                 <div className="mt-10 pt-6 border-t border-[#111111]/10 dark:border-white/10">
                   <Link href="/work" className="link-button">
-                    View Project Details <span className="text-[#FF512F]">↗</span>
+                    View Project Details <span className="text-[#2F6BFF]">↗</span>
                   </Link>
                 </div>
               </div>
 
               {/* Right Column: Architectural Browser Frame */}
-              <div className="relative overflow-hidden rounded-sm border border-[#111111]/20 dark:border-white/15 bg-[#111111] p-6 shadow-xl text-white">
+              <div className="relative overflow-hidden rounded-xs border border-[#111111]/20 dark:border-white/15 bg-[#0B0F17] p-6 shadow-xl text-white">
                 {/* Browser Header */}
                 <div className="flex items-center justify-between border-b border-white/15 pb-4">
                   <div className="flex items-center gap-2">
@@ -140,15 +140,15 @@ export function FeaturedShowcase() {
                   <span className="font-mono text-[11px] text-[#888888]">
                     halveron.studio/case/{activeTab.id}
                   </span>
-                  <span className="font-mono text-xs font-bold text-[#FF512F]">
+                  <span className="font-mono text-xs font-bold text-[#2F6BFF]">
                     {activeTab.num}
                   </span>
                 </div>
 
                 {/* Content Frame */}
                 <div className="mt-6 space-y-4">
-                  <div className="rounded-sm border border-white/15 bg-white/5 p-6 backdrop-blur-md">
-                    <span className="font-mono text-[10px] uppercase tracking-widest text-[#FF512F]">
+                  <div className="rounded-xs border border-white/15 bg-white/5 p-6 backdrop-blur-md">
+                    <span className="font-mono text-[10px] uppercase tracking-widest text-[#2F6BFF]">
                       Bespoke Experience
                     </span>
                     <h4 className="serif-display mt-2 text-2xl font-normal text-white">
@@ -160,7 +160,7 @@ export function FeaturedShowcase() {
                   </div>
 
                   <div className="grid grid-cols-2 gap-3">
-                    <div className="rounded-sm border border-white/15 bg-white/5 p-4">
+                    <div className="rounded-xs border border-white/15 bg-white/5 p-4">
                       <span className="block font-mono text-[10px] uppercase text-[#888888]">
                         Design Scope
                       </span>
@@ -168,11 +168,11 @@ export function FeaturedShowcase() {
                         100% Bespoke
                       </span>
                     </div>
-                    <div className="rounded-sm border border-white/15 bg-white/5 p-4">
+                    <div className="rounded-xs border border-white/15 bg-white/5 p-4">
                       <span className="block font-mono text-[10px] uppercase text-[#888888]">
                         Performance
                       </span>
-                      <span className="serif-display mt-1 block text-lg font-normal text-[#FF512F]">
+                      <span className="serif-display mt-1 block text-lg font-normal text-[#2F6BFF]">
                         Under 1.0s
                       </span>
                     </div>
