@@ -43,15 +43,7 @@ export function NewsletterForm() {
 
   return (
     <div>
-      <h3 className="font-mono text-[11px] uppercase tracking-[0.16em] text-cobalt-light">
-        Notes on shipping
-      </h3>
-      <p className="mt-4 text-sm text-[#8b93a5]">
-        Occasional writing on building products properly. No cadence promises,
-        no spam.
-      </p>
-
-      <form onSubmit={onSubmit} className="mt-4">
+      <form onSubmit={onSubmit} className="mt-2">
         <div className="absolute left-[-9999px]" aria-hidden="true">
           <label htmlFor="nl_company_url">Company URL</label>
           <input id="nl_company_url" name="company_url" tabIndex={-1} autoComplete="off" />
@@ -60,30 +52,30 @@ export function NewsletterForm() {
         <label htmlFor="nl-email" className="sr-only">
           Email address
         </label>
-        <div className="flex gap-2">
+        <div className="flex flex-col sm:flex-row gap-2">
           <input
             id="nl-email"
             name="email"
             type="email"
             required
-            placeholder="you@company.com"
-            className="min-w-0 flex-1 rounded-lg border border-ink-line bg-ink-soft px-3 py-2 text-sm text-white placeholder:text-[#6b7690] focus:border-cobalt-light focus:outline-none"
+            placeholder="your-email@company.com"
+            className="min-w-0 flex-1 rounded-sm border border-[#111111]/30 dark:border-white/20 bg-transparent px-3.5 py-2.5 font-mono text-xs text-[#111111] dark:text-white placeholder:text-[#888888] focus:border-[#FF512F] focus:outline-none"
           />
           <button
             type="submit"
             disabled={status === "sending"}
             aria-busy={status === "sending"}
-            className="shrink-0 rounded-lg bg-white px-4 py-2 text-sm font-medium text-ink transition-colors hover:bg-paper disabled:opacity-60"
+            className="link-button px-4 py-2.5 text-[11px] disabled:opacity-60"
           >
-            {status === "sending" ? "…" : "Join"}
+            {status === "sending" ? "…" : "Subscribe ↗"}
           </button>
         </div>
 
         <div aria-live="polite">
           {message && (
             <p
-              className={`mt-2 text-xs ${
-                status === "error" ? "text-red-300" : "text-cobalt-light"
+              className={`mt-2 font-mono text-xs ${
+                status === "error" ? "text-red-500" : "text-[#FF512F]"
               }`}
             >
               {message}

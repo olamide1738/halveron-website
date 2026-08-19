@@ -3,18 +3,19 @@ import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
 import { CookieNotice } from "../components/CookieNotice";
 import { BackToTop } from "../components/BackToTop";
+import { CustomCursor } from "../components/CustomCursor";
 import { site } from "../lib/site";
 import "./globals.css";
 
 export const metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: "Halveron — Premium digital product studio",
+    default: "Halveron® — Digital Product Studio & Web Agency",
     template: "%s — Halveron",
   },
   description: site.description,
   openGraph: {
-    title: "Halveron — Premium digital product studio",
+    title: "Halveron® — Digital Product Studio & Web Agency",
     description: site.description,
     url: site.url,
     siteName: "Halveron",
@@ -22,7 +23,7 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Halveron — Premium digital product studio",
+    title: "Halveron® — Digital Product Studio & Web Agency",
     description: site.description,
   },
 };
@@ -34,7 +35,7 @@ export default function RootLayout({ children }) {
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
-          href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
           rel="stylesheet"
         />
         <meta name="color-scheme" content="light dark" />
@@ -60,9 +61,10 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body>
+        <CustomCursor />
         <a
           href="#main"
-          className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:bg-ink focus:px-4 focus:py-2 focus:text-white"
+          className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:rounded-sm focus:bg-[#111111] focus:px-4 focus:py-2 focus:text-white font-mono text-xs uppercase"
         >
           Skip to content
         </a>

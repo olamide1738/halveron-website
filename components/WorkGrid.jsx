@@ -28,10 +28,10 @@ export function WorkGrid() {
             <button
               key={cat}
               onClick={() => setActiveCategory(cat)}
-              className={`rounded-full px-5 py-2.5 font-mono text-xs font-semibold uppercase tracking-[0.14em] transition-all duration-300 ${
+              className={`rounded-xs px-5 py-2.5 font-mono text-xs font-bold uppercase tracking-[0.14em] transition-all duration-150 cursor-pointer ${
                 isActive
-                  ? "bg-cobalt text-white shadow-md shadow-cobalt/25 scale-105"
-                  : "glass-card-light text-slate dark:text-[#B9C1D0] hover:border-cobalt/40 hover:text-ink dark:hover:text-white"
+                  ? "bg-[#111111] dark:bg-[#FF512F] text-white shadow-sm"
+                  : "border border-[#111111]/20 dark:border-white/20 text-[#444444] dark:text-[#CCCCCC] hover:border-[#111111] dark:hover:border-white"
               }`}
             >
               {cat}
@@ -41,24 +41,24 @@ export function WorkGrid() {
       </div>
 
       {/* Visual Work Projects Grid */}
-      <div className="mt-12 grid gap-8 lg:grid-cols-2">
+      <div className="mt-14 grid gap-8 lg:grid-cols-2">
         {filteredWork.map((w, idx) => (
-          <Reveal key={w.label} delay={idx * 80}>
-            <article className="glass-card-light group relative flex flex-col justify-between overflow-hidden rounded-3xl p-6 md:p-8 transition-all duration-500 hover:border-cobalt/50 hover:shadow-2xl hover:-translate-y-1">
+          <Reveal key={w.label} delay={idx * 60}>
+            <article className="rounded-md border border-[#111111]/15 dark:border-white/10 bg-white dark:bg-[#161922] p-6 md:p-8 flex flex-col justify-between shadow-sm transition-all duration-300 hover:border-[#FF512F]/60">
               <div>
-                {/* Visual Project UI Frame */}
-                <div className="relative aspect-[16/10] w-full overflow-hidden rounded-2xl border border-white/80 dark:border-white/10 bg-ink shadow-lg">
+                {/* Visual Project Frame */}
+                <div className="relative aspect-[16/10] w-full overflow-hidden rounded-xs border border-[#111111]/20 dark:border-white/10 bg-[#111111]">
                   {/* Browser Chrome Header */}
-                  <div className="absolute top-0 left-0 right-0 z-20 flex items-center justify-between border-b border-white/10 bg-[#161E2E]/90 px-4 py-2.5 backdrop-blur-md">
+                  <div className="absolute top-0 left-0 right-0 z-20 flex items-center justify-between border-b border-white/10 bg-[#111111]/90 px-4 py-2 backdrop-blur-md">
                     <div className="flex items-center gap-1.5">
-                      <span className="h-2.5 w-2.5 rounded-full bg-red-500/80" />
-                      <span className="h-2.5 w-2.5 rounded-full bg-amber-500/80" />
-                      <span className="h-2.5 w-2.5 rounded-full bg-emerald-500/80" />
+                      <span className="h-2 w-2 rounded-full bg-red-500/80" />
+                      <span className="h-2 w-2 rounded-full bg-amber-500/80" />
+                      <span className="h-2 w-2 rounded-full bg-emerald-500/80" />
                     </div>
-                    <div className="truncate rounded-md bg-white/10 px-3 py-0.5 font-mono text-[10px] text-white/60">
-                      halveron.com/work/{w.sector.toLowerCase().replace(/\s+/g, "-")}
+                    <div className="truncate font-mono text-[10px] text-white/50">
+                      halveron.studio/case/{w.sector.toLowerCase().replace(/\s+/g, "-")}
                     </div>
-                    <span className="font-mono text-[10px] text-cobalt-light font-bold">
+                    <span className="font-mono text-[10px] text-[#FF512F] font-bold">
                       {w.year}
                     </span>
                   </div>
@@ -70,22 +70,21 @@ export function WorkGrid() {
                       alt={`${w.sector} UI preview`}
                       fill
                       sizes="(max-width: 768px) 100vw, 50vw"
-                      className="object-cover object-top pt-8 transition-transform duration-700 group-hover:scale-105"
+                      className="object-cover object-top pt-7 transition-transform duration-700 hover:scale-105"
                     />
                   ) : (
-                    <div className="flex h-full w-full items-center justify-center pt-8 font-display text-2xl font-bold text-white/40">
+                    <div className="flex h-full w-full items-center justify-center pt-8 serif-display text-2xl text-white/40">
                       {w.sector}
                     </div>
                   )}
 
-                  {/* Top Industry & Metric Badges Overlay */}
-                  <div className="absolute bottom-4 left-4 right-4 z-20 flex flex-wrap items-center justify-between gap-2">
-                    <span className="glass-pill-dark font-mono text-xs text-white backdrop-blur-md bg-black/60 border-white/20">
+                  {/* Industry & Metric Badge */}
+                  <div className="absolute bottom-3 left-3 right-3 z-20 flex flex-wrap items-center justify-between gap-2">
+                    <span className="tag-pill bg-black/75 text-white border-white/20">
                       {w.industry}
                     </span>
                     {w.result && (
-                      <span className="inline-flex items-center gap-2 rounded-full bg-emerald-500/90 px-3.5 py-1.5 font-mono text-xs font-bold text-white shadow-md backdrop-blur-md">
-                        <span className="h-1.5 w-1.5 rounded-full bg-white animate-pulse" />
+                      <span className="tag-pill bg-[#FF512F] text-white border-[#FF512F] font-bold">
                         {w.result}
                       </span>
                     )}
@@ -95,19 +94,19 @@ export function WorkGrid() {
                 {/* Project Copy Details */}
                 <div className="mt-6">
                   <div className="flex items-center justify-between">
-                    <span className="font-mono text-xs font-bold uppercase tracking-[0.14em] text-cobalt dark:text-cobalt-light">
+                    <span className="font-mono text-xs font-bold uppercase tracking-[0.14em] text-[#FF512F]">
                       {w.type}
                     </span>
-                    <span className="font-mono text-xs text-mute dark:text-[#8C98B3]">
+                    <span className="font-mono text-xs text-[#888888]">
                       {w.label}
                     </span>
                   </div>
 
-                  <h3 className="h-display mt-2 text-2xl font-bold text-ink dark:text-white group-hover:text-cobalt transition-colors">
+                  <h3 className="serif-display mt-3 text-3xl font-normal text-[#111111] dark:text-white">
                     {w.sector}
                   </h3>
 
-                  <p className="mt-2.5 text-sm text-slate dark:text-[#B9C1D0] leading-relaxed">
+                  <p className="mt-3 text-sm text-[#555555] dark:text-[#CCCCCC] leading-relaxed">
                     {w.summary}
                   </p>
 
@@ -117,7 +116,7 @@ export function WorkGrid() {
                       {w.tags.map((tag) => (
                         <span
                           key={tag}
-                          className="rounded-lg border border-line/60 dark:border-white/10 bg-white/50 dark:bg-white/5 px-2.5 py-1 font-mono text-[11px] font-medium text-slate dark:text-[#B9C1D0]"
+                          className="rounded-xs border border-[#111111]/10 dark:border-white/10 bg-[#FEFAF7] dark:bg-white/5 px-2.5 py-1 font-mono text-[11px] text-[#444444] dark:text-[#CCCCCC]"
                         >
                           {tag}
                         </span>
@@ -128,12 +127,12 @@ export function WorkGrid() {
               </div>
 
               {/* Interactive Inspect Button */}
-              <div className="mt-6">
+              <div className="mt-8 pt-4 border-t border-[#111111]/10 dark:border-white/10">
                 <button
                   onClick={() => setSelectedProject(w)}
-                  className="inline-flex w-full items-center justify-center gap-2 rounded-2xl border border-line/80 dark:border-white/10 bg-white/60 dark:bg-white/5 px-4 py-3 font-mono text-xs font-bold uppercase tracking-[0.14em] text-ink dark:text-white transition-all duration-300 hover:border-cobalt hover:bg-cobalt hover:text-white"
+                  className="link-button w-full text-center"
                 >
-                  Inspect Case Study Details →
+                  Inspect Case Study Details ↗
                 </button>
               </div>
             </article>
@@ -143,26 +142,26 @@ export function WorkGrid() {
 
       {/* Case Study Modal */}
       {selectedProject && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-ink/80 backdrop-blur-md animate-fade-in">
-          <div className="relative w-full max-w-2xl rounded-3xl border border-white/20 bg-white dark:bg-[#161E2E] p-8 shadow-2xl">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md animate-fade-in">
+          <div className="relative w-full max-w-2xl rounded-md border border-[#111111]/20 dark:border-white/20 bg-[#FEFAF7] dark:bg-[#161922] p-8 shadow-2xl">
             <button
               onClick={() => setSelectedProject(null)}
-              className="absolute top-6 right-6 flex h-9 w-9 items-center justify-center rounded-full bg-paper dark:bg-white/10 font-bold text-ink dark:text-white hover:bg-cobalt hover:text-white transition-colors"
+              className="absolute top-6 right-6 flex h-8 w-8 items-center justify-center rounded-xs border border-[#111111]/20 dark:border-white/20 font-mono text-sm font-bold text-[#111111] dark:text-white hover:bg-[#FF512F] hover:text-white hover:border-[#FF512F] transition-colors"
             >
               ✕
             </button>
 
-            <span className="font-mono text-xs font-bold uppercase tracking-[0.14em] text-cobalt dark:text-cobalt-light">
+            <span className="font-mono text-xs font-bold uppercase tracking-[0.14em] text-[#FF512F]">
               {selectedProject.industry} · {selectedProject.year}
             </span>
-            <h3 className="h-display mt-2 text-3xl font-bold text-ink dark:text-white">
+            <h3 className="serif-display mt-2 text-4xl font-normal text-[#111111] dark:text-white">
               {selectedProject.sector}
             </h3>
-            <p className="mt-1 font-mono text-sm font-semibold text-slate dark:text-[#B9C1D0]">
+            <p className="mt-1 font-mono text-xs uppercase tracking-wider text-[#666666] dark:text-[#AAAAAA]">
               {selectedProject.type}
             </p>
 
-            <div className="relative mt-6 aspect-video w-full overflow-hidden rounded-2xl border border-white/10 bg-ink">
+            <div className="relative mt-6 aspect-video w-full overflow-hidden rounded-xs border border-[#111111]/20 dark:border-white/10 bg-[#111111]">
               <Image
                 src={selectedProject.image}
                 alt={selectedProject.sector}
@@ -171,14 +170,14 @@ export function WorkGrid() {
               />
             </div>
 
-            <div className="mt-6 space-y-4 text-sm text-slate dark:text-[#B9C1D0]">
-              <p className="font-bold text-ink dark:text-white">
-                Core Deliverables & Results:
+            <div className="mt-6 space-y-4 text-sm text-[#444444] dark:text-[#CCCCCC] leading-relaxed">
+              <p className="font-mono text-xs uppercase tracking-wider text-[#111111] dark:text-white font-bold">
+                Project Summary &amp; Results:
               </p>
               <p>{selectedProject.summary}</p>
               {selectedProject.result && (
-                <div className="inline-flex items-center gap-2 rounded-xl bg-cobalt/10 dark:bg-cobalt/20 border border-cobalt/30 px-4 py-2 font-mono text-xs font-bold text-cobalt dark:text-cobalt-light">
-                  Key Metric: {selectedProject.result}
+                <div className="inline-flex items-center gap-2 rounded-xs bg-[#FF512F]/10 border border-[#FF512F]/30 px-4 py-2 font-mono text-xs font-bold text-[#FF512F]">
+                  Key Result: {selectedProject.result}
                 </div>
               )}
             </div>
@@ -186,9 +185,9 @@ export function WorkGrid() {
             <div className="mt-8 flex justify-end">
               <button
                 onClick={() => setSelectedProject(null)}
-                className="rounded-2xl bg-cobalt px-6 py-3 font-mono text-xs font-bold uppercase tracking-[0.14em] text-white shadow-lg"
+                className="link-button-solid"
               >
-                Close Case Study
+                Close Case Study ✕
               </button>
             </div>
           </div>

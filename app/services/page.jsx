@@ -1,95 +1,104 @@
+import Link from "next/link";
 import { Section, Eyebrow, SectionHeading } from "../../components/Section";
 import { CTASection } from "../../components/CTASection";
-import { Icon } from "../../components/Icon";
 import { TechToolkit } from "../../components/TechToolkit";
 import { ComparisonSection } from "../../components/ComparisonSection";
 import { Reveal } from "../../components/Reveal";
-import { services, process } from "../../lib/site";
+import { services, process, site } from "../../lib/site";
 
 export const metadata = {
-  title: "Services — Web, Mobile, SaaS, Branding & MVP Builds",
+  title: "Services — Web Design, Mobile Apps, SaaS & MVP Builds",
   description:
-    "Web design, mobile apps, SaaS product engineering, MVP launches, branding systems, and UI/UX design — engineered under one roof.",
+    "Custom web design, mobile apps, SaaS engineering, fast MVP launches, and branding systems — engineered under one roof.",
 };
 
 export default function ServicesPage() {
   return (
     <>
       {/* 1. HERO BANNER */}
-      <section className="relative overflow-hidden bg-ink text-white py-24 md:py-32">
-        <div
-          className="pointer-events-none absolute inset-0 bg-dotgrid-dark opacity-60"
-          aria-hidden="true"
-        />
-        <div
-          className="pointer-events-none absolute inset-0 glow-cobalt"
-          aria-hidden="true"
-        />
-        <div
-          className="pointer-events-none absolute -left-20 top-1/4 h-96 w-96 rounded-full bg-cobalt/20 blur-3xl animate-fluid-blob"
-          aria-hidden="true"
-        />
-
+      <section className="relative overflow-hidden bg-[#FEFAF7] dark:bg-[#0E1117] text-[#111111] dark:text-white pt-24 pb-20 md:pt-36 md:pb-28 border-b border-[#111111]/10 dark:border-white/10 transition-colors duration-300">
         <div className="container-hal relative z-10">
-          <div className="max-w-3xl">
-            <Eyebrow className="text-cobalt-light">What We Do</Eyebrow>
-            <h1 className="h-display mt-4 text-4xl leading-[1.08] text-white md:text-6xl lg:text-7xl font-bold tracking-tight">
-              Everything it takes to design, build, and{" "}
-              <span className="bg-gradient-to-r from-white via-cobalt-light to-white bg-clip-text text-transparent">
-                launch your product.
-              </span>
+          <div className="max-w-4xl">
+            <div className="inline-flex items-center gap-2 rounded-xs border border-[#111111]/20 dark:border-white/20 px-3.5 py-1.5 font-mono text-[11px] uppercase tracking-[0.16em] text-[#FF512F]">
+              <span className="h-1.5 w-1.5 rounded-full bg-[#FF512F]" />
+              <span>01 / Core Services &amp; Capabilities</span>
+            </div>
+
+            <h1 className="serif-display mt-8 text-5xl leading-[1.04] tracking-tight md:text-7xl lg:text-8xl text-[#111111] dark:text-white">
+              Everything it takes to{" "}
+              <span className="serif-italic text-[#FF512F]">design, build</span> &amp; launch your product.
             </h1>
-            <p className="mt-6 max-w-2xl text-lg text-[#B9C1D0] md:text-xl leading-relaxed">
-              Six core services, one friendly expert team. Work with us on a single project or take your idea all the way from concept to market.
+
+            <p className="mt-8 max-w-2xl text-lg md:text-xl font-light text-[#444444] dark:text-[#CCCCCC] leading-relaxed">
+              Six focused disciplines, one accountable team of senior creators. Engage us for a single service sprint or take your vision all the way from idea to scale.
             </p>
           </div>
         </div>
       </section>
 
-      {/* 2. SERVICES GRID */}
+      {/* 2. SERVICES LIST */}
       <Section className="relative overflow-hidden py-24">
-        <div className="space-y-6">
+        <div className="space-y-8">
           {services.map((s, i) => (
-            <Reveal key={s.slug} delay={i * 80}>
+            <Reveal key={s.slug} delay={i * 60}>
               <article
                 id={s.slug}
-                className="glass-card-light group scroll-mt-28 rounded-3xl p-8 md:p-10 transition-all duration-300 hover:border-cobalt/40"
+                className="rounded-md border border-[#111111]/15 dark:border-white/10 bg-white dark:bg-[#161922] p-8 md:p-12 shadow-sm transition-all duration-300 hover:border-[#FF512F]/50"
               >
-                <div className="grid gap-8 lg:grid-cols-[1fr_1.4fr] lg:items-center">
+                <div className="grid gap-10 lg:grid-cols-[1.1fr_1.3fr] lg:items-start">
                   <div>
-                    <div className="flex items-center justify-between">
-                      <span className="flex h-12 w-12 items-center justify-center rounded-2xl border border-white/80 dark:border-white/15 bg-cobalt/10 dark:bg-cobalt/20 text-cobalt dark:text-cobalt-light">
-                        <Icon name={s.slug} className="h-6 w-6" />
-                      </span>
-                      <span className="font-mono text-xs font-bold text-cobalt dark:text-cobalt-light">
+                    <div className="flex items-center justify-between border-b border-[#111111]/10 dark:border-white/10 pb-4">
+                      <span className="font-mono text-sm font-bold text-[#FF512F]">
                         0{i + 1}
+                      </span>
+                      <span className="font-mono text-xs uppercase tracking-widest text-[#888888]">
+                        Full Discipline
                       </span>
                     </div>
 
-                    <h2 className="h-display mt-5 text-2xl font-bold text-ink dark:text-white md:text-3xl group-hover:text-cobalt transition-colors">
+                    <h2 className="serif-display mt-6 text-3xl md:text-4xl font-normal text-[#111111] dark:text-white">
                       {s.title}
                     </h2>
-                    <p className="mt-3 text-base text-slate dark:text-[#B9C1D0] leading-relaxed">
+
+                    <p className="mt-4 text-base text-[#555555] dark:text-[#CCCCCC] leading-relaxed">
                       {s.summary}
                     </p>
+
+                    <div className="mt-8">
+                      <a
+                        href={site.bookingUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="link-button"
+                      >
+                        Inquire This Service ↗
+                      </a>
+                    </div>
                   </div>
 
                   <div>
-                    <p className="text-sm text-slate dark:text-[#B9C1D0] leading-relaxed">
+                    <div className="border-b border-[#111111]/10 dark:border-white/10 pb-4">
+                      <span className="font-mono text-xs uppercase tracking-wider text-[#888888]">
+                        Approach &amp; Detail
+                      </span>
+                    </div>
+
+                    <p className="mt-6 text-sm md:text-base text-[#444444] dark:text-[#CCCCCC] leading-relaxed">
                       {s.detail}
                     </p>
-                    <div className="mt-6">
-                      <span className="font-mono text-[11px] uppercase tracking-[0.14em] text-mute dark:text-[#8C98B3]">
+
+                    <div className="mt-8">
+                      <span className="font-mono text-[11px] uppercase tracking-[0.16em] text-[#888888]">
                         Key Deliverables
                       </span>
-                      <ul className="mt-3 grid gap-2.5 sm:grid-cols-2">
+                      <ul className="mt-4 grid gap-3 sm:grid-cols-2">
                         {s.deliverables.map((d) => (
                           <li
                             key={d}
-                            className="flex items-center gap-2.5 rounded-xl border border-white/80 dark:border-white/10 bg-white/60 dark:bg-white/5 px-3 py-2 font-mono text-xs text-ink dark:text-white backdrop-blur-md"
+                            className="flex items-center gap-2.5 rounded-xs border border-[#111111]/10 dark:border-white/10 bg-[#FEFAF7] dark:bg-white/5 px-3.5 py-2.5 font-mono text-xs text-[#111111] dark:text-white"
                           >
-                            <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-cobalt" />
-                            {d}
+                            <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-[#FF512F]" />
+                            <span>{d}</span>
                           </li>
                         ))}
                       </ul>
@@ -102,39 +111,37 @@ export default function ServicesPage() {
         </div>
       </Section>
 
-      {/* 3. DESIGN & DEV TOOLKIT */}
-      <Section paper className="relative overflow-hidden py-24">
+      {/* 3. TOOLKIT */}
+      <Section paper className="border-t border-[#111111]/10 dark:border-white/10">
         <TechToolkit />
       </Section>
 
-      {/* 4. PROCESS RECAP */}
-      <Section className="relative overflow-hidden py-24">
+      {/* 4. PROCESS */}
+      <Section className="relative overflow-hidden">
         <SectionHeading
-          eyebrow="How Every Engagement Runs"
-          title="The same measured path, whatever the service."
-          lead="From a one-week discovery sprint to a multi-month build: scoped, visible, and accountable at every step."
+          eyebrow="Our Process"
+          title="From first idea to official launch."
+          lead="We run an agile, transparent development schedule with open staging previews from week one."
         />
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {process.map((p, i) => (
-            <Reveal key={p.step} delay={i * 70}>
-              <div className="glass-card-light flex h-full flex-col justify-between rounded-3xl p-7 transition-all duration-300">
+            <Reveal key={p.step} delay={i * 60}>
+              <div className="swiss-card flex h-full flex-col justify-between">
                 <div>
-                  <div className="flex items-center justify-between">
-                    <span
-                      className={`flex h-9 w-9 items-center justify-center rounded-xl font-mono text-xs font-bold ${
-                        i === 0
-                          ? "bg-cobalt text-white shadow-md shadow-cobalt/25"
-                          : "bg-cobalt/10 dark:bg-cobalt/20 text-cobalt dark:text-cobalt-light"
-                      }`}
-                    >
-                      {p.step}
+                  <div className="flex items-center justify-between border-b border-[#111111]/10 dark:border-white/10 pb-3">
+                    <span className="font-mono text-xs font-bold text-[#FF512F]">
+                      STEP 0{i + 1}
                     </span>
-                    <span className="glass-pill">{p.duration}</span>
+                    <span className="font-mono text-[11px] uppercase tracking-wider text-[#888888]">
+                      {p.duration}
+                    </span>
                   </div>
-                  <h3 className="h-display mt-5 text-lg font-bold text-ink dark:text-white">
+
+                  <h3 className="serif-display mt-5 text-2xl font-normal text-[#111111] dark:text-white">
                     {p.title}
                   </h3>
-                  <p className="mt-2 text-sm text-slate dark:text-[#B9C1D0] leading-relaxed">
+
+                  <p className="mt-3 text-sm text-[#555555] dark:text-[#CCCCCC] leading-relaxed">
                     {p.body}
                   </p>
                 </div>
@@ -144,12 +151,13 @@ export default function ServicesPage() {
         </div>
       </Section>
 
-      {/* 5. COMPARISON MATRIX */}
+      {/* 5. COMPARISON */}
       <ComparisonSection />
 
+      {/* 6. CTA */}
       <CTASection
-        title="Not sure which service you need?"
-        lead="Start with a discovery sprint. We'll map the problem and give you a scoped, priced proposal — yours to keep, no obligation."
+        title="Ready to discuss your project scope?"
+        lead="Book a short 20-minute discovery call to review requirements, feasibility, and transparent fixed pricing."
       />
     </>
   );

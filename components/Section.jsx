@@ -8,10 +8,10 @@ export function Section({
   id,
 }) {
   const bg = dark
-    ? "bg-ink text-white"
+    ? "bg-[#111111] dark:bg-[#07090D] text-white"
     : paper
-    ? "bg-paper dark:bg-[#121826] text-slate dark:text-[#B9C1D0] transition-colors duration-300"
-    : "bg-white dark:bg-[#0E131F] text-slate dark:text-[#B9C1D0] transition-colors duration-300";
+    ? "bg-[#F7F2EB] dark:bg-[#12151D] text-[#111111] dark:text-[#EDEDED] transition-colors duration-300"
+    : "bg-[#FEFAF7] dark:bg-[#0E1117] text-[#111111] dark:text-[#EDEDED] transition-colors duration-300";
 
   return (
     <section id={id} className={`${bg} ${className}`}>
@@ -21,42 +21,42 @@ export function Section({
 }
 
 export function Eyebrow({ children, className = "" }) {
-  return <p className={`eyebrow mb-4 ${className}`}>{children}</p>;
-}
-
-// The signature motif: two bars with a cobalt block closing the gap between them.
-export function GapDivider({ className = "", animate = true }) {
   return (
-    <div
-      className={`flex items-center ${className}`}
-      aria-hidden="true"
-    >
-      <span className="h-[3px] w-16 rounded-sm bg-ink/20 dark:bg-white/20" />
-      <span
-        className={`mx-1.5 h-3 w-4 rounded-sm bg-cobalt ${
-          animate ? "origin-left animate-gapClose" : ""
-        }`}
-      />
-      <span className="h-[3px] w-16 rounded-sm bg-ink/20 dark:bg-white/20" />
+    <div className={`flex items-center gap-2 mb-4 font-mono text-[11px] uppercase tracking-[0.2em] text-[#FF512F] ${className}`}>
+      <span className="h-1.5 w-1.5 rounded-full bg-[#FF512F]" />
+      <span>{children}</span>
     </div>
   );
 }
 
-// Section heading block: eyebrow + display headline + optional lead paragraph.
+// The signature Swiss motif: crisp 1px rule with red-orange accent
+export function GapDivider({ className = "" }) {
+  return (
+    <div className={`flex items-center gap-2 ${className}`} aria-hidden="true">
+      <span className="h-[1px] w-12 bg-[#111111]/30 dark:bg-white/30" />
+      <span className="h-1.5 w-1.5 rounded-full bg-[#FF512F]" />
+      <span className="h-[1px] w-12 bg-[#111111]/30 dark:bg-white/30" />
+    </div>
+  );
+}
+
+// Section heading block: eyebrow + Swiss editorial display headline + lead paragraph.
 export function SectionHeading({ eyebrow, title, lead, dark = false, center = false }) {
   return (
-    <div className={`${center ? "mx-auto text-center" : ""} max-w-2xl`}>
+    <div className={`${center ? "mx-auto text-center" : ""} max-w-3xl`}>
       {eyebrow && <Eyebrow>{eyebrow}</Eyebrow>}
       <h2
-        className={`h-display text-3xl leading-tight md:text-4xl ${
-          dark ? "text-white" : "text-ink dark:text-white"
+        className={`serif-display text-4xl leading-[1.08] tracking-tight md:text-5xl lg:text-6xl ${
+          dark ? "text-white" : "text-[#111111] dark:text-white"
         }`}
       >
         {title}
       </h2>
       {lead && (
         <p
-          className={`mt-4 text-lg ${dark ? "text-[#B9C1D0]" : "text-slate dark:text-[#B9C1D0]"}`}
+          className={`mt-5 text-base md:text-lg leading-relaxed ${
+            dark ? "text-[#CCCCCC]" : "text-[#444444] dark:text-[#B9C1D0]"
+          }`}
         >
           {lead}
         </p>

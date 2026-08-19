@@ -9,21 +9,30 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        // Locked Halveron palette — see Brand Guidelines v1.0
-        ink: "#161E2E",
-        slate: "#2E3A52",
-        paper: "#F3F5F8",
-        cobalt: "#2F6BFF",
-        line: "#E2E6EC",
-        mute: "#6B7488",
-        // dark-surface helpers used on inverted sections
-        "ink-soft": "#1d263b",
-        "ink-line": "#2c3854",
-        "cobalt-light": "#7FA4FF",
+        // Swiss fahrenheit.ch inspired palette
+        "swiss-bg": "#FEFAF7",
+        "swiss-dark": "#0E1117",
+        "swiss-card-dark": "#161922",
+        "swiss-key": "#FF512F",
+        "swiss-key-hover": "#E04020",
+        "swiss-text": "#111111",
+        "swiss-muted": "#666666",
+        "swiss-line": "#E2DED9",
+        "swiss-line-dark": "#262933",
+        // Legacy fallbacks
+        ink: "#111111",
+        slate: "#333333",
+        paper: "#FEFAF7",
+        cobalt: "#FF512F",
+        "cobalt-light": "#FF7558",
+        line: "#E2DED9",
+        mute: "#777777",
       },
       fontFamily: {
-        display: ["Outfit", "system-ui", "-apple-system", "sans-serif"],
-        body: ["Plus Jakarta Sans", "system-ui", "-apple-system", "sans-serif"],
+        serif: ["Instrument Serif", "Newsreader", "Playfair Display", "Georgia", "serif"],
+        display: ["Instrument Serif", "Newsreader", "Playfair Display", "Georgia", "serif"],
+        body: ["Plus Jakarta Sans", "Inter", "Helvetica Neue", "sans-serif"],
+        sans: ["Plus Jakarta Sans", "Inter", "Helvetica Neue", "sans-serif"],
         mono: ["JetBrains Mono", "ui-monospace", "SFMono-Regular", "monospace"],
       },
       letterSpacing: {

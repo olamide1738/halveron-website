@@ -1,42 +1,38 @@
-import { Button } from "./Button";
-import { GapDivider } from "./Section";
+import Link from "next/link";
 import { site } from "../lib/site";
 
-// The dark "let's close the gap" call-to-action band reused at the foot of most pages.
 export function CTASection({
-  title = "Let's close the gap.",
-  lead = "Tell us what you're building. We'll show you how we'd take it from idea to launch to scale.",
+  title = "Let's build something exceptional together.",
+  lead = "Tell us what you're planning. We'll share our honest feedback, timeline estimates, and exact fixed pricing.",
 }) {
   return (
-    <section className="relative overflow-hidden bg-ink text-white py-20 md:py-28">
-      {/* Ambient Liquid Orbs */}
-      <div
-        className="pointer-events-none absolute -left-20 top-1/2 h-80 w-80 -translate-y-1/2 rounded-full bg-cobalt/20 blur-3xl animate-fluid-blob"
-        aria-hidden="true"
-      />
-      <div
-        className="pointer-events-none absolute -right-20 top-1/2 h-80 w-80 -translate-y-1/2 rounded-full bg-cobalt-light/20 blur-3xl animate-fluid-blob-slow"
-        aria-hidden="true"
-      />
-      <div
-        className="pointer-events-none absolute inset-0 bg-dotgrid-dark opacity-60"
-        aria-hidden="true"
-      />
-      <div className="container-hal relative z-10 text-center">
-        <div className="mx-auto flex justify-center">
-          <GapDivider />
+    <section className="relative overflow-hidden bg-[#111111] dark:bg-[#07090D] text-white py-24 md:py-32 border-t border-white/10">
+      <div className="container-hal relative z-10 text-center max-w-3xl mx-auto">
+        <div className="inline-flex items-center gap-2 rounded-xs border border-white/20 px-3.5 py-1.5 font-mono text-[11px] uppercase tracking-[0.16em] text-[#FF512F]">
+          <span className="h-1.5 w-1.5 rounded-full bg-[#FF512F]" />
+          <span>Start Your Project</span>
         </div>
-        <h2 className="h-display mx-auto mt-8 max-w-2xl text-3xl font-bold leading-tight text-white md:text-5xl">
+
+        <h2 className="serif-display mx-auto mt-6 text-4xl font-normal leading-[1.08] tracking-tight md:text-6xl text-white">
           {title}
         </h2>
-        <p className="mx-auto mt-5 max-w-xl text-lg text-[#B9C1D0] leading-relaxed">{lead}</p>
-        <div className="mt-9 flex flex-col items-center justify-center gap-4 sm:flex-row">
-          <Button href={site.bookingUrl} external variant="glassCobalt" className="group">
-            Book a discovery call
-          </Button>
-          <Button href="/contact" variant="glassDark" className="group">
-            Send us a brief
-          </Button>
+
+        <p className="mx-auto mt-6 max-w-xl text-base md:text-lg text-[#CCCCCC] leading-relaxed">
+          {lead}
+        </p>
+
+        <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
+          <a
+            href={site.bookingUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="link-button-solid text-white"
+          >
+            Book Discovery Call <span className="text-white">↗</span>
+          </a>
+          <Link href="/contact" className="link-button text-white border-white/40 hover:border-white">
+            Send Project Brief ↗
+          </Link>
         </div>
       </div>
     </section>

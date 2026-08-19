@@ -51,16 +51,6 @@ const comparisonRows = [
 export function ComparisonSection() {
   return (
     <Section paper className="relative overflow-hidden py-24">
-      {/* Background Glow Blobs */}
-      <div
-        className="pointer-events-none absolute -left-20 top-1/4 h-80 w-80 rounded-full bg-cobalt/10 blur-3xl animate-fluid-blob"
-        aria-hidden="true"
-      />
-      <div
-        className="pointer-events-none absolute -right-20 bottom-10 h-80 w-80 rounded-full bg-cobalt-light/15 blur-3xl animate-fluid-blob-slow"
-        aria-hidden="true"
-      />
-
       <div className="relative z-10">
         <SectionHeading
           eyebrow="Why Halveron"
@@ -71,48 +61,48 @@ export function ComparisonSection() {
         <div className="mt-14 overflow-x-auto pb-4">
           <div className="min-w-[720px]">
             {/* Table Header */}
-            <div className="grid grid-cols-[1.2fr_1.3fr_1fr_1fr] items-center gap-4 rounded-2xl border border-line/80 dark:border-white/10 bg-white/40 dark:bg-white/5 p-4 backdrop-blur-xl font-mono text-xs uppercase tracking-[0.14em]">
-              <div className="text-mute dark:text-[#8C98B3]">Comparison Feature</div>
-              <div className="flex items-center gap-2 text-cobalt dark:text-cobalt-light font-bold">
-                <span className="h-2 w-2 rounded-full bg-cobalt animate-pulse" />
+            <div className="grid grid-cols-[1.2fr_1.3fr_1fr_1fr] items-center gap-4 rounded-xs border border-[#111111]/20 dark:border-white/15 bg-white/60 dark:bg-white/5 p-4 font-mono text-xs uppercase tracking-[0.14em]">
+              <div className="text-[#777777]">Feature</div>
+              <div className="flex items-center gap-2 text-[#FF512F] font-bold">
+                <span className="h-1.5 w-1.5 rounded-full bg-[#FF512F]" />
                 Halveron Studio
               </div>
-              <div className="text-slate dark:text-[#B9C1D0]">Traditional Agency</div>
-              <div className="text-slate dark:text-[#B9C1D0]">In-House Team</div>
+              <div className="text-[#555555] dark:text-[#CCCCCC]">Traditional Agency</div>
+              <div className="text-[#555555] dark:text-[#CCCCCC]">In-House Team</div>
             </div>
 
             {/* Table Rows */}
-            <div className="mt-3 space-y-3">
+            <div className="mt-3 space-y-2">
               {comparisonRows.map((row, idx) => (
-                <Reveal key={row.feature} delay={idx * 60}>
-                  <div className="grid grid-cols-[1.2fr_1.3fr_1fr_1fr] items-center gap-4 rounded-2xl border border-white/80 dark:border-white/10 bg-white/70 dark:bg-[#161E2E]/70 p-5 backdrop-blur-xl shadow-2xs transition-all duration-300 hover:border-cobalt/30 hover:shadow-md">
+                <Reveal key={row.feature} delay={idx * 50}>
+                  <div className="grid grid-cols-[1.2fr_1.3fr_1fr_1fr] items-center gap-4 rounded-xs border border-[#111111]/10 dark:border-white/10 bg-white dark:bg-[#161922] p-5 shadow-2xs transition-all duration-200 hover:border-[#FF512F]/40">
                     {/* Feature Name */}
                     <div>
-                      <h4 className="h-display text-sm font-bold text-ink dark:text-white">
+                      <h4 className="serif-display text-lg font-normal text-[#111111] dark:text-white">
                         {row.feature}
                       </h4>
                     </div>
 
                     {/* Halveron Column (Highlighted) */}
-                    <div className="rounded-xl border border-cobalt/30 bg-cobalt/10 dark:bg-cobalt/20 p-3 backdrop-blur-md">
-                      <span className="h-display block text-sm font-bold text-cobalt dark:text-cobalt-light">
+                    <div className="rounded-xs border border-[#FF512F]/30 bg-[#FF512F]/5 dark:bg-[#FF512F]/10 p-3">
+                      <span className="serif-display block text-lg font-bold text-[#FF512F]">
                         ✓ {row.halveron}
                       </span>
-                      <span className="mt-0.5 block font-mono text-[10px] text-slate dark:text-[#B9C1D0]">
+                      <span className="mt-0.5 block font-mono text-[11px] text-[#666666] dark:text-[#AAAAAA]">
                         {row.halveronSub}
                       </span>
                     </div>
 
                     {/* Traditional Agency */}
                     <div>
-                      <span className="text-sm font-medium text-slate dark:text-[#B9C1D0]">
+                      <span className="font-mono text-xs text-[#666666] dark:text-[#AAAAAA]">
                         {row.agency}
                       </span>
                     </div>
 
                     {/* In-House Team */}
                     <div>
-                      <span className="text-sm font-medium text-slate dark:text-[#B9C1D0]">
+                      <span className="font-mono text-xs text-[#666666] dark:text-[#AAAAAA]">
                         {row.inHouse}
                       </span>
                     </div>

@@ -2,25 +2,25 @@ import Link from "next/link";
 
 // Brand button with full dark mode support across all variants.
 const styles = {
-  base: "inline-flex items-center justify-center gap-2 rounded-lg font-body font-medium text-[15px] transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cobalt focus-visible:ring-offset-2 dark:focus-visible:ring-offset-ink",
-  size: "px-6 py-3",
-  sizeSm: "px-4 py-2 text-[14px]",
+  base: "relative inline-flex items-center justify-center gap-2 rounded-sm font-mono text-[12px] font-bold uppercase tracking-[0.14em] transition-all duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FF512F] cursor-pointer",
+  size: "px-7 py-3.5",
+  sizeSm: "px-4 py-2 text-[11px]",
   variants: {
     primary:
-      "bg-cobalt text-white hover:bg-[#2559d9] shadow-md shadow-cobalt/20",
-    dark: "bg-ink dark:bg-white text-white dark:text-ink hover:bg-slate dark:hover:bg-paper",
+      "border border-[#FF512F] bg-[#FF512F] text-white hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[3px_3px_0px_#111111] dark:hover:shadow-[3px_3px_0px_white]",
+    dark: "border border-[#111111] dark:border-white/40 bg-[#111111] dark:bg-white text-white dark:text-[#111111] hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[3px_3px_0px_#FF512F]",
     ghost:
-      "border border-line dark:border-white/20 text-ink dark:text-white hover:border-ink dark:hover:border-white hover:bg-paper dark:hover:bg-white/10",
+      "border border-[#111111]/40 dark:border-white/30 text-[#111111] dark:text-white bg-transparent hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[3px_3px_0px_#111111] dark:hover:shadow-[3px_3px_0px_#FF512F]",
     light:
-      "bg-white dark:bg-white/10 text-ink dark:text-white hover:bg-paper dark:hover:bg-white/20",
+      "border border-[#111111] bg-white text-[#111111] hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[3px_3px_0px_#FF512F]",
     lightGhost:
-      "border border-ink-line text-white hover:border-cobalt-light hover:text-cobalt-light",
+      "border border-white/40 text-white bg-transparent hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[3px_3px_0px_#FF512F]",
     glass:
-      "bg-white/80 dark:bg-white/10 backdrop-blur-md border border-white/90 dark:border-white/15 text-ink dark:text-white shadow-[0_4px_16px_rgba(22,30,46,0.08)] dark:shadow-[0_4px_16px_rgba(0,0,0,0.3)] hover:bg-white dark:hover:bg-white/20 hover:border-cobalt/40 dark:hover:border-cobalt-light/40 hover:shadow-[0_8px_24px_rgba(47,107,255,0.15)]",
+      "border border-[#111111] dark:border-white/30 text-[#111111] dark:text-white bg-transparent hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[3px_3px_0px_#111111] dark:hover:shadow-[3px_3px_0px_#FF512F]",
     glassDark:
-      "bg-[#161E2E]/60 backdrop-blur-md border border-white/15 text-white shadow-[0_4px_20px_rgba(0,0,0,0.3)] hover:bg-[#161E2E]/80 hover:border-cobalt-light/40 hover:text-white",
+      "border border-white/30 text-white bg-white/5 backdrop-blur-md hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[3px_3px_0px_#FF512F]",
     glassCobalt:
-      "bg-cobalt/90 backdrop-blur-md text-white border border-white/20 shadow-[0_8px_24px_rgba(47,107,255,0.25)] hover:bg-cobalt hover:shadow-[0_12px_32px_rgba(47,107,255,0.4)]",
+      "border border-[#FF512F] bg-[#FF512F] text-white hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[3px_3px_0px_#111111] dark:hover:shadow-[3px_3px_0px_white]",
   },
 };
 

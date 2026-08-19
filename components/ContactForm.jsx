@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { Button } from "./Button";
 import { site } from "../lib/site";
 
 const BUDGETS = [
@@ -58,25 +57,23 @@ export function ContactForm() {
 
   if (status === "success") {
     return (
-      <div className="rounded-3xl border border-white/15 bg-[#161E2E]/90 p-8 md:p-10 text-white backdrop-blur-xl shadow-2xl">
-        <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-emerald-500/20 text-emerald-400">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-            <polyline points="20 6 9 17 4 12" />
-          </svg>
+      <div className="rounded-md border border-[#111111]/15 dark:border-white/10 bg-white dark:bg-[#161922] p-8 md:p-10 text-[#111111] dark:text-white shadow-sm">
+        <div className="flex h-10 w-10 items-center justify-center rounded-xs bg-[#FF512F]/10 text-[#FF512F] font-bold font-mono">
+          ✓
         </div>
-        <h2 className="h-display mt-5 text-2xl font-bold text-white">Brief received.</h2>
-        <p className="mt-2 text-base leading-relaxed text-[#B9C1D0]">
-          Thanks — we&apos;ve got it. You&apos;ll hear back from a senior person here within one business day.
+        <h2 className="serif-display mt-5 text-3xl font-normal text-[#111111] dark:text-white">Brief received.</h2>
+        <p className="mt-2 text-base leading-relaxed text-[#555555] dark:text-[#CCCCCC]">
+          Thanks — we&apos;ve got it. You&apos;ll hear back from a senior practitioner here within one business day.
         </p>
-        <p className="mt-6 text-sm text-[#8C98B3]">
+        <p className="mt-6 font-mono text-xs text-[#888888]">
           In a hurry?{" "}
           <a
             href={site.bookingUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-cobalt-light font-bold hover:underline"
+            className="text-[#FF512F] font-bold hover:underline"
           >
-            Book a call directly.
+            Book a call directly ↗
           </a>
         </p>
       </div>
@@ -86,10 +83,19 @@ export function ContactForm() {
   const sending = status === "sending";
 
   return (
-    <div className="rounded-3xl border border-white/15 bg-[#161E2E]/90 p-8 md:p-10 text-white backdrop-blur-xl shadow-2xl">
-      <h2 className="h-display text-2xl font-bold text-white">Send us a brief</h2>
-      <p className="mt-2 text-sm text-[#B9C1D0]">
-        Give us the outline and we&apos;ll come back within one business day with a scoped proposal.
+    <div className="rounded-md border border-[#111111]/15 dark:border-white/10 bg-white dark:bg-[#161922] p-8 md:p-10 text-[#111111] dark:text-white shadow-sm">
+      <div className="flex items-center justify-between border-b border-[#111111]/10 dark:border-white/10 pb-4">
+        <span className="font-mono text-xs font-bold uppercase tracking-[0.16em] text-[#FF512F]">
+          Project Inquiry Brief
+        </span>
+        <span className="font-mono text-xs text-[#888888]">
+          Step 01 / 01
+        </span>
+      </div>
+
+      <h2 className="serif-display mt-5 text-3xl font-normal text-[#111111] dark:text-white">Send us a brief</h2>
+      <p className="mt-2 text-sm text-[#555555] dark:text-[#CCCCCC]">
+        Give us the outline and we&apos;ll come back within 24 hours with a scoped proposal.
       </p>
 
       <form className="mt-6 space-y-4" onSubmit={onSubmit} noValidate>
@@ -99,32 +105,32 @@ export function ContactForm() {
         </div>
 
         <Field
-          label="Name"
+          label="Your Name"
           name="name"
-          placeholder="Your name"
+          placeholder="e.g. Alex Morgan"
           invalid={field === "name"}
         />
         <Field
-          label="Email"
+          label="Email Address"
           name="email"
           type="email"
-          placeholder="you@company.com"
+          placeholder="alex@company.com"
           invalid={field === "email"}
         />
         <Field
-          label="Company"
+          label="Company / Project Name"
           name="company"
-          placeholder="Company (optional)"
+          placeholder="Company Name (optional)"
           required={false}
         />
         <div className="grid gap-4 sm:grid-cols-2">
-          <SelectField label="Budget" name="budget" options={BUDGETS} />
-          <SelectField label="Timeline" name="timeline" options={TIMELINES} />
+          <SelectField label="Estimated Budget" name="budget" options={BUDGETS} />
+          <SelectField label="Target Timeline" name="timeline" options={TIMELINES} />
         </div>
 
         <div>
-          <label htmlFor="brief" className="mb-1.5 block font-mono text-[11px] uppercase tracking-[0.14em] text-[#8C98B3]">
-            Project brief
+          <label htmlFor="brief" className="mb-1.5 block font-mono text-[11px] uppercase tracking-[0.14em] text-[#777777]">
+            Project Outline &amp; Goals
           </label>
           <textarea
             id="brief"
@@ -132,41 +138,41 @@ export function ContactForm() {
             rows={4}
             required
             aria-invalid={field === "brief" || undefined}
-            placeholder="What are you building, and what does success look like?"
-            className={`w-full rounded-xl border bg-white/5 px-4 py-3 text-[15px] text-white placeholder:text-[#94A3B8] focus:outline-none focus:ring-2 focus:ring-cobalt-light transition-colors ${
+            placeholder="What are you building, and what does success look like for your business?"
+            className={`w-full rounded-xs border bg-transparent px-4 py-3 text-sm text-[#111111] dark:text-white placeholder:text-[#888888] focus:outline-none focus:border-[#FF512F] transition-colors ${
               field === "brief"
-                ? "border-red-500 focus:border-red-500"
-                : "border-white/15 hover:border-white/30 focus:border-cobalt-light"
+                ? "border-red-500"
+                : "border-[#111111]/20 dark:border-white/20 hover:border-[#111111]/50 dark:hover:border-white/40"
             }`}
           />
         </div>
 
         <div aria-live="polite">
           {error && (
-            <p className="rounded-xl bg-red-500/10 border border-red-500/20 px-4 py-3 text-sm text-red-400">
+            <p className="rounded-xs bg-red-500/10 border border-red-500/20 px-4 py-3 font-mono text-xs text-red-500">
               {error}
             </p>
           )}
         </div>
 
-        <Button
-          variant="primary"
-          className="w-full justify-center shadow-lg"
+        <button
+          type="submit"
+          className="link-button-solid w-full text-center"
           disabled={sending}
           aria-busy={sending}
         >
-          {sending ? "Sending…" : "Send brief"}
-        </Button>
+          {sending ? "Sending Brief…" : "Send Project Brief ↗"}
+        </button>
 
-        <p className="text-center text-xs text-[#8C98B3]">
-          We reply within one business day. Prefer a live conversation?{" "}
+        <p className="text-center font-mono text-[11px] text-[#777777] pt-2">
+          We reply within 24 hours. Prefer a direct conversation?{" "}
           <a
             href={site.bookingUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-cobalt-light font-bold hover:underline"
+            className="text-[#FF512F] font-bold hover:underline"
           >
-            Book a call instead.
+            Book a call instead ↗
           </a>
         </p>
       </form>
@@ -184,7 +190,7 @@ function Field({
 }) {
   return (
     <div>
-      <label htmlFor={name} className="mb-1.5 block font-mono text-[11px] uppercase tracking-[0.14em] text-[#8C98B3]">
+      <label htmlFor={name} className="mb-1.5 block font-mono text-[11px] uppercase tracking-[0.14em] text-[#777777]">
         {label}
       </label>
       <input
@@ -194,10 +200,10 @@ function Field({
         required={required}
         placeholder={placeholder}
         aria-invalid={invalid || undefined}
-        className={`w-full rounded-xl border bg-white/5 px-4 py-3 text-[15px] text-white placeholder:text-[#94A3B8] focus:outline-none focus:ring-2 focus:ring-cobalt-light transition-colors ${
+        className={`w-full rounded-xs border bg-transparent px-4 py-3 text-sm text-[#111111] dark:text-white placeholder:text-[#888888] focus:outline-none focus:border-[#FF512F] transition-colors ${
           invalid
-            ? "border-red-500 focus:border-red-500"
-            : "border-white/15 hover:border-white/30 focus:border-cobalt-light"
+            ? "border-red-500"
+            : "border-[#111111]/20 dark:border-white/20 hover:border-[#111111]/50 dark:hover:border-white/40"
         }`}
       />
     </div>
@@ -207,23 +213,23 @@ function Field({
 function SelectField({ label, name, options }) {
   return (
     <div>
-      <label htmlFor={name} className="mb-1.5 block font-mono text-[11px] uppercase tracking-[0.14em] text-[#8C98B3]">
+      <label htmlFor={name} className="mb-1.5 block font-mono text-[11px] uppercase tracking-[0.14em] text-[#777777]">
         {label}
       </label>
       <div className="relative">
         <select
           id={name}
           name={name}
-          className="w-full appearance-none rounded-xl border border-white/15 hover:border-white/30 bg-white/5 px-4 py-3 pr-10 text-[15px] text-white focus:border-cobalt-light focus:outline-none focus:ring-2 focus:ring-cobalt-light cursor-pointer transition-colors"
+          className="w-full appearance-none rounded-xs border border-[#111111]/20 dark:border-white/20 hover:border-[#111111]/50 dark:hover:border-white/40 bg-transparent px-4 py-3 pr-10 text-sm text-[#111111] dark:text-white focus:border-[#FF512F] focus:outline-none cursor-pointer transition-colors"
         >
           {options.map((o) => (
-            <option key={o} className="bg-[#161E2E] text-white">
+            <option key={o} className="bg-[#FEFAF7] dark:bg-[#161922] text-[#111111] dark:text-white">
               {o}
             </option>
           ))}
         </select>
-        <div className="pointer-events-none absolute right-3.5 top-1/2 -translate-y-1/2 text-[#8C98B3]">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <div className="pointer-events-none absolute right-3.5 top-1/2 -translate-y-1/2 text-[#777777]">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <polyline points="6 9 12 15 18 9" />
           </svg>
         </div>
