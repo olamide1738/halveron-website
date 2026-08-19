@@ -4,37 +4,34 @@ import { legal } from "../lib/site";
 export function LegalLayout({ eyebrow, title, intro, children }) {
   return (
     <>
-      <section className="relative overflow-hidden bg-ink text-white py-20 md:py-28">
-        <div
-          className="pointer-events-none absolute inset-0 bg-dotgrid-dark opacity-60"
-          aria-hidden="true"
-        />
-        <div
-          className="pointer-events-none absolute inset-0 glow-cobalt"
-          aria-hidden="true"
-        />
-        <div
-          className="pointer-events-none absolute -left-20 top-1/4 h-80 w-80 rounded-full bg-cobalt/20 blur-3xl animate-fluid-blob"
-          aria-hidden="true"
-        />
-
+      <section className="relative overflow-hidden bg-[#FEFAF7] dark:bg-[#0B0F17] text-[#111111] dark:text-white pt-24 pb-20 md:pt-36 md:pb-28 border-b border-[#111111]/10 dark:border-white/10 transition-colors duration-300">
         <div className="container-hal relative z-10">
-          <Eyebrow className="text-cobalt-light">{eyebrow}</Eyebrow>
-          <h1 className="h-display mt-3 text-4xl leading-[1.1] text-white md:text-5xl font-bold">
-            {title}
-          </h1>
-          {intro && (
-            <p className="mt-5 max-w-2xl text-lg text-[#B9C1D0] leading-relaxed">{intro}</p>
-          )}
-          <p className="mt-6 font-mono text-xs uppercase tracking-[0.14em] text-cobalt dark:text-cobalt-light font-semibold">
-            Last updated {legal.lastUpdated}
-          </p>
+          <div className="max-w-4xl">
+            <div className="inline-flex items-center gap-2 rounded-xs border border-[#111111]/20 dark:border-white/20 px-3.5 py-1.5 font-mono text-[11px] uppercase tracking-[0.16em] text-[#2F6BFF]">
+              <span className="h-1.5 w-1.5 rounded-full bg-[#2F6BFF]" />
+              <span>{eyebrow}</span>
+            </div>
+
+            <h1 className="serif-display mt-8 text-5xl leading-[1.04] tracking-tight md:text-7xl font-normal text-[#111111] dark:text-white">
+              {title}
+            </h1>
+
+            {intro && (
+              <p className="mt-6 max-w-2xl text-lg text-[#555555] dark:text-[#CCCCCC] leading-relaxed">
+                {intro}
+              </p>
+            )}
+
+            <p className="mt-8 font-mono text-xs uppercase tracking-[0.14em] text-[#2F6BFF] font-semibold">
+              Last updated {legal.lastUpdated}
+            </p>
+          </div>
         </div>
       </section>
 
-      <section className="bg-paper dark:bg-[#0E131F] py-16 md:py-24">
+      <section className="bg-[#FEFAF7] dark:bg-[#0B0F17] py-16 md:py-24">
         <div className="container-hal">
-          <div className="glass-card-light max-w-4xl rounded-3xl p-8 md:p-12 space-y-10">
+          <div className="rounded-md border border-[#111111]/15 dark:border-white/10 bg-white dark:bg-[#121826] max-w-4xl p-8 md:p-12 space-y-10 shadow-sm">
             {children}
           </div>
         </div>
@@ -45,9 +42,11 @@ export function LegalLayout({ eyebrow, title, intro, children }) {
 
 export function Clause({ title, children }) {
   return (
-    <section className="border-b border-line/60 dark:border-white/10 pb-8 last:border-0 last:pb-0">
-      <h2 className="h-display text-2xl font-bold text-ink dark:text-white">{title}</h2>
-      <div className="mt-4 space-y-4 text-base leading-relaxed text-slate dark:text-[#B9C1D0]">
+    <section className="border-b border-[#111111]/10 dark:border-white/10 pb-8 last:border-0 last:pb-0">
+      <h2 className="serif-display text-2xl md:text-3xl font-normal text-[#111111] dark:text-white">
+        {title}
+      </h2>
+      <div className="mt-4 space-y-4 text-base leading-relaxed text-[#555555] dark:text-[#CCCCCC]">
         {children}
       </div>
     </section>
@@ -58,8 +57,8 @@ export function ClauseList({ items }) {
   return (
     <ul className="mt-4 space-y-3">
       {items.map((item, i) => (
-        <li key={i} className="flex gap-3 text-base leading-relaxed text-slate dark:text-[#B9C1D0]">
-          <span className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-cobalt dark:bg-cobalt-light" />
+        <li key={i} className="flex gap-3 text-base leading-relaxed text-[#555555] dark:text-[#CCCCCC]">
+          <span className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#2F6BFF]" />
           <span>{item}</span>
         </li>
       ))}

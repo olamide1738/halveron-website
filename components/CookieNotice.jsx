@@ -38,13 +38,13 @@ export function CookieNotice() {
     <div
       role="region"
       aria-label="Analytics notice"
-      className="fixed inset-x-4 bottom-4 z-[60] mx-auto max-w-xl rounded-2xl border border-ink-line bg-ink p-5 text-white shadow-[0_16px_50px_rgba(22,30,46,0.35)] md:inset-x-auto md:right-6 md:bottom-6"
+      className="fixed inset-x-4 bottom-4 z-[60] mx-auto max-w-xl rounded-md border border-[#111111]/20 dark:border-white/20 bg-[#FEFAF7] dark:bg-[#121826] p-6 text-[#111111] dark:text-white shadow-2xl md:inset-x-auto md:right-6 md:bottom-6"
     >
-      <p className="text-sm leading-relaxed text-[#B9C1D0]">
+      <p className="text-sm leading-relaxed text-[#555555] dark:text-[#CCCCCC]">
         We use privacy-focused, aggregate-only analytics to see which pages get
         read. No advertising trackers, no cross-site profiling, no selling your
         data.{" "}
-        <Link href="/privacy" className="text-cobalt-light hover:underline">
+        <Link href="/privacy" className="text-[#2F6BFF] hover:underline font-bold">
           Read the privacy policy
         </Link>
         .
@@ -52,9 +52,9 @@ export function CookieNotice() {
       <div className="mt-4 flex justify-end">
         <button
           onClick={dismiss}
-          className="rounded-lg bg-white px-4 py-2 text-sm font-medium text-ink transition-colors hover:bg-paper"
+          className="link-button-solid text-xs py-2 px-4"
         >
-          Got it
+          Got it ↗
         </button>
       </div>
     </div>

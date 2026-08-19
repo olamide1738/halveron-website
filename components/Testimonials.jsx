@@ -45,20 +45,24 @@ export function Testimonials({
 
 function QuoteCard({ quote, name, role, company, service }) {
   return (
-    <figure className="glass-card-light flex flex-col rounded-2xl p-7">
-      <Quotemark />
-      <blockquote className="mt-4 flex-1 text-[15px] leading-relaxed text-slate dark:text-[#B9C1D0]">
-        {quote}
-      </blockquote>
-      <figcaption className="mt-6 border-t border-line/60 dark:border-white/10 pt-4">
-        <span className="h-display block text-[15px] font-semibold text-ink dark:text-white">{name}</span>
-        <span className="mt-0.5 block text-sm text-mute dark:text-[#8C98B3]">
+    <figure className="rounded-md border border-[#111111]/15 dark:border-white/10 bg-white dark:bg-[#121826] flex flex-col justify-between p-8 shadow-sm transition-all duration-300 hover:border-[#2F6BFF]/50">
+      <div>
+        <Quotemark />
+        <blockquote className="mt-5 text-base leading-relaxed text-[#444444] dark:text-[#CCCCCC]">
+          &ldquo;{quote}&rdquo;
+        </blockquote>
+      </div>
+      <figcaption className="mt-8 border-t border-[#111111]/10 dark:border-white/10 pt-5">
+        <span className="serif-display block text-lg font-normal text-[#111111] dark:text-white">
+          {name}
+        </span>
+        <span className="mt-0.5 block font-mono text-xs text-[#777777] dark:text-[#AAAAAA]">
           {role}
           {role && company ? ", " : ""}
           {company}
         </span>
         {service && (
-          <span className="glass-pill mt-3">
+          <span className="tag-pill mt-3">
             {service}
           </span>
         )}

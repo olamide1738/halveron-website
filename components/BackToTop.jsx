@@ -30,15 +30,15 @@ export function BackToTop() {
       onClick={scrollToTop}
       aria-label="Scroll to top of page"
       title="Scroll to top"
-      className={`fixed bottom-6 right-6 z-50 flex h-11 w-11 items-center justify-center rounded-2xl border border-white/80 dark:border-white/15 bg-white/80 dark:bg-[#161E2E]/80 text-ink dark:text-white backdrop-blur-xl shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-cobalt/40 hover:bg-white dark:hover:bg-[#161E2E] hover:text-cobalt hover:shadow-cobalt/20 ${
+      className={`fixed bottom-6 right-6 z-50 flex h-10 w-10 items-center justify-center rounded-xs border border-[#111111]/30 dark:border-white/20 bg-[#FEFAF7] dark:bg-[#0B0F17] text-[#111111] dark:text-white shadow-md transition-all duration-200 hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[3px_3px_0px_#2F6BFF] cursor-pointer ${
         visible
           ? "translate-y-0 opacity-100 pointer-events-auto"
           : "translate-y-4 opacity-0 pointer-events-none"
       }`}
     >
       <svg
-        width="18"
-        height="18"
+        width="16"
+        height="16"
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"

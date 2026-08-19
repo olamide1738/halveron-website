@@ -217,13 +217,13 @@ export function TechToolkit() {
         />
 
         {/* Category Filter Pills */}
-        <div className="flex flex-wrap gap-2 rounded-2xl border border-white/80 dark:border-white/15 bg-white/70 dark:bg-white/10 p-2 backdrop-blur-xl shadow-sm shrink-0">
+        <div className="flex flex-wrap gap-1.5 rounded-xs border border-[#111111]/20 dark:border-white/15 bg-white/60 dark:bg-white/5 p-1.5 backdrop-blur-sm shrink-0">
           <button
             onClick={() => setActiveCategory("all")}
-            className={`rounded-xl px-4 py-2 font-mono text-xs font-semibold uppercase tracking-[0.12em] transition-all duration-300 ${
+            className={`rounded-xs px-4 py-2 font-mono text-xs font-bold uppercase tracking-[0.14em] transition-all duration-150 ${
               activeCategory === "all"
-                ? "bg-cobalt text-white shadow-md shadow-cobalt/25"
-                : "text-slate dark:text-[#B9C1D0] hover:bg-white/80 dark:hover:bg-white/20 hover:text-ink dark:hover:text-white"
+                ? "bg-[#2F6BFF] text-white shadow-sm"
+                : "text-[#444444] dark:text-[#CCCCCC] hover:text-[#111111] dark:hover:text-white"
             }`}
           >
             All Tools
@@ -232,10 +232,10 @@ export function TechToolkit() {
             <button
               key={c.id}
               onClick={() => setActiveCategory(c.id)}
-              className={`rounded-xl px-4 py-2 font-mono text-xs font-semibold uppercase tracking-[0.12em] transition-all duration-300 ${
+              className={`rounded-xs px-4 py-2 font-mono text-xs font-bold uppercase tracking-[0.14em] transition-all duration-150 ${
                 activeCategory === c.id
-                  ? "bg-cobalt text-white shadow-md shadow-cobalt/25"
-                  : "text-slate dark:text-[#B9C1D0] hover:bg-white/80 dark:hover:bg-white/20 hover:text-ink dark:hover:text-white"
+                  ? "bg-[#2F6BFF] text-white shadow-sm"
+                  : "text-[#444444] dark:text-[#CCCCCC] hover:text-[#111111] dark:hover:text-white"
               }`}
             >
               {c.title.split(" ")[0]}
@@ -244,58 +244,50 @@ export function TechToolkit() {
         </div>
       </div>
 
-      {/* Bento Grid Layout */}
+      {/* Swiss Bento Grid Layout */}
       <div className="mt-12 grid gap-6 md:grid-cols-2">
         {filteredCategories.map((cat, idx) => (
           <Reveal key={cat.id} delay={idx * 80}>
-            <div className="glass-card-light group relative overflow-hidden rounded-3xl p-8 transition-all duration-300 hover:shadow-xl">
-              {/* Top Accent Gradient Glow */}
-              <div
-                className={`pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full bg-gradient-to-br ${cat.accent} blur-2xl transition-all duration-500 group-hover:scale-125`}
-                aria-hidden="true"
-              />
-
-              <div className="relative z-10">
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-3">
-                    <span className="flex h-8 w-8 items-center justify-center rounded-xl bg-cobalt/10 dark:bg-cobalt/20 font-mono text-xs font-bold text-cobalt dark:text-cobalt-light">
-                      0{idx + 1}
-                    </span>
-                    <h3 className="h-display text-xl font-bold text-ink dark:text-white">
-                      {cat.title}
-                    </h3>
-                  </div>
-                  <span className="glass-pill">{cat.count}</span>
+            <div className="rounded-md border border-[#111111]/15 dark:border-white/10 bg-white dark:bg-[#121826] p-8 shadow-sm transition-all duration-300 hover:border-[#2F6BFF]/40">
+              <div className="flex items-center justify-between border-b border-[#111111]/10 dark:border-white/10 pb-4">
+                <div className="flex items-center gap-3">
+                  <span className="font-mono text-xs font-bold text-[#2F6BFF]">
+                    0{idx + 1}
+                  </span>
+                  <h3 className="serif-display text-2xl font-normal text-[#111111] dark:text-white">
+                    {cat.title}
+                  </h3>
                 </div>
+                <span className="tag-pill">{cat.count}</span>
+              </div>
 
-                <p className="mt-3 text-sm text-slate dark:text-[#B9C1D0] leading-relaxed">
-                  {cat.description}
-                </p>
+              <p className="mt-4 text-sm text-[#555555] dark:text-[#CCCCCC] leading-relaxed">
+                {cat.description}
+              </p>
 
-                {/* Interactive Tool Cards */}
-                <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-3">
-                  {cat.tools.map((tool) => (
-                    <div
-                      key={tool.name}
-                      className="group/tool relative flex flex-col justify-between rounded-2xl border border-white/80 dark:border-white/10 bg-white/80 dark:bg-white/10 p-3.5 backdrop-blur-md shadow-2xs transition-all duration-200 hover:-translate-y-1 hover:border-cobalt/40 hover:bg-white dark:hover:bg-white/20 hover:shadow-md"
-                    >
-                      <div className="flex items-center justify-between">
-                        <span className="text-cobalt dark:text-cobalt-light transition-colors group-hover/tool:text-ink dark:group-hover/tool:text-white">
-                          {toolIcons[tool.iconKey]}
-                        </span>
-                        <span className="h-1.5 w-1.5 rounded-full bg-cobalt/30 group-hover/tool:bg-cobalt" />
-                      </div>
-                      <div className="mt-3">
-                        <span className="h-display block text-sm font-bold text-ink dark:text-white group-hover/tool:text-cobalt dark:group-hover/tool:text-cobalt-light">
-                          {tool.name}
-                        </span>
-                        <span className="mt-0.5 block font-mono text-[10px] text-mute dark:text-[#8C98B3]">
-                          {tool.tag}
-                        </span>
-                      </div>
+              {/* Interactive Tool Cards */}
+              <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-3">
+                {cat.tools.map((tool) => (
+                  <div
+                    key={tool.name}
+                    className="flex flex-col justify-between rounded-xs border border-[#111111]/10 dark:border-white/10 bg-[#FEFAF7] dark:bg-white/5 p-3.5 transition-all duration-150 hover:border-[#2F6BFF]/50"
+                  >
+                    <div className="flex items-center justify-between">
+                      <span className="text-[#2F6BFF]">
+                        {toolIcons[tool.iconKey]}
+                      </span>
+                      <span className="h-1.5 w-1.5 rounded-full bg-[#2F6BFF]/40" />
                     </div>
-                  ))}
-                </div>
+                    <div className="mt-3">
+                      <span className="font-mono text-xs font-bold text-[#111111] dark:text-white block">
+                        {tool.name}
+                      </span>
+                      <span className="mt-0.5 block font-mono text-[10px] text-[#777777] dark:text-[#AAAAAA]">
+                        {tool.tag}
+                      </span>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
           </Reveal>

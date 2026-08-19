@@ -42,15 +42,15 @@ const clientIcons = {
 export function ClientLogos({ title = "Trusted by brands & visionary companies" }) {
   if (clients.length === 0) {
     return (
-      <div className="rounded-3xl border border-dashed border-line dark:border-white/15 bg-paper dark:bg-white/5 px-8 py-10">
+      <div className="rounded-md border border-dashed border-[#111111]/20 dark:border-white/15 bg-white/40 dark:bg-white/5 px-8 py-10">
         <div className="flex flex-col items-start gap-5 md:flex-row md:items-center md:justify-between">
           <div>
             <GapMotif />
-            <p className="mt-4 max-w-xl text-[15px] text-slate dark:text-[#B9C1D0]">
+            <p className="mt-4 max-w-xl text-sm text-[#555555] dark:text-[#CCCCCC]">
               We name clients here once engagements complete and we have their permission — not before.
             </p>
           </div>
-          <span className="shrink-0 rounded-full bg-white dark:bg-white/10 border border-line/60 dark:border-white/10 px-4 py-1.5 font-mono text-[10px] uppercase tracking-[0.14em] text-mute dark:text-[#B9C1D0]">
+          <span className="shrink-0 tag-pill">
             First engagements underway
           </span>
         </div>
@@ -64,39 +64,39 @@ export function ClientLogos({ title = "Trusted by brands & visionary companies" 
   return (
     <div className="relative">
       <div className="flex items-center justify-between">
-        <h2 className="font-mono text-xs font-semibold uppercase tracking-[0.18em] text-cobalt dark:text-cobalt-light">
+        <h2 className="font-mono text-xs font-bold uppercase tracking-[0.18em] text-[#2F6BFF]">
           {title}
         </h2>
-        <span className="hidden sm:inline-flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.14em] text-mute dark:text-[#8C98B3]">
-          <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
+        <span className="hidden sm:inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.14em] text-[#777777] dark:text-[#AAAAAA]">
+          <span className="h-1.5 w-1.5 rounded-full bg-[#2F6BFF]" />
           Active Engagements
         </span>
       </div>
 
-      {/* Infinite Liquid Glass Marquee */}
-      <div className="group relative mt-6 overflow-hidden rounded-3xl border border-white/80 dark:border-white/10 bg-white/40 dark:bg-white/5 py-4 backdrop-blur-xl shadow-xs">
-        {/* Left & Right Fade Gradients */}
-        <div className="pointer-events-none absolute left-0 top-0 bottom-0 z-10 w-16 bg-gradient-to-r from-white dark:from-[#0E131F] to-transparent" />
-        <div className="pointer-events-none absolute right-0 top-0 bottom-0 z-10 w-16 bg-gradient-to-l from-white dark:from-[#0E131F] to-transparent" />
+      {/* Infinite Swiss Marquee */}
+      <div className="group relative mt-6 overflow-hidden rounded-md border border-[#111111]/15 dark:border-white/10 bg-white/50 dark:bg-white/5 py-4 shadow-2xs">
+        {/* Left & Right Fade Gradients matching section background */}
+        <div className="pointer-events-none absolute left-0 top-0 bottom-0 z-10 w-16 bg-gradient-to-r from-[#F7F2EB] dark:from-[#12151D] to-transparent" />
+        <div className="pointer-events-none absolute right-0 top-0 bottom-0 z-10 w-16 bg-gradient-to-l from-[#F7F2EB] dark:from-[#12151D] to-transparent" />
 
         <div className="marquee-track flex w-max gap-4">
           {marqueeList.map((c, idx) => (
             <div
               key={`${c.name}-${idx}`}
-              className="flex items-center gap-3.5 rounded-2xl border border-white/80 dark:border-white/10 bg-white/80 dark:bg-[#161E2E]/80 px-5 py-3.5 backdrop-blur-md shadow-2xs transition-all duration-300 hover:border-cobalt/40 dark:hover:border-cobalt-light/40 hover:bg-white dark:hover:bg-[#161E2E] hover:shadow-md shrink-0"
+              className="flex items-center gap-3.5 rounded-xs border border-[#111111]/10 dark:border-white/10 bg-white dark:bg-[#121826] px-5 py-3 shadow-2xs transition-all duration-200 hover:border-[#2F6BFF]/40 shrink-0"
             >
-              <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-cobalt/10 dark:bg-cobalt/20 text-cobalt dark:text-cobalt-light">
+              <div className="flex h-9 w-9 items-center justify-center rounded-xs bg-[#2F6BFF]/10 text-[#2F6BFF]">
                 {clientIcons[c.name] ?? (
-                  <span className="font-display font-bold text-xs">
+                  <span className="font-mono font-bold text-xs">
                     {c.name.substring(0, 2).toUpperCase()}
                   </span>
                 )}
               </div>
               <div>
-                <h4 className="h-display text-sm font-bold text-ink dark:text-white leading-tight">
+                <h4 className="serif-display text-base font-normal text-[#111111] dark:text-white leading-tight">
                   {c.name}
                 </h4>
-                <p className="font-mono text-[10px] text-mute dark:text-[#8C98B3]">
+                <p className="font-mono text-[10px] uppercase tracking-wider text-[#777777] dark:text-[#AAAAAA]">
                   {c.scope || c.industry}
                 </p>
               </div>

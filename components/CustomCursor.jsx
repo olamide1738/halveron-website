@@ -9,12 +9,13 @@ export function CustomCursor() {
 
   useEffect(() => {
     // Only activate custom cursor on devices with fine pointer (mouse/trackpad)
-    if (window.matchMedia("(pointer: fine)").matches) {
-      setVisible(true);
+    if (!window.matchMedia("(pointer: fine)").matches) {
+      return;
     }
 
     const updateCursor = (e) => {
       setPosition({ x: e.clientX, y: e.clientY });
+      if (!visible) setVisible(true);
     };
 
     const handleMouseEnter = () => setVisible(true);
@@ -28,7 +29,8 @@ export function CustomCursor() {
         target.closest("input") ||
         target.closest("textarea") ||
         target.closest("select") ||
-        target.closest(".cursor-pointer")
+        target.closest(".cursor-pointer") ||
+        target.closest("[role='button']")
       ) {
         setHovered(true);
       } else {
@@ -36,8 +38,8 @@ export function CustomCursor() {
       }
     };
 
-    window.addEventListener("mousemove", updateCursor);
-    window.addEventListener("mouseover", handleLinkHover);
+    window.addEventListener("mousemove", updateCursor, { passive: true });
+    window.addEventListener("mouseover", handleLinkHover, { passive: true });
     document.addEventListener("mouseenter", handleMouseEnter);
     document.addEventListener("mouseleave", handleMouseLeave);
 
@@ -47,16 +49,16 @@ export function CustomCursor() {
       document.removeEventListener("mouseenter", handleMouseEnter);
       document.removeEventListener("mouseleave", handleMouseLeave);
     };
-  }, []);
+  }, [visible]);
 
   if (!visible) return null;
 
   return (
     <div
-      className={`pointer-events-none fixed left-0 top-0 z-[9999] rounded-full transition-transform duration-100 ease-out ${
+      className={`pointer-events-none fixed left-0 top-0 z-[9999] rounded-full transition-all duration-150 ease-out will-change-transform ${
         hovered
-          ? "h-10 w-10 bg-[#2F6BFF]/35 border border-[#2F6BFF] mix-blend-multiply dark:mix-blend-screen -translate-x-1/2 -translate-y-1/2 backdrop-blur-[1px]"
-          : "h-3.5 w-3.5 bg-[#2F6BFF] -translate-x-1/2 -translate-y-1/2 shadow-sm"
+          ? "h-9 w-9 bg-[#2F6BFF]/20 border-2 border-[#2F6BFF]"
+          : "h-3 w-3 bg-[#2F6BFF] shadow-sm"
       }`}
       style={{
         transform: `translate3d(${position.x}px, ${position.y}px, 0) translate(-50%, -50%)`,

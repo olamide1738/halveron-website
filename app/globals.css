@@ -170,9 +170,6 @@
   .bg-paper {
     @apply dark:bg-[#121826];
   }
-  .bg-white {
-    @apply dark:bg-[#0E131F];
-  }
   .border-line {
     @apply dark:border-white/10;
   }
@@ -267,26 +264,5 @@
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
-  }
-}
-
-@supports ((animation-timeline: view()) and (animation-range: entry)) {
-  .reveal-native {
-    animation: reveal-entry auto ease-out forwards;
-    animation-timeline: view(block);
-    /* 5% from entry edge, finishes 15% from entry edge */
-    animation-range: entry 5% cover 15%;
-    transition: none !important;
-  }
-  
-  @keyframes reveal-entry {
-    from {
-      opacity: 0;
-      transform: translateY(12px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
   }
 }

@@ -3,16 +3,17 @@
 import { useEffect, useState } from "react";
 
 export function PageLoader() {
-  const [mounted, setMounted] = useState(false);
+  const [show, setShow] = useState(true);
 
   useEffect(() => {
-    setMounted(true);
-    // Unmount from React tree after CSS animation finishes (1.4s)
+    // Unmount completely from React tree after CSS animation finishes
     const timer = setTimeout(() => {
-      // Done
-    }, 1400);
+      setShow(false);
+    }, 1200);
     return () => clearTimeout(timer);
   }, []);
+
+  if (!show) return null;
 
   return (
     <div
@@ -23,17 +24,17 @@ export function PageLoader() {
         {/* Measured Gap Animation Motif */}
         <div className="relative flex h-12 w-64 items-center justify-center">
           {/* Left Bar */}
-          <div className="h-2 rounded-sm bg-white animate-gapLeftBar" />
+          <div className="h-2 rounded-xs bg-white animate-gapLeftBar" />
 
           {/* Central Cobalt Block */}
-          <div className="z-10 h-3 w-4 rounded-sm bg-cobalt animate-gapCobalt" />
+          <div className="z-10 h-3 w-4 rounded-xs bg-cobalt animate-gapCobalt" />
 
           {/* Right Bar */}
-          <div className="h-2 rounded-sm bg-white animate-gapRightBar" />
+          <div className="h-2 rounded-xs bg-white animate-gapRightBar" />
         </div>
 
         {/* Brand wordmark reveal */}
-        <span className="font-display text-xs font-bold tracking-[0.2em] uppercase text-[#7FA4FF] animate-wordmarkFadeIn">
+        <span className="font-mono text-xs font-bold tracking-[0.2em] uppercase text-[#7FA4FF] animate-wordmarkFadeIn">
           HALVERON
         </span>
       </div>

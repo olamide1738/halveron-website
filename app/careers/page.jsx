@@ -1,6 +1,5 @@
 import { Section, Eyebrow, SectionHeading } from "../../components/Section";
 import { CTASection } from "../../components/CTASection";
-import { Button } from "../../components/Button";
 import { Reveal } from "../../components/Reveal";
 import { openings, site, differentiators } from "../../lib/site";
 
@@ -14,30 +13,20 @@ export default function CareersPage() {
   return (
     <>
       {/* 1. HERO BANNER */}
-      <section className="relative overflow-hidden bg-ink text-white py-24 md:py-32">
-        <div
-          className="pointer-events-none absolute inset-0 bg-dotgrid-dark opacity-60"
-          aria-hidden="true"
-        />
-        <div
-          className="pointer-events-none absolute inset-0 glow-cobalt"
-          aria-hidden="true"
-        />
-        <div
-          className="pointer-events-none absolute -left-20 top-1/4 h-96 w-96 rounded-full bg-cobalt/20 blur-3xl animate-fluid-blob"
-          aria-hidden="true"
-        />
-
+      <section className="relative overflow-hidden bg-[#FEFAF7] dark:bg-[#0B0F17] text-[#111111] dark:text-white pt-24 pb-20 md:pt-36 md:pb-28 border-b border-[#111111]/10 dark:border-white/10 transition-colors duration-300">
         <div className="container-hal relative z-10">
-          <div className="max-w-3xl">
-            <Eyebrow className="text-cobalt-light">Careers at Halveron</Eyebrow>
-            <h1 className="h-display mt-4 text-4xl leading-[1.08] text-white md:text-6xl lg:text-7xl font-bold tracking-tight">
+          <div className="max-w-4xl">
+            <div className="inline-flex items-center gap-2 rounded-xs border border-[#111111]/20 dark:border-white/20 px-3.5 py-1.5 font-mono text-[11px] uppercase tracking-[0.16em] text-[#2F6BFF]">
+              <span className="h-1.5 w-1.5 rounded-full bg-[#2F6BFF]" />
+              <span>05 / Careers &amp; Open Roles</span>
+            </div>
+
+            <h1 className="serif-display mt-8 text-5xl leading-[1.04] tracking-tight md:text-7xl lg:text-8xl text-[#111111] dark:text-white">
               Join a team building products that{" "}
-              <span className="bg-gradient-to-r from-white via-cobalt-light to-white bg-clip-text text-transparent">
-                matter.
-              </span>
+              <span className="serif-italic text-[#2F6BFF]">matter.</span>
             </h1>
-            <p className="mt-6 max-w-2xl text-lg text-[#B9C1D0] md:text-xl leading-relaxed">
+
+            <p className="mt-8 max-w-2xl text-lg md:text-xl font-light text-[#444444] dark:text-[#CCCCCC] leading-relaxed">
               We work directly with founders and ambitious companies worldwide, creating modern websites and mobile apps with genuine care, autonomy, and craft.
             </p>
           </div>
@@ -48,7 +37,7 @@ export default function CareersPage() {
       <Section className="relative overflow-hidden py-24">
         <SectionHeading
           eyebrow="Open Roles"
-          title={openings.length > 0 ? "Where we need senior people." : "No open roles right now."}
+          title={openings.length > 0 ? "Where we need senior practitioners." : "No open roles right now."}
           lead={
             openings.length > 0
               ? "Join a high-autonomy studio team shipping production React, Next.js, and Node products for clients in the US, Europe, and Africa."
@@ -61,49 +50,49 @@ export default function CareersPage() {
             <div className="space-y-6">
               {openings.map((role, idx) => (
                 <Reveal key={role.title} delay={idx * 80}>
-                  <div className="glass-card-light group flex flex-col gap-6 rounded-3xl p-8 transition-all duration-300 md:flex-row md:items-center md:justify-between hover:border-cobalt/40">
+                  <div className="rounded-md border border-[#111111]/15 dark:border-white/10 bg-white dark:bg-[#121826] p-8 shadow-sm transition-all duration-300 md:flex md:items-center md:justify-between hover:border-[#2F6BFF]/50">
                     <div>
-                      <span className="glass-pill">{[role.type, role.location].filter(Boolean).join(" · ")}</span>
-                      <h3 className="h-display mt-4 text-2xl font-bold text-ink dark:text-white group-hover:text-cobalt transition-colors">
+                      <span className="tag-pill">{[role.type, role.location].filter(Boolean).join(" · ")}</span>
+                      <h3 className="serif-display mt-4 text-3xl font-normal text-[#111111] dark:text-white">
                         {role.title}
                       </h3>
                       {role.summary && (
-                        <p className="mt-3 max-w-2xl text-sm text-slate dark:text-[#B9C1D0] leading-relaxed">
+                        <p className="mt-3 max-w-2xl text-sm text-[#555555] dark:text-[#CCCCCC] leading-relaxed">
                           {role.summary}
                         </p>
                       )}
                     </div>
-                    <Button
-                      href={`mailto:${site.email}?subject=${encodeURIComponent(
-                        `Application — ${role.title}`,
-                      )}`}
-                      variant="primary"
-                      className="shrink-0 shadow-md"
-                    >
-                      Apply for role →
-                    </Button>
+                    <div className="mt-6 md:mt-0">
+                      <a
+                        href={`mailto:${site.email}?subject=${encodeURIComponent(
+                          `Application — ${role.title}`,
+                        )}`}
+                        className="link-button-solid shrink-0"
+                      >
+                        Apply for role ↗
+                      </a>
+                    </div>
                   </div>
                 </Reveal>
               ))}
             </div>
           ) : (
-            <div className="glass-card-light rounded-3xl p-8 md:p-12 text-center">
-              <h3 className="h-display text-2xl font-bold text-ink dark:text-white">
+            <div className="rounded-md border border-[#111111]/15 dark:border-white/10 bg-white dark:bg-[#121826] p-8 md:p-12 text-center shadow-sm">
+              <h3 className="serif-display text-3xl font-normal text-[#111111] dark:text-white">
                 Send a speculative application
               </h3>
-              <p className="mx-auto mt-3 max-w-xl text-base text-slate dark:text-[#B9C1D0] leading-relaxed">
+              <p className="mx-auto mt-3 max-w-xl text-base text-[#555555] dark:text-[#CCCCCC] leading-relaxed">
                 Tell us what you&apos;ve built. Links to live repositories, shipped products, or Figma systems say more than a resume.
               </p>
-              <div className="mt-6">
-                <Button
+              <div className="mt-8">
+                <a
                   href={`mailto:${site.email}?subject=${encodeURIComponent(
                     "Speculative application",
                   )}`}
-                  variant="primary"
-                  className="shadow-lg"
+                  className="link-button-solid"
                 >
-                  Email us your work →
-                </Button>
+                  Email us your work ↗
+                </a>
               </div>
             </div>
           )}
@@ -121,15 +110,15 @@ export default function CareersPage() {
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {differentiators.map((d, idx) => (
             <Reveal key={d.title} delay={idx * 80}>
-              <div className="glass-card-light flex h-full flex-col justify-between rounded-3xl p-7 transition-all duration-300">
+              <div className="swiss-card flex h-full flex-col justify-between">
                 <div>
-                  <div className="flex h-8 w-8 items-center justify-center rounded-xl bg-cobalt/10 font-mono text-xs font-bold text-cobalt dark:text-cobalt-light">
+                  <span className="font-mono text-xs font-bold text-[#2F6BFF]">
                     0{idx + 1}
-                  </div>
-                  <h3 className="h-display mt-4 text-lg font-bold text-ink dark:text-white">
+                  </span>
+                  <h3 className="serif-display mt-4 text-2xl font-normal text-[#111111] dark:text-white">
                     {d.title}
                   </h3>
-                  <p className="mt-2 text-sm text-slate dark:text-[#B9C1D0] leading-relaxed">
+                  <p className="mt-3 text-sm text-[#555555] dark:text-[#CCCCCC] leading-relaxed">
                     {d.body}
                   </p>
                 </div>
