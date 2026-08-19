@@ -9,6 +9,7 @@ import { PageLoader } from "../components/PageLoader";
 import { FeaturedShowcase } from "../components/FeaturedShowcase";
 import { TechToolkit } from "../components/TechToolkit";
 import { ComparisonSection } from "../components/ComparisonSection";
+import { HeroBackground } from "../components/HeroBackground";
 import {
   services,
   process,
@@ -25,6 +26,7 @@ export default function HomePage() {
 
       {/* 1. HERO SECTION IN SWISS EDITORIAL STYLE */}
       <section className="relative overflow-hidden bg-[#FEFAF7] dark:bg-[#0B0F17] text-[#111111] dark:text-white pt-24 pb-28 md:pt-36 md:pb-40 transition-colors duration-300">
+        <HeroBackground />
         <div className="container-hal relative z-10">
           <div className="max-w-4xl">
             {/* Top Swiss Tag */}
@@ -35,14 +37,14 @@ export default function HomePage() {
 
             {/* Giant Editorial Serif Headline */}
             <h1 className="serif-display mt-8 text-5xl leading-[1.04] tracking-tight md:text-7xl lg:text-8xl text-[#111111] dark:text-white">
-              Bring your idea to us —{" "}
+              Bring your idea to us,{" "}
               <span className="serif-italic text-[#2F6BFF]">we design &amp; build</span>{" "}
               everything for you.
             </h1>
 
             {/* Indented Editorial Lead Paragraph */}
             <p className="mt-8 max-w-2xl text-lg md:text-xl font-light text-[#444444] dark:text-[#CCCCCC] leading-relaxed">
-              One accountable senior studio taking you from initial concept to market launch. Custom websites, mobile apps, software portals, and brand systems — engineered with Swiss precision under one roof.
+              One accountable senior studio taking you from initial concept to market launch. Custom websites, mobile apps, software portals, and brand systems, engineered with Swiss precision under one roof.
             </p>
 
             {/* Discipline Pill Tags */}
@@ -99,7 +101,7 @@ export default function HomePage() {
         <ClientLogos title="Trusted by ambitious brands & visionary founders worldwide" />
       </Section>
 
-      {/* 3. CORE SERVICES (SWISS NUMBERED BENTO GRID 01 - 06) */}
+      {/* 3. CORE SERVICES */}
       <Section className="relative">
         <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
           <SectionHeading
@@ -160,11 +162,11 @@ export default function HomePage() {
       {/* 4. SELECTED WORK SHOWCASE */}
       <FeaturedShowcase />
 
-      {/* 5. PROCESS SECTION (SWISS STEP SEQUENCE) */}
+      {/* 5. PROCESS SECTION */}
       <Section className="relative overflow-hidden">
         <SectionHeading
           eyebrow="Our Working Process"
-          title="A transparent roadmap — every step visible."
+          title="A transparent roadmap with every step visible."
           lead="From initial strategy and Figma wireframes to code development and official launch, you always know what is happening."
         />
 

@@ -76,7 +76,7 @@ export function HeroVisual() {
                 Modern, Tailored Design
               </h4>
               <p className="mt-1 text-xs text-[#B9C1D0] leading-relaxed">
-                Custom visual styling made specifically for your brand — easy to navigate and built to build trust.
+                Custom visual styling made specifically for your brand, easy to navigate and built to build trust.
               </p>
             </div>
 

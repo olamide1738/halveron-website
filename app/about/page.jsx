@@ -7,7 +7,7 @@ import { Reveal } from "../../components/Reveal";
 import { differentiators, site } from "../../lib/site";
 
 export const metadata = {
-  title: "About Us — Halveron Digital Product Studio",
+  title: "About Us · Halveron Digital Product Studio",
   description:
     "Halveron is a full-service digital product studio. We unite strategy, UI/UX design, mobile apps, SaaS engineering, and brand systems under one roof.",
 };
@@ -30,7 +30,7 @@ export default function AboutPage() {
             </h1>
 
             <p className="mt-8 max-w-2xl text-lg md:text-xl font-light text-[#444444] dark:text-[#CCCCCC] leading-relaxed">
-              Halveron is an independent digital product studio and agency. We unite strategy, visual design, mobile apps, websites, and branding under one roof — taking you from napkin sketch to a successful market launch.
+              Halveron is an independent digital product studio and agency. We unite strategy, visual design, mobile apps, websites, and branding under one roof, taking you from napkin sketch to a successful market launch.
             </p>
           </div>
         </div>
@@ -87,7 +87,7 @@ export default function AboutPage() {
                   Global Quality &amp; Great Value
                 </h3>
                 <p className="mt-4 text-sm text-[#555555] dark:text-[#CCCCCC] leading-relaxed">
-                  Based in Lagos (UTC+1), we provide seamless real-time communication with Europe, the UK, and US mornings — offering world-class design at up to 50% better value.
+                  Based in Lagos (UTC+1), we provide seamless real-time communication with Europe, the UK, and US mornings, offering world-class design at up to 50% better value.
                 </p>
               </div>
             </div>

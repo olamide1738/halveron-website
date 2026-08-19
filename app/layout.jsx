@@ -10,12 +10,12 @@ import "./globals.css";
 export const metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: "Halveron® — Digital Product Studio & Web Agency",
-    template: "%s — Halveron",
+    default: "Halveron® · Digital Product Studio & Web Agency",
+    template: "%s · Halveron",
   },
   description: site.description,
   openGraph: {
-    title: "Halveron® — Digital Product Studio & Web Agency",
+    title: "Halveron® · Digital Product Studio & Web Agency",
     description: site.description,
     url: site.url,
     siteName: "Halveron",
@@ -23,7 +23,7 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Halveron® — Digital Product Studio & Web Agency",
+    title: "Halveron® · Digital Product Studio & Web Agency",
     description: site.description,
   },
 };

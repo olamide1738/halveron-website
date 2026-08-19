@@ -5,14 +5,14 @@ import { site } from "../lib/site";
 
 const BUDGETS = [
   "Under $10k",
-  "$10k – $25k",
-  "$25k – $60k",
-  "$60k – $150k",
+  "$10k to $25k",
+  "$25k to $60k",
+  "$60k to $150k",
   "$150k+",
   "Not sure yet",
 ];
 
-const TIMELINES = ["ASAP", "1–3 months", "3–6 months", "Just exploring"];
+const TIMELINES = ["ASAP", "1 to 3 months", "3 to 6 months", "Just exploring"];
 
 export function ContactForm() {
   const [status, setStatus] = useState("idle"); // idle | sending | success | error
@@ -63,7 +63,7 @@ export function ContactForm() {
         </div>
         <h2 className="serif-display mt-5 text-3xl font-normal text-[#111111] dark:text-white">Brief received.</h2>
         <p className="mt-2 text-base leading-relaxed text-[#555555] dark:text-[#CCCCCC]">
-          Thanks — we&apos;ve got it. You&apos;ll hear back from a senior practitioner here within one business day.
+          Thanks, we&apos;ve got it. You&apos;ll hear back from a senior practitioner here within one business day.
         </p>
         <p className="mt-6 font-mono text-xs text-[#888888]">
           In a hurry?{" "}

@@ -96,7 +96,7 @@ export async function POST(request) {
   let html;
 
   if (isNewsletter) {
-    subject = `Newsletter signup — ${email}`;
+    subject = `Newsletter signup: ${email}`;
     html = `<h2>New newsletter signup</h2><p><strong>Email:</strong> ${esc(email)}</p>`;
   } else {
     const name = clean(body.name, MAX.name);
@@ -119,15 +119,15 @@ export async function POST(request) {
     const budget = clean(body.budget, 60);
     const timeline = clean(body.timeline, 60);
 
-    subject = `New brief — ${name}${company ? ` (${company})` : ""}`;
+    subject = `New brief from ${name}${company ? ` (${company})` : ""}`;
     html = `
       <h2>New project brief</h2>
       <table cellpadding="6" style="border-collapse:collapse;font-family:sans-serif">
         <tr><td><strong>Name</strong></td><td>${esc(name)}</td></tr>
         <tr><td><strong>Email</strong></td><td>${esc(email)}</td></tr>
-        <tr><td><strong>Company</strong></td><td>${esc(company) || "—"}</td></tr>
-        <tr><td><strong>Budget</strong></td><td>${esc(budget) || "—"}</td></tr>
-        <tr><td><strong>Timeline</strong></td><td>${esc(timeline) || "—"}</td></tr>
+        <tr><td><strong>Company</strong></td><td>${esc(company) || "None specified"}</td></tr>
+        <tr><td><strong>Budget</strong></td><td>${esc(budget) || "None specified"}</td></tr>
+        <tr><td><strong>Timeline</strong></td><td>${esc(timeline) || "None specified"}</td></tr>
       </table>
       <h3>Brief</h3>
       <p style="white-space:pre-wrap;font-family:sans-serif">${esc(brief)}</p>

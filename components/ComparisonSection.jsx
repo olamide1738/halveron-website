@@ -6,10 +6,10 @@ import { Reveal } from "./Reveal";
 const comparisonRows = [
   {
     feature: "Start Date & Kickoff",
-    halveron: "1–2 Weeks",
+    halveron: "1 to 2 Weeks",
     halveronSub: "Fast start with no endless waiting",
-    agency: "4–8 Weeks (Slow bureaucracy)",
-    inHouse: "3–6 Months (Long hiring process)",
+    agency: "4 to 8 Weeks (Slow bureaucracy)",
+    inHouse: "3 to 6 Months (Long hiring process)",
   },
   {
     feature: "Who Builds Your Project",

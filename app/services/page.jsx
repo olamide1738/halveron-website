@@ -7,9 +7,9 @@ import { Reveal } from "../../components/Reveal";
 import { services, process, site } from "../../lib/site";
 
 export const metadata = {
-  title: "Services — Web Design, Mobile Apps, SaaS & MVP Builds",
+  title: "Services · Web Design, Mobile Apps, SaaS & MVP Builds",
   description:
-    "Custom web design, mobile apps, SaaS engineering, fast MVP launches, and branding systems — engineered under one roof.",
+    "Custom web design, mobile apps, SaaS engineering, fast MVP launches, and branding systems, engineered under one roof.",
 };
 
 export default function ServicesPage() {

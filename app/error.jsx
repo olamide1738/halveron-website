@@ -29,25 +29,25 @@ export default function Error({ error, reset }) {
           <h1 className="h-display mt-3 text-4xl leading-tight md:text-5xl">
             That didn&apos;t work.
           </h1>
-          <p className="mt-5 text-lg text-slate">
-            An unexpected error stopped this page from loading. It&apos;s been
-            logged on our side. Try again — and if it keeps happening, tell us
-            and we&apos;ll fix it properly.
+          <p className="mt-5 text-lg text-[#555555] dark:text-[#CCCCCC]">
+            An unexpected error stopped this page from loading. It has been
+            logged on our side. Please try again, and if it keeps happening, let us
+            know and we will fix it immediately.
           </p>
 
           {error?.digest && (
-            <p className="mt-4 font-mono text-xs text-mute">
+            <p className="mt-4 font-mono text-xs text-[#888888]">
               Reference: {error.digest}
             </p>
           )}
 
           <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-            <Button variant="dark" onClick={reset} className="group">
-              Try again
-            </Button>
-            <Button href={`mailto:${site.email}`} variant="ghost" className="group">
-              Report the problem
-            </Button>
+            <button onClick={reset} className="link-button-solid">
+              Try Again ↗
+            </button>
+            <a href={`mailto:${site.email}`} className="link-button">
+              Report the Problem ↗
+            </a>
           </div>
         </div>
       </div>

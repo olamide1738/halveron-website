@@ -58,8 +58,8 @@ export default function TermsPage() {
         </p>
         <p>
           Two exceptions, both normal: we retain ownership of our pre-existing
-          tools, internal libraries, and general know-how — you get a perpetual
-          licence to use them as part of your deliverable — and third-party
+          tools, internal libraries, and general know-how (you get a perpetual
+          licence to use them as part of your deliverable) and third-party
           open-source components stay under their own licences.
         </p>
         <p>
@@ -85,7 +85,7 @@ export default function TermsPage() {
           ]}
         />
         <p>
-          Projects slip most often on access and approvals, not engineering —
+          Projects slip most often on access and approvals, not engineering,
           so we plan these explicitly.
         </p>
       </Clause>
@@ -118,7 +118,7 @@ export default function TermsPage() {
       <Clause title="Governing law">
         <p>
           These terms are governed by the laws of {legal.jurisdiction}, and its
-          courts have exclusive jurisdiction over any dispute — unless a signed
+          courts have exclusive jurisdiction over any dispute, unless a signed
           project agreement specifies otherwise.
         </p>
       </Clause>

@@ -4,7 +4,7 @@ import { Reveal } from "../../components/Reveal";
 import { site, faqs } from "../../lib/site";
 
 export const metadata = {
-  title: "Contact Us — Schedule a Discovery Call",
+  title: "Contact Us · Schedule a Discovery Call",
   description:
     "Book a discovery call with Halveron, or send us a brief. We reply within one business day with a scoped proposal.",
 };
@@ -28,7 +28,7 @@ export default function ContactPage() {
               </h1>
 
               <p className="mt-6 max-w-md text-base md:text-lg text-[#555555] dark:text-[#CCCCCC] leading-relaxed">
-                The fastest way to start is a discovery call — 30 minutes to understand your requirements and give you honest advice on timeline, scope, and fixed pricing.
+                The fastest way to start is a discovery call. It takes 30 minutes to understand your requirements and give you honest advice on timeline, scope, and fixed pricing.
               </p>
 
               <div className="mt-8">

@@ -37,10 +37,10 @@ export default function PrivacyPage() {
         <p>We collect only what you actively give us, plus minimal technical data:</p>
         <ClauseList
           items={[
-            "Information you submit through the contact form — your name, email address, company, budget and timeline selections, and the project brief you write.",
+            "Information you submit through the contact form, including your name, email address, company, budget and timeline selections, and the project brief you write.",
             "Your email address, if you sign up for our newsletter.",
             "Standard server logs, including IP address, which we use for security and rate limiting on our contact form.",
-            "Aggregate, non-identifying analytics about page visits — only if analytics is enabled on this site.",
+            "Aggregate, non-identifying analytics about page visits, only if analytics is enabled on this site.",
           ]}
         />
         <p>
@@ -52,9 +52,9 @@ export default function PrivacyPage() {
       <Clause title="Why we use it, and our legal basis">
         <ClauseList
           items={[
-            "To reply to your enquiry and scope potential work — our legitimate interest in responding to someone who contacted us, and steps taken at your request before entering a contract.",
-            "To send newsletters you asked for — your consent, withdrawable at any time.",
-            "To keep the site secure and prevent spam submissions — our legitimate interest in protecting our systems.",
+            "To reply to your enquiry and scope potential work: our legitimate interest in responding to someone who contacted us, and steps taken at your request before entering a contract.",
+            "To send newsletters you asked for: your consent, withdrawable at any time.",
+            "To keep the site secure and prevent spam submissions: our legitimate interest in protecting our systems.",
           ]}
         />
       </Clause>
@@ -66,9 +66,9 @@ export default function PrivacyPage() {
         </p>
         <ClauseList
           items={[
-            "Resend — delivers contact-form submissions to our inbox.",
-            "Our hosting provider — serves this website and retains standard access logs.", // TODO: name your host (e.g. Vercel, Netlify) once deployed
-            "Our analytics provider, if enabled — receives aggregate page-view data only.",
+            "Resend: delivers contact-form submissions to our inbox.",
+            "Our hosting provider: serves this website and retains standard access logs.", // TODO: name your host (e.g. Vercel, Netlify) once deployed
+            "Our analytics provider, if enabled: receives aggregate page-view data only.",
           ]}
         />
         <p>
@@ -97,8 +97,8 @@ export default function PrivacyPage() {
 
       <Clause title="Your rights">
         <p>
-          Depending on where you live — including under the Nigeria Data
-          Protection Act and, for visitors in Europe, the GDPR — you may have
+          Depending on where you live (including under the Nigeria Data
+          Protection Act and, for visitors in Europe, the GDPR), you may have
           the right to:
         </p>
         <ClauseList

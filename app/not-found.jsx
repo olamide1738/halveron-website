@@ -19,19 +19,19 @@ export default function NotFound() {
           <h1 className="h-display mt-3 text-4xl leading-tight md:text-5xl">
             There&apos;s a gap here.
           </h1>
-          <p className="mt-5 text-lg text-slate">
-            This page doesn&apos;t exist — it may have moved, or the link that
-            sent you here was wrong. Closing gaps is rather our thing, so here
+          <p className="mt-5 text-lg text-[#555555] dark:text-[#CCCCCC]">
+            This page doesn&apos;t exist. It may have moved, or the link that
+            sent you here was incorrect. Closing gaps is our thing, so here
             are the ways back.
           </p>
 
           <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-            <Button href="/" variant="dark" className="group">
-              Back to home
-            </Button>
-            <Button href={site.bookingUrl} external variant="ghost" className="group">
-              Book a discovery call
-            </Button>
+            <Link href="/" className="link-button-solid">
+              Back to Home ↗
+            </Link>
+            <a href={site.bookingUrl} target="_blank" rel="noopener noreferrer" className="link-button">
+              Book a Discovery Call ↗
+            </a>
           </div>
 
           <nav aria-label="Site sections" className="mt-12 border-t border-line pt-6">

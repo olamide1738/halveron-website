@@ -4,9 +4,9 @@ import { Reveal } from "../../components/Reveal";
 import { openings, site, differentiators } from "../../lib/site";
 
 export const metadata = {
-  title: "Careers — Senior Product Engineering & Design Roles",
+  title: "Careers · Senior Product Engineering & Design Roles",
   description:
-    "Join Halveron — senior product engineering and UI/UX design roles based in Lagos, working with founders and companies worldwide.",
+    "Join Halveron for senior product engineering and UI/UX design roles based in Lagos, working with founders and companies worldwide.",
 };
 
 export default function CareersPage() {
@@ -65,7 +65,7 @@ export default function CareersPage() {
                     <div className="mt-6 md:mt-0">
                       <a
                         href={`mailto:${site.email}?subject=${encodeURIComponent(
-                          `Application — ${role.title}`,
+                          `Application: ${role.title}`,
                         )}`}
                         className="link-button-solid shrink-0"
                       >
@@ -104,7 +104,7 @@ export default function CareersPage() {
         <SectionHeading
           eyebrow="Studio Culture"
           title="The principles we sell, applied internally."
-          lead="These aren't marketing promises — they describe how the team actually operates day to day."
+          lead="These aren't marketing promises, they describe how the team actually operates day to day."
         />
 
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">

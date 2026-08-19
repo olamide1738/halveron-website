@@ -40,7 +40,7 @@ const showcaseProjects = [
     accent: "Brand & Web Design",
     year: "2025",
     description:
-      "A complete brand transformation — distinctive logo suite, custom color palette, editorial typography, and a modern website built to win customer confidence.",
+      "A complete brand transformation featuring a distinctive logo suite, custom color palette, editorial typography, and a modern website built to win customer confidence.",
     highlights: ["Logo & Style Kit", "Custom Marketing Web", "SEO Architecture"],
   },
 ];

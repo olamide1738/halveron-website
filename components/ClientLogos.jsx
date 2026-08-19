@@ -47,7 +47,7 @@ export function ClientLogos({ title = "Trusted by brands & visionary companies" 
           <div>
             <GapMotif />
             <p className="mt-4 max-w-xl text-sm text-[#555555] dark:text-[#CCCCCC]">
-              We name clients here once engagements complete and we have their permission — not before.
+              We name clients here once engagements complete and we have their permission, not before.
             </p>
           </div>
           <span className="shrink-0 tag-pill">

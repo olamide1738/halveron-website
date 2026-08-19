@@ -23,7 +23,7 @@ export function Testimonials({
           lead ??
           (hasReal
             ? undefined
-            : "We're early, and we'd rather show you nothing than show you something invented. Our first clients' words will land here — attributed, and with their permission.")
+            : "We're early, and we'd rather show you nothing than show you something invented. Our first clients' words will land here, attributed, and with their permission.")
         }
       />
 

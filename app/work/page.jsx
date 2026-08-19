@@ -3,7 +3,7 @@ import { WorkGrid } from "../../components/WorkGrid";
 import { CTASection } from "../../components/CTASection";
 
 export const metadata = {
-  title: "Selected Work — Halveron Digital Product Studio",
+  title: "Selected Work · Halveron Digital Product Studio",
   description:
     "Explore high-fidelity visual case studies of websites, mobile apps, and SaaS platforms shipped by Halveron.",
 };
