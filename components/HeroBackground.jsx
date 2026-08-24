@@ -4,6 +4,7 @@ import { WebGLHeroCanvas } from "./WebGLHeroCanvas";
 
 // Bold, eye-catching hero background with large animated gradient orbs,
 // a strong mesh overlay, floating geometric accents, and interactive WebGL canvas.
+// Completely uniform background with zero light/dark top strips.
 
 export function HeroBackground() {
   return (
@@ -15,7 +16,7 @@ export function HeroBackground() {
       <div
         className="absolute -top-[10%] -right-[5%] h-[800px] w-[800px] rounded-full animate-hero-float"
         style={{
-          background: "radial-gradient(circle, rgba(47,107,255,0.25) 0%, rgba(47,107,255,0.08) 40%, transparent 70%)",
+          background: "radial-gradient(circle, rgba(47,107,255,0.22) 0%, rgba(47,107,255,0.06) 40%, transparent 70%)",
           filter: "blur(80px)",
         }}
       />
@@ -24,7 +25,7 @@ export function HeroBackground() {
       <div
         className="absolute -bottom-[20%] -left-[15%] h-[700px] w-[700px] rounded-full animate-hero-float-reverse"
         style={{
-          background: "radial-gradient(circle, rgba(212,168,83,0.20) 0%, rgba(212,168,83,0.06) 40%, transparent 70%)",
+          background: "radial-gradient(circle, rgba(212,168,83,0.18) 0%, rgba(212,168,83,0.05) 40%, transparent 70%)",
           filter: "blur(70px)",
         }}
       />
@@ -33,7 +34,7 @@ export function HeroBackground() {
       <div
         className="absolute top-[20%] left-[25%] h-[500px] w-[500px] rounded-full animate-hero-pulse"
         style={{
-          background: "radial-gradient(circle, rgba(139,92,246,0.15) 0%, rgba(139,92,246,0.04) 45%, transparent 70%)",
+          background: "radial-gradient(circle, rgba(139,92,246,0.14) 0%, rgba(139,92,246,0.03) 45%, transparent 70%)",
           filter: "blur(90px)",
         }}
       />
@@ -42,7 +43,7 @@ export function HeroBackground() {
       <div
         className="absolute top-[40%] right-[12%] h-[250px] w-[250px] rounded-full animate-hero-pulse-delayed"
         style={{
-          background: "radial-gradient(circle, rgba(47,107,255,0.30) 0%, transparent 60%)",
+          background: "radial-gradient(circle, rgba(47,107,255,0.25) 0%, transparent 60%)",
           filter: "blur(50px)",
         }}
       />
@@ -111,29 +112,6 @@ export function HeroBackground() {
       {/* 11. Second floating ring — offset */}
       <div
         className="absolute bottom-[25%] left-[15%] h-28 w-28 rounded-full border border-[#D4A853]/10 dark:border-[#D4A853]/12 animate-hero-ring-reverse md:h-40 md:w-40"
-      />
-
-      {/* 12. Bottom gradient horizon line */}
-      <div
-        className="absolute bottom-0 left-0 right-0 h-px"
-        style={{
-          background: "linear-gradient(90deg, transparent 5%, #D4A853 25%, #2F6BFF 50%, #D4A853 75%, transparent 95%)",
-          opacity: 0.15,
-        }}
-      />
-
-      {/* 13. Top vignette — adds depth */}
-      <div
-        className="absolute inset-x-0 top-0 h-40"
-        style={{
-          background: "linear-gradient(180deg, rgba(254,250,247,0.6) 0%, transparent 100%)",
-        }}
-      />
-      <div
-        className="absolute inset-x-0 top-0 h-40 hidden dark:block"
-        style={{
-          background: "linear-gradient(180deg, rgba(11,15,23,0.6) 0%, transparent 100%)",
-        }}
       />
     </div>
   );
