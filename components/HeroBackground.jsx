@@ -1,11 +1,15 @@
 "use client";
 
+import { WebGLHeroCanvas } from "./WebGLHeroCanvas";
+
 // Bold, eye-catching hero background with large animated gradient orbs,
-// a strong mesh overlay, and floating geometric accents.
+// a strong mesh overlay, floating geometric accents, and interactive WebGL canvas.
 
 export function HeroBackground() {
   return (
     <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
+      {/* Interactive WebGL / Canvas particle constellation */}
+      <WebGLHeroCanvas />
 
       {/* 1. Large animated cobalt orb — top right, slow drift */}
       <div

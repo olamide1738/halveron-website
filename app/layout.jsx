@@ -4,6 +4,7 @@ import { Footer } from "../components/Footer";
 import { CookieNotice } from "../components/CookieNotice";
 import { BackToTop } from "../components/BackToTop";
 import { CustomCursor } from "../components/CustomCursor";
+import { ScrollProgress } from "../components/ScrollProgress";
 import { site } from "../lib/site";
 import "./globals.css";
 
@@ -61,6 +62,7 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body>
+        <ScrollProgress />
         <CustomCursor />
         <a
           href="#main"
