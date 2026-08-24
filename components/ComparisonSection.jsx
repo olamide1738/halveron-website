@@ -85,8 +85,11 @@ export function ComparisonSection() {
 
                     {/* Halveron Column (Highlighted) */}
                     <div className="rounded-xs border border-[#2F6BFF]/30 bg-[#2F6BFF]/5 dark:bg-[#2F6BFF]/10 p-3">
-                      <span className="serif-display block text-lg font-bold text-[#2F6BFF]">
-                        ✓ {row.halveron}
+                      <span className="serif-display flex items-center gap-1.5 text-lg font-bold text-[#2F6BFF]">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="shrink-0">
+                          <polyline points="20 6 9 17 4 12" />
+                        </svg>
+                        <span>{row.halveron}</span>
                       </span>
                       <span className="mt-0.5 block font-mono text-[11px] text-[#666666] dark:text-[#AAAAAA]">
                         {row.halveronSub}

@@ -124,7 +124,12 @@ export default function OpenSourcePage() {
                       />
                       <span>{repo.language}</span>
                     </span>
-                    <span>★ {repo.stars}</span>
+                    <span className="flex items-center gap-1">
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" className="text-amber-400">
+                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                      </svg>
+                      <span>{repo.stars}</span>
+                    </span>
                   </div>
 
                   <a
@@ -231,22 +236,42 @@ export default function OpenSourcePage() {
 
                 <div className="flex items-center gap-2 font-mono text-xs">
                   <span
-                    className={`px-3 py-1 rounded-xs font-bold ${
+                    className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-xs font-bold ${
                       passesAA
                         ? "bg-emerald-500/20 text-emerald-500 border border-emerald-500/30"
                         : "bg-rose-500/20 text-rose-500 border border-rose-500/30"
                     }`}
                   >
-                    WCAG AA: {passesAA ? "PASS ✓" : "FAIL ✕"}
+                    {passesAA ? (
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                        <polyline points="20 6 9 17 4 12" />
+                      </svg>
+                    ) : (
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                        <line x1="18" y1="6" x2="6" y2="18" />
+                        <line x1="6" y1="6" x2="18" y2="18" />
+                      </svg>
+                    )}
+                    <span>WCAG AA: {passesAA ? "PASS" : "FAIL"}</span>
                   </span>
                   <span
-                    className={`px-3 py-1 rounded-xs font-bold ${
+                    className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-xs font-bold ${
                       passesAAA
                         ? "bg-emerald-500/20 text-emerald-500 border border-emerald-500/30"
                         : "bg-rose-500/20 text-rose-500 border border-rose-500/30"
                     }`}
                   >
-                    WCAG AAA: {passesAAA ? "PASS ✓" : "FAIL ✕"}
+                    {passesAAA ? (
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                        <polyline points="20 6 9 17 4 12" />
+                      </svg>
+                    ) : (
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                        <line x1="18" y1="6" x2="6" y2="18" />
+                        <line x1="6" y1="6" x2="18" y2="18" />
+                      </svg>
+                    )}
+                    <span>WCAG AAA: {passesAAA ? "PASS" : "FAIL"}</span>
                   </span>
                 </div>
               </div>
@@ -338,9 +363,18 @@ export default function OpenSourcePage() {
                 <button
                   type="button"
                   onClick={handleCopyClamp}
-                  className="link-button-solid"
+                  className="link-button-solid inline-flex items-center gap-2"
                 >
-                  {copiedClamp ? "Copied to Clipboard! ✓" : "Copy CSS Clamp Snippet ↗"}
+                  {copiedClamp ? (
+                    <>
+                      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                        <polyline points="20 6 9 17 4 12" />
+                      </svg>
+                      <span>Copied to Clipboard!</span>
+                    </>
+                  ) : (
+                    <span>Copy CSS Clamp Snippet ↗</span>
+                  )}
                 </button>
               </div>
             </div>

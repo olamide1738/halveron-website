@@ -76,7 +76,13 @@ export default function HomePage() {
             {/* Architectural Trust Strip */}
             <div className="mt-16 flex flex-wrap items-center gap-x-8 gap-y-3 border-t border-[#111111]/15 dark:border-white/10 pt-8 font-mono text-xs text-[#666666] dark:text-[#AAAAAA]">
               <div className="flex items-center gap-2">
-                <span className="text-[#2F6BFF]">★★★★★</span>
+                <div className="flex items-center gap-0.5 text-[#2F6BFF]">
+                  {[...Array(5)].map((_, i) => (
+                    <svg key={i} width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
+                      <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                    </svg>
+                  ))}
+                </div>
                 <span className="font-bold text-[#111111] dark:text-white">5.0 Client Rating</span>
               </div>
               <span>·</span>

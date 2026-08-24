@@ -103,8 +103,10 @@ export function HeroVisual() {
             {/* Specimen Strip */}
             <div className="flex items-center justify-between rounded-xl border border-white/10 bg-white/5 p-3.5">
               <div className="flex items-center gap-3">
-                <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-cobalt/20 text-cobalt-light font-mono text-xs font-bold">
-                  ✓
+                <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-cobalt/20 text-cobalt-light">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
                 </div>
                 <div>
                   <div className="h-display text-xs font-semibold text-white">Interactive Prototype</div>
@@ -123,8 +125,11 @@ export function HeroVisual() {
           <div className="mt-6 space-y-3 animate-riseIn">
             <div className="flex items-center justify-between rounded-xl border border-white/10 bg-white/5 p-3.5">
               <div className="flex items-center gap-3">
-                <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-cobalt/20 text-cobalt-light text-sm">
-                  💳
+                <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-cobalt/20 text-cobalt-light">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <rect x="2" y="5" width="20" height="14" rx="2" />
+                    <line x1="2" y1="10" x2="22" y2="10" />
+                  </svg>
                 </span>
                 <div>
                   <div className="text-xs font-semibold text-white">Online Payments & Billing</div>
@@ -136,8 +141,11 @@ export function HeroVisual() {
 
             <div className="flex items-center justify-between rounded-xl border border-white/10 bg-white/5 p-3.5">
               <div className="flex items-center gap-3">
-                <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-emerald-500/20 text-emerald-400 text-sm">
-                  👤
+                <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-emerald-500/20 text-emerald-400">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                    <circle cx="12" cy="7" r="4" />
+                  </svg>
                 </span>
                 <div>
                   <div className="text-xs font-semibold text-white">Customer Logins & Portals</div>
@@ -149,8 +157,12 @@ export function HeroVisual() {
 
             <div className="flex items-center justify-between rounded-xl border border-white/10 bg-white/5 p-3.5">
               <div className="flex items-center gap-3">
-                <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-amber-500/20 text-amber-400 text-sm">
-                  📊
+                <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-amber-500/20 text-amber-400">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <line x1="18" y1="20" x2="18" y2="10" />
+                    <line x1="12" y1="20" x2="12" y2="4" />
+                    <line x1="6" y1="20" x2="6" y2="14" />
+                  </svg>
                 </span>
                 <div>
                   <div className="text-xs font-semibold text-white">Simple Business Dashboard</div>

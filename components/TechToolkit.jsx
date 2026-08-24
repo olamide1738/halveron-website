@@ -258,8 +258,11 @@ export function TechToolkit() {
             placeholder="Search tools (e.g. Next.js, Stripe, Figma)..."
             className="w-full rounded-xs border border-[#111111]/20 dark:border-white/15 bg-white/40 dark:bg-white/5 px-4 py-2.5 pl-9 font-mono text-xs text-[#111111] dark:text-white placeholder:text-[#888888] focus:border-[#2F6BFF] focus:outline-none transition-colors"
           />
-          <span className="absolute left-3 top-1/2 -translate-y-1/2 text-[#888888] text-xs">
-            🔍
+          <span className="absolute left-3 top-1/2 -translate-y-1/2 text-[#888888]">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <circle cx="11" cy="11" r="8" />
+              <line x1="21" y1="21" x2="16.65" y2="16.65" />
+            </svg>
           </span>
           {searchQuery && (
             <button
@@ -267,7 +270,10 @@ export function TechToolkit() {
               onClick={() => setSearchQuery("")}
               className="absolute right-3 top-1/2 -translate-y-1/2 font-mono text-xs text-[#888888] hover:text-white"
             >
-              ✕
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18" />
+                <line x1="6" y1="6" x2="18" y2="18" />
+              </svg>
             </button>
           )}
         </div>

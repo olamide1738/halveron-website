@@ -58,8 +58,10 @@ export function ContactForm() {
   if (status === "success") {
     return (
       <div className="rounded-md border border-[#111111]/15 dark:border-white/10 bg-white dark:bg-[#121826] p-8 md:p-10 text-[#111111] dark:text-white shadow-sm">
-        <div className="flex h-10 w-10 items-center justify-center rounded-xs bg-[#2F6BFF]/10 text-[#2F6BFF] font-bold font-mono">
-          ✓
+        <div className="flex h-10 w-10 items-center justify-center rounded-xs bg-[#2F6BFF]/10 text-[#2F6BFF]">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+            <polyline points="20 6 9 17 4 12" />
+          </svg>
         </div>
         <h2 className="serif-display mt-5 text-3xl font-normal text-[#111111] dark:text-white">Brief received.</h2>
         <p className="mt-2 text-base leading-relaxed text-[#555555] dark:text-[#CCCCCC]">
