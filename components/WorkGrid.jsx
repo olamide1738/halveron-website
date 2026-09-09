@@ -7,9 +7,9 @@ import { CaseStudyModal } from "./CaseStudyModal";
 
 const CATEGORIES = [
   "All Work",
-  "Architecture & Living",
-  "Artisanal Studio & E-Commerce",
-  "Commercial Architecture",
+  "Bio-Architecture & Living Walls",
+  "Luxury Fashion & Couture",
+  "Architecture & Landscape",
 ];
 
 export function WorkGrid() {
