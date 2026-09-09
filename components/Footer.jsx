@@ -5,43 +5,43 @@ import { nav, services, site } from "../lib/site";
 
 export function Footer() {
   return (
-    <footer className="border-t border-[#111111]/15 dark:border-white/10 bg-[#FEFAF7] dark:bg-[#07090D] text-[#111111] dark:text-white transition-colors duration-300">
+    <footer className="border-t border-[#0F172A]/10 dark:border-white/10 bg-[#FAFAFC] dark:bg-[#07090D] text-[#0F172A] dark:text-white transition-colors duration-300">
       <div className="container-hal pt-20 pb-12">
-        {/* Giant Typographic Wordmark & Halveron Brand Mark */}
-        <div className="border-b border-[#111111]/15 dark:border-white/10 pb-12">
+        {/* Typographic Wordmark & Studio Brand */}
+        <div className="border-b border-[#0F172A]/10 dark:border-white/10 pb-12">
           <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
             <div>
               <div className="flex items-center gap-3 mb-4">
                 <Logomark size={36} />
-                <span className="font-mono text-xs uppercase tracking-[0.2em] text-[#2F6BFF]">
-                  Digital Product Studio &amp; Web Agency
+                <span className="font-mono text-xs font-bold uppercase tracking-[0.14em] text-[#2F6BFF]">
+                  Bespoke Digital Product Studio
                 </span>
               </div>
-              <h2 className="serif-display text-6xl font-normal tracking-tight md:text-8xl lg:text-9xl text-[#111111] dark:text-white">
+              <h2 className="heading-display text-5xl font-extrabold tracking-[-0.04em] sm:text-7xl md:text-8xl lg:text-9xl text-[#0F172A] dark:text-white">
                 HALVERON<span className="text-[#2F6BFF]">®</span>
               </h2>
             </div>
             <div className="max-w-xs pb-2">
-              <p className="font-mono text-xs uppercase tracking-wider text-[#666666] dark:text-[#AAAAAA]">
-                Turning ambitious ideas into finished, high-performing websites and mobile products.
+              <p className="font-sans text-sm text-[#64748B] dark:text-[#94A3B8] leading-relaxed">
+                Turning ambitious ideas into finished, high-performing websites and digital products.
               </p>
             </div>
           </div>
         </div>
 
-        {/* Numbered Columns */}
+        {/* Navigation & Contact Columns */}
         <div className="grid gap-10 py-16 md:grid-cols-4">
           <div>
-            <div className="flex items-center gap-2 font-mono text-xs uppercase tracking-[0.18em] text-[#2F6BFF]">
+            <div className="flex items-center gap-2 font-mono text-xs font-bold uppercase tracking-wider text-[#2F6BFF]">
               <span>01</span>
               <span>Studio</span>
             </div>
-            <ul className="mt-5 space-y-3 font-mono text-xs uppercase tracking-wider">
+            <ul className="mt-5 space-y-3 font-sans text-sm">
               {nav.map((item) => (
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className="line-btm-ani text-[#444444] dark:text-[#CCCCCC] hover:text-[#2F6BFF]"
+                    className="line-btm-ani text-[#475569] dark:text-[#CBD5E1] hover:text-[#2F6BFF] font-medium"
                   >
                     {item.label}
                   </Link>
@@ -50,7 +50,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/careers"
-                  className="line-btm-ani text-[#444444] dark:text-[#CCCCCC] hover:text-[#2F6BFF]"
+                  className="line-btm-ani text-[#475569] dark:text-[#CBD5E1] hover:text-[#2F6BFF] font-medium"
                 >
                   Careers
                 </Link>
@@ -59,16 +59,16 @@ export function Footer() {
           </div>
 
           <div>
-            <div className="flex items-center gap-2 font-mono text-xs uppercase tracking-[0.18em] text-[#2F6BFF]">
+            <div className="flex items-center gap-2 font-mono text-xs font-bold uppercase tracking-wider text-[#2F6BFF]">
               <span>02</span>
               <span>Services</span>
             </div>
-            <ul className="mt-5 space-y-3 font-mono text-xs uppercase tracking-wider">
+            <ul className="mt-5 space-y-3 font-sans text-sm">
               {services.slice(0, 5).map((s) => (
                 <li key={s.slug}>
                   <Link
                     href={`/services#${s.slug}`}
-                    className="line-btm-ani text-[#444444] dark:text-[#CCCCCC] hover:text-[#2F6BFF]"
+                    className="line-btm-ani text-[#475569] dark:text-[#CBD5E1] hover:text-[#2F6BFF] font-medium"
                   >
                     {s.title}
                   </Link>
@@ -78,15 +78,15 @@ export function Footer() {
           </div>
 
           <div>
-            <div className="flex items-center gap-2 font-mono text-xs uppercase tracking-[0.18em] text-[#2F6BFF]">
+            <div className="flex items-center gap-2 font-mono text-xs font-bold uppercase tracking-wider text-[#2F6BFF]">
               <span>03</span>
               <span>Contact</span>
             </div>
-            <div className="mt-5 space-y-3 font-mono text-xs uppercase tracking-wider text-[#444444] dark:text-[#CCCCCC]">
+            <div className="mt-5 space-y-3 font-sans text-sm text-[#475569] dark:text-[#CBD5E1]">
               <p>
                 <a
                   href={`mailto:${site.email}`}
-                  className="line-btm-ani hover:text-[#2F6BFF]"
+                  className="line-btm-ani hover:text-[#2F6BFF] font-medium"
                 >
                   {site.email}
                 </a>
@@ -101,20 +101,20 @@ export function Footer() {
                   Book Discovery Call ↗
                 </a>
               </p>
-              <p className="text-[#888888] pt-2">
-                Lagos (UTC+1) · Global Overlap
+              <p className="text-xs text-[#94A3B8] pt-2 font-mono">
+                {site.location} · Global Overlap
               </p>
             </div>
           </div>
 
           <div>
-            <div className="flex items-center gap-2 font-mono text-xs uppercase tracking-[0.18em] text-[#2F6BFF]">
+            <div className="flex items-center gap-2 font-mono text-xs font-bold uppercase tracking-wider text-[#2F6BFF]">
               <span>04</span>
               <span>Updates</span>
             </div>
             <div className="mt-5">
-              <p className="font-mono text-xs text-[#666666] dark:text-[#AAAAAA] mb-4">
-                Quarterly studio briefings and new project releases.
+              <p className="font-sans text-xs text-[#64748B] dark:text-[#94A3B8] mb-4">
+                Quarterly briefings, design essays, and new project releases.
               </p>
               <NewsletterForm />
             </div>
@@ -122,7 +122,7 @@ export function Footer() {
         </div>
 
         {/* Legal & Copyright */}
-        <div className="flex flex-col justify-between gap-4 border-t border-[#111111]/15 dark:border-white/10 pt-8 font-mono text-xs text-[#777777] md:flex-row md:items-center">
+        <div className="flex flex-col justify-between gap-4 border-t border-[#0F172A]/10 dark:border-white/10 pt-8 font-mono text-xs text-[#64748B] md:flex-row md:items-center">
           <span>
             © {new Date().getFullYear()} HALVERON STUDIO. ALL RIGHTS RESERVED.
           </span>

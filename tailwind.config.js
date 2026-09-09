@@ -9,79 +9,66 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        // Halveron Brand Palette with Swiss architectural styling
-        "swiss-bg": "#FEFAF7",
-        "swiss-dark": "#0B0F17",
-        "swiss-card-dark": "#121826",
-        "swiss-key": "#2F6BFF",
-        "swiss-key-hover": "#1A4FD9",
-        "swiss-text": "#111111",
-        "swiss-muted": "#667085",
-        "swiss-line": "#E2E8F0",
-        "swiss-line-dark": "#1E293B",
-        // Halveron Signature Tokens
+        // Halveron Brand Palette
+        "brand-bg": "#FAFAFC",
+        "brand-dark": "#0B0F17",
+        "brand-card-light": "#FFFFFF",
+        "brand-card-dark": "#121826",
+        "brand-key": "#2F6BFF",
+        "brand-key-hover": "#1E54E6",
+        "brand-text": "#0F172A",
+        "brand-muted": "#64748B",
+        "brand-border": "#E2E8F0",
+        "brand-border-dark": "#1E293B",
+        // Signature Tokens
         ink: "#0B0F17",
-        slate: "#667085",
-        paper: "#FEFAF7",
+        slate: "#64748B",
+        paper: "#FAFAFC",
         cobalt: "#2F6BFF",
         "cobalt-light": "#5B8EFF",
+        "cobalt-dark": "#1E54E6",
         line: "#E2E8F0",
         mute: "#94A3B8",
       },
       fontFamily: {
-        serif: ["Instrument Serif", "Newsreader", "Playfair Display", "Georgia", "serif"],
-        display: ["Instrument Serif", "Newsreader", "Playfair Display", "Georgia", "serif"],
-        body: ["Plus Jakarta Sans", "Inter", "Helvetica Neue", "sans-serif"],
-        sans: ["Plus Jakarta Sans", "Inter", "Helvetica Neue", "sans-serif"],
+        display: ["Plus Jakarta Sans", "Inter", "system-ui", "sans-serif"],
+        body: ["Plus Jakarta Sans", "Inter", "system-ui", "sans-serif"],
+        sans: ["Plus Jakarta Sans", "Inter", "system-ui", "sans-serif"],
         mono: ["JetBrains Mono", "ui-monospace", "SFMono-Regular", "monospace"],
       },
       borderRadius: {
-        xs: "2px",
+        xs: "4px",
+        sm: "8px",
+        md: "12px",
+        lg: "16px",
+        xl: "20px",
+        "2xl": "24px",
+        "3xl": "32px",
       },
-      letterSpacing: {
-        eyebrow: "0.2em",
-      },
-      maxWidth: {
-        prose: "68ch",
+      boxShadow: {
+        glow: "0 0 30px -5px rgba(47, 107, 255, 0.3)",
+        "glow-lg": "0 0 50px -10px rgba(47, 107, 255, 0.4)",
+        card: "0 10px 30px -10px rgba(0, 0, 0, 0.05)",
+        "card-dark": "0 10px 30px -10px rgba(0, 0, 0, 0.3)",
       },
       keyframes: {
-        gapClose: {
-          "0%": { transform: "scaleX(0)", opacity: "0" },
-          "100%": { transform: "scaleX(1)", opacity: "1" },
-        },
         riseIn: {
-          "0%": { transform: "translateY(12px)", opacity: "0" },
+          "0%": { transform: "translateY(16px)", opacity: "0" },
           "100%": { transform: "translateY(0)", opacity: "1" },
         },
-        pageLoaderFadeOut: {
-          "0%, 65%": { opacity: "1", visibility: "visible" },
-          "100%": { opacity: "0", visibility: "hidden" },
-        },
-        gapLeftBar: {
-          "0%": { width: "4rem", transform: "translateX(-1.5rem)" },
-          "100%": { width: "5rem", transform: "translateX(0.75rem)" },
-        },
-        gapRightBar: {
-          "0%": { width: "4rem", transform: "translateX(1.5rem)" },
-          "100%": { width: "5rem", transform: "translateX(-0.75rem)" },
-        },
-        gapCobalt: {
-          "0%": { transform: "scale(0.75)", opacity: "0.8" },
-          "100%": { transform: "scale(1)", opacity: "1" },
-        },
-        wordmarkFadeIn: {
-          "0%, 25%": { opacity: "0" },
+        fadeIn: {
+          "0%": { opacity: "0" },
           "100%": { opacity: "1" },
+        },
+        pulseGlow: {
+          "0%, 100%": { opacity: "0.4", transform: "scale(1)" },
+          "50%": { opacity: "0.7", transform: "scale(1.05)" },
         },
       },
       animation: {
-        gapClose: "gapClose .7s cubic-bezier(.22,1,.36,1) forwards",
-        riseIn: "riseIn .6s cubic-bezier(.22,1,.36,1) forwards",
-        pageLoaderFadeOut: "pageLoaderFadeOut 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards",
-        gapLeftBar: "gapLeftBar 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards",
-        gapRightBar: "gapRightBar 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards",
-        gapCobalt: "gapCobalt 0.5s ease-out forwards",
-        wordmarkFadeIn: "wordmarkFadeIn 0.6s ease-out forwards",
+        riseIn: "riseIn .5s cubic-bezier(.16,1,.3,1) forwards",
+        fadeIn: "fadeIn .4s ease-out forwards",
+        pulseGlow: "pulseGlow 6s ease-in-out infinite",
       },
     },
   },

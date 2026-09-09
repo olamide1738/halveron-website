@@ -166,14 +166,14 @@ export function CapabilitiesDeckModal({ isOpen, onClose }) {
       />
 
       {/* Modal Card */}
-      <div className="relative max-h-[92vh] w-full max-w-4xl overflow-hidden rounded-md border border-[#111111]/20 dark:border-white/15 bg-[#FEFAF7] dark:bg-[#0E131F] text-[#111111] dark:text-white p-6 sm:p-10 shadow-2xl z-10 flex flex-col justify-between">
+      <div className="relative max-h-[92vh] w-full max-w-4xl overflow-hidden rounded-3xl border border-[#0F172A]/10 dark:border-white/15 bg-[#FAFAFC] dark:bg-[#0B0F17] text-[#0F172A] dark:text-white p-6 sm:p-10 shadow-2xl z-10 flex flex-col justify-between">
         {/* Top Deck Navigation Bar */}
-        <div className="flex items-center justify-between border-b border-[#111111]/10 dark:border-white/10 pb-4">
+        <div className="flex items-center justify-between border-b border-[#0F172A]/10 dark:border-white/10 pb-4">
           <div className="flex items-center gap-3">
             <span className="font-mono text-xs font-bold text-[#2F6BFF] uppercase tracking-wider">
               Halveron Studio Deck
             </span>
-            <span className="font-mono text-xs text-[#888888]">
+            <span className="font-mono text-xs text-[#64748B]">
               Slide {slide.num} of {String(DECK_SLIDES.length).padStart(2, "0")}
             </span>
           </div>
@@ -182,7 +182,7 @@ export function CapabilitiesDeckModal({ isOpen, onClose }) {
             <button
               type="button"
               onClick={handleDownload}
-              className="hidden sm:inline-flex items-center gap-1.5 rounded-xs border border-[#111111]/20 dark:border-white/20 px-3 py-1 font-mono text-xs font-bold hover:border-[#2F6BFF] transition-colors cursor-pointer"
+              className="hidden sm:inline-flex items-center gap-1.5 rounded-full border border-[#0F172A]/15 dark:border-white/20 px-4 py-1.5 font-sans text-xs font-semibold hover:border-[#2F6BFF] transition-colors cursor-pointer"
             >
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[#2F6BFF]">
                 <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
@@ -198,7 +198,7 @@ export function CapabilitiesDeckModal({ isOpen, onClose }) {
                 onClose();
               }}
               aria-label="Close capabilities deck"
-              className="flex h-8 w-8 items-center justify-center rounded-xs border border-[#111111]/20 dark:border-white/20 hover:border-[#2F6BFF] bg-transparent font-mono transition-colors cursor-pointer"
+              className="flex h-8 w-8 items-center justify-center rounded-full border border-[#0F172A]/15 dark:border-white/20 hover:border-[#2F6BFF] bg-transparent font-mono transition-colors cursor-pointer"
             >
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                 <line x1="18" y1="6" x2="6" y2="18" />
@@ -209,20 +209,20 @@ export function CapabilitiesDeckModal({ isOpen, onClose }) {
         </div>
 
         {/* Slide Content Box */}
-        <div className="my-8 py-4 animate-riseIn key={slide.num}">
-          <div className="inline-flex items-center gap-2 rounded-xs border border-[#2F6BFF]/30 bg-[#2F6BFF]/5 px-3 py-1 font-mono text-[11px] uppercase tracking-widest text-[#2F6BFF] font-bold">
-            <span>●</span>
+        <div className="my-8 py-4 animate-riseIn" key={slide.num}>
+          <div className="inline-flex items-center gap-2 rounded-full border border-[#2F6BFF]/30 bg-[#2F6BFF]/10 px-3.5 py-1 font-mono text-[11px] uppercase tracking-wider text-[#2F6BFF] font-bold">
+            <span className="h-1.5 w-1.5 rounded-full bg-[#2F6BFF] animate-pulse" />
             <span>{slide.eyebrow}</span>
           </div>
 
           <h2
             id="deck-title"
-            className="serif-display mt-6 text-3xl sm:text-4xl md:text-5xl font-normal leading-tight text-[#111111] dark:text-white"
+            className="heading-display mt-6 text-2xl sm:text-3xl md:text-4xl font-extrabold leading-tight text-[#0F172A] dark:text-white"
           >
             {slide.title}
           </h2>
 
-          <p className="mt-2 font-mono text-xs sm:text-sm text-[#777777] dark:text-[#AAAAAA] uppercase tracking-wider">
+          <p className="mt-2 font-sans text-xs sm:text-sm font-semibold text-[#64748B] dark:text-[#94A3B8]">
             {slide.subtitle}
           </p>
 
@@ -230,12 +230,12 @@ export function CapabilitiesDeckModal({ isOpen, onClose }) {
             {slide.points.map((pt, idx) => (
               <div
                 key={pt}
-                className="flex items-start gap-3 rounded-xs border border-[#111111]/10 dark:border-white/10 bg-white/50 dark:bg-white/5 p-4"
+                className="flex items-start gap-3 rounded-xl border border-[#0F172A]/10 dark:border-white/10 bg-white dark:bg-white/5 p-4 shadow-sm"
               >
                 <span className="font-mono text-xs font-bold text-[#2F6BFF] shrink-0 mt-0.5">
                   0{idx + 1}
                 </span>
-                <p className="font-mono text-xs sm:text-sm text-[#444444] dark:text-[#CCCCCC] leading-relaxed">
+                <p className="font-sans text-xs sm:text-sm text-[#334155] dark:text-[#CBD5E1] leading-relaxed">
                   {pt}
                 </p>
               </div>
@@ -244,7 +244,7 @@ export function CapabilitiesDeckModal({ isOpen, onClose }) {
         </div>
 
         {/* Bottom Slide Controller & Booking Action */}
-        <div className="border-t border-[#111111]/10 dark:border-white/10 pt-5 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="border-t border-[#0F172A]/10 dark:border-white/10 pt-5 flex flex-col sm:flex-row items-center justify-between gap-4">
           {/* Slide dots */}
           <div className="flex items-center gap-1.5">
             {DECK_SLIDES.map((_, idx) => (
@@ -258,7 +258,7 @@ export function CapabilitiesDeckModal({ isOpen, onClose }) {
                 className={`h-2 rounded-full transition-all duration-200 cursor-pointer ${
                   currentSlide === idx
                     ? "w-7 bg-[#2F6BFF]"
-                    : "w-2 bg-[#111111]/20 dark:bg-white/20 hover:bg-[#2F6BFF]/50"
+                    : "w-2 bg-[#0F172A]/20 dark:bg-white/20 hover:bg-[#2F6BFF]/50"
                 }`}
                 aria-label={`Go to slide ${idx + 1}`}
               />
@@ -273,7 +273,7 @@ export function CapabilitiesDeckModal({ isOpen, onClose }) {
                 sound.playHover();
                 setCurrentSlide((s) => (s - 1 + DECK_SLIDES.length) % DECK_SLIDES.length);
               }}
-              className="px-3.5 py-1.5 rounded-xs border border-[#111111]/20 dark:border-white/20 font-mono text-xs hover:border-[#2F6BFF] transition-colors cursor-pointer"
+              className="px-4 py-1.5 rounded-full border border-[#0F172A]/15 dark:border-white/20 font-sans text-xs font-semibold hover:border-[#2F6BFF] transition-colors cursor-pointer"
             >
               ← Prev
             </button>
@@ -283,7 +283,7 @@ export function CapabilitiesDeckModal({ isOpen, onClose }) {
                 sound.playHover();
                 setCurrentSlide((s) => (s + 1) % DECK_SLIDES.length);
               }}
-              className="px-3.5 py-1.5 rounded-xs border border-[#111111]/20 dark:border-white/20 font-mono text-xs hover:border-[#2F6BFF] transition-colors cursor-pointer"
+              className="px-4 py-1.5 rounded-full border border-[#0F172A]/15 dark:border-white/20 font-sans text-xs font-semibold hover:border-[#2F6BFF] transition-colors cursor-pointer"
             >
               Next →
             </button>
@@ -291,9 +291,10 @@ export function CapabilitiesDeckModal({ isOpen, onClose }) {
               href={site.bookingUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="link-button-solid text-xs py-2 px-4"
+              onClick={() => sound.playClick()}
+              className="link-button-solid text-xs py-2 px-5"
             >
-              Book Discovery ↗
+              Start a Project ↗
             </a>
           </div>
         </div>

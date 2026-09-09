@@ -8,10 +8,10 @@ export function Section({
   id,
 }) {
   const bg = dark
-    ? "bg-[#111111] dark:bg-[#07090D] text-white"
+    ? "bg-[#070A10] dark:bg-[#07090D] text-white"
     : paper
-    ? "bg-[#F7F2EB] dark:bg-[#12151D] text-[#111111] dark:text-[#EDEDED] transition-colors duration-300"
-    : "bg-[#FEFAF7] dark:bg-[#0E1117] text-[#111111] dark:text-[#EDEDED] transition-colors duration-300";
+    ? "bg-[#F4F4F8] dark:bg-[#0E131F] text-[#0F172A] dark:text-[#F1F5F9] transition-colors duration-300"
+    : "bg-[#FAFAFC] dark:bg-[#0B0F17] text-[#0F172A] dark:text-[#F1F5F9] transition-colors duration-300";
 
   return (
     <section id={id} className={`${bg} ${className}`}>
@@ -22,40 +22,38 @@ export function Section({
 
 export function Eyebrow({ children, className = "" }) {
   return (
-    <div className={`flex items-center gap-2 mb-4 font-mono text-[11px] uppercase tracking-[0.2em] text-[#2F6BFF] ${className}`}>
-      <span className="h-1.5 w-1.5 rounded-full bg-[#2F6BFF]" />
+    <div className={`inline-flex items-center gap-2 mb-4 rounded-full border border-[#2F6BFF]/30 bg-[#2F6BFF]/10 px-3.5 py-1 font-mono text-[11px] font-semibold uppercase tracking-[0.14em] text-[#2F6BFF] ${className}`}>
+      <span className="h-1.5 w-1.5 rounded-full bg-[#2F6BFF] animate-pulse" />
       <span>{children}</span>
     </div>
   );
 }
 
-// The signature Halveron Swiss motif: crisp 1px rule with cobalt accent
 export function GapDivider({ className = "" }) {
   return (
     <div className={`flex items-center gap-2 ${className}`} aria-hidden="true">
-      <span className="h-[1px] w-12 bg-[#111111]/30 dark:bg-white/30" />
+      <span className="h-[1px] w-12 bg-[#0F172A]/20 dark:bg-white/20" />
       <span className="h-1.5 w-1.5 rounded-full bg-[#2F6BFF]" />
-      <span className="h-[1px] w-12 bg-[#111111]/30 dark:bg-white/30" />
+      <span className="h-[1px] w-12 bg-[#0F172A]/20 dark:bg-white/20" />
     </div>
   );
 }
 
-// Section heading block: eyebrow + Swiss editorial display headline + lead paragraph.
 export function SectionHeading({ eyebrow, title, lead, dark = false, center = false }) {
   return (
     <div className={`${center ? "mx-auto text-center" : ""} max-w-3xl`}>
       {eyebrow && <Eyebrow>{eyebrow}</Eyebrow>}
       <h2
-        className={`serif-display text-4xl leading-[1.08] tracking-tight md:text-5xl lg:text-6xl ${
-          dark ? "text-white" : "text-[#111111] dark:text-white"
+        className={`heading-display mt-2 text-3xl font-extrabold leading-[1.12] tracking-[-0.03em] sm:text-4xl md:text-5xl ${
+          dark ? "text-white" : "text-[#0F172A] dark:text-white"
         }`}
       >
         {title}
       </h2>
       {lead && (
         <p
-          className={`mt-5 text-base md:text-lg leading-relaxed ${
-            dark ? "text-[#CCCCCC]" : "text-[#444444] dark:text-[#B9C1D0]"
+          className={`mt-4 text-base md:text-lg leading-relaxed ${
+            dark ? "text-[#CBD5E1]" : "text-[#64748B] dark:text-[#94A3B8]"
           }`}
         >
           {lead}

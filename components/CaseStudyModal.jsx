@@ -6,25 +6,15 @@ import { site } from "../lib/site";
 
 export function CaseStudyModal({ study, onClose }) {
   useEffect(() => {
-    if (!study) return;
-
-    sound.playOpen();
-
     const handleKeyDown = (e) => {
       if (e.key === "Escape") {
         sound.playClick();
         onClose();
       }
     };
-
-    document.body.style.overflow = "hidden";
     window.addEventListener("keydown", handleKeyDown);
-
-    return () => {
-      document.body.style.overflow = "";
-      window.removeEventListener("keydown", handleKeyDown);
-    };
-  }, [study, onClose]);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [onClose]);
 
   if (!study) return null;
 
@@ -33,11 +23,11 @@ export function CaseStudyModal({ study, onClose }) {
       role="dialog"
       aria-modal="true"
       aria-labelledby="case-study-title"
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 md:p-10 animate-riseIn"
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 md:p-10 animate-fadeIn"
     >
       {/* Backdrop */}
       <div
-        className="fixed inset-0 bg-black/70 backdrop-blur-md transition-opacity"
+        className="fixed inset-0 bg-black/80 backdrop-blur-md transition-opacity"
         onClick={() => {
           sound.playClick();
           onClose();
@@ -45,15 +35,15 @@ export function CaseStudyModal({ study, onClose }) {
         aria-hidden="true"
       />
 
-      {/* Modal Container */}
-      <div className="relative max-h-[90vh] w-full max-w-4xl overflow-y-auto rounded-md border border-[#111111]/20 dark:border-white/15 bg-[#FEFAF7] dark:bg-[#0E131F] text-[#111111] dark:text-white p-6 sm:p-10 md:p-12 shadow-2xl z-10 transition-all">
+      {/* Modal Card */}
+      <div className="relative max-h-[90vh] w-full max-w-4xl overflow-y-auto rounded-3xl border border-[#0F172A]/10 dark:border-white/15 bg-[#FAFAFC] dark:bg-[#0B0F17] text-[#0F172A] dark:text-white p-6 sm:p-10 shadow-2xl z-10">
         {/* Header Bar */}
-        <div className="flex items-center justify-between border-b border-[#111111]/10 dark:border-white/10 pb-5">
+        <div className="flex items-center justify-between border-b border-[#0F172A]/10 dark:border-white/10 pb-5">
           <div className="flex items-center gap-3">
-            <span className="tag-pill text-[#2F6BFF] border-[#2F6BFF]/40 bg-[#2F6BFF]/5 font-bold">
+            <span className="tag-pill text-[#2F6BFF] border-[#2F6BFF]/30 bg-[#2F6BFF]/10 font-bold">
               {study.industry}
             </span>
-            <span className="font-mono text-xs text-[#888888]">
+            <span className="font-mono text-xs text-[#64748B]">
               {study.year} · Case Study
             </span>
           </div>
@@ -65,7 +55,7 @@ export function CaseStudyModal({ study, onClose }) {
               onClose();
             }}
             aria-label="Close case study modal"
-            className="flex h-9 w-9 items-center justify-center rounded-xs border border-[#111111]/20 dark:border-white/20 hover:border-[#2F6BFF] dark:hover:border-[#2F6BFF] bg-transparent font-mono text-[#111111] dark:text-white transition-colors cursor-pointer"
+            className="flex h-9 w-9 items-center justify-center rounded-full border border-[#0F172A]/15 dark:border-white/20 hover:border-[#2F6BFF] dark:hover:border-[#2F6BFF] bg-transparent font-mono text-[#0F172A] dark:text-white transition-colors cursor-pointer"
           >
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
               <line x1="18" y1="6" x2="6" y2="18" />
@@ -78,29 +68,29 @@ export function CaseStudyModal({ study, onClose }) {
         <div className="mt-8">
           <h2
             id="case-study-title"
-            className="serif-display text-4xl sm:text-5xl md:text-6xl font-normal leading-tight text-[#111111] dark:text-white"
+            className="heading-display text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight text-[#0F172A] dark:text-white"
           >
             {study.title}
           </h2>
-          <p className="mt-3 font-mono text-sm sm:text-base font-semibold text-[#2F6BFF]">
+          <p className="mt-3 font-sans text-sm sm:text-base font-bold text-[#2F6BFF]">
             {study.tagline}
           </p>
-          <p className="mt-4 text-base sm:text-lg text-[#555555] dark:text-[#CCCCCC] leading-relaxed max-w-3xl">
+          <p className="mt-4 text-base sm:text-lg text-[#64748B] dark:text-[#94A3B8] leading-relaxed max-w-3xl">
             {study.summary}
           </p>
         </div>
 
         {/* Quantifiable Results Grid */}
-        <div className="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-3 border-y border-[#111111]/10 dark:border-white/10 py-6">
+        <div className="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-3 border-y border-[#0F172A]/10 dark:border-white/10 py-6">
           {study.metrics.map((m) => (
             <div
               key={m.label}
-              className="rounded-xs border border-[#111111]/10 dark:border-white/10 bg-white/60 dark:bg-white/5 p-4 text-center"
+              className="rounded-xl border border-[#0F172A]/10 dark:border-white/10 bg-white/80 dark:bg-white/5 p-4 text-center shadow-sm"
             >
-              <span className="serif-display block text-2xl sm:text-3xl font-bold text-[#2F6BFF]">
+              <span className="font-display block text-2xl sm:text-3xl font-extrabold text-[#2F6BFF]">
                 {m.value}
               </span>
-              <span className="mt-1 block font-mono text-[10px] uppercase tracking-wider text-[#777777] dark:text-[#AAAAAA]">
+              <span className="mt-1 block font-mono text-[10px] uppercase tracking-wider text-[#64748B] dark:text-[#94A3B8]">
                 {m.label}
               </span>
             </div>
@@ -108,119 +98,103 @@ export function CaseStudyModal({ study, onClose }) {
         </div>
 
         {/* Narrative Deep Dive: Challenge & Solution */}
-        <div className="mt-10 grid gap-8 md:grid-cols-2">
-          <div className="rounded-xs border border-[#111111]/15 dark:border-white/10 bg-white dark:bg-[#121826] p-6 shadow-2xs">
-            <span className="font-mono text-xs uppercase tracking-widest text-rose-500 font-bold">
+        <div className="mt-10 grid gap-6 md:grid-cols-2">
+          <div className="rounded-2xl border border-[#0F172A]/10 dark:border-white/10 bg-white dark:bg-[#121826] p-6 shadow-sm">
+            <span className="font-mono text-xs uppercase tracking-wider text-rose-500 font-bold">
               01 / The Challenge
             </span>
-            <p className="mt-3 text-sm text-[#555555] dark:text-[#CCCCCC] leading-relaxed">
+            <p className="mt-3 text-sm text-[#475569] dark:text-[#CBD5E1] leading-relaxed">
               {study.challenge}
             </p>
           </div>
 
-          <div className="rounded-xs border border-[#111111]/15 dark:border-white/10 bg-white dark:bg-[#121826] p-6 shadow-2xs">
-            <span className="font-mono text-xs uppercase tracking-widest text-emerald-500 font-bold">
-              02 / The Strategic Solution
+          <div className="rounded-2xl border border-[#0F172A]/10 dark:border-white/10 bg-white dark:bg-[#121826] p-6 shadow-sm">
+            <span className="font-mono text-xs uppercase tracking-wider text-emerald-500 font-bold">
+              02 / The Solution
             </span>
-            <p className="mt-3 text-sm text-[#555555] dark:text-[#CCCCCC] leading-relaxed">
+            <p className="mt-3 text-sm text-[#475569] dark:text-[#CBD5E1] leading-relaxed">
               {study.solution}
             </p>
           </div>
         </div>
 
-        {/* Key Deliverables & Tech Stack */}
-        <div className="mt-8 grid gap-8 md:grid-cols-2">
-          {/* Deliverables */}
+        {/* Deliverables & Technology Stack */}
+        <div className="mt-10 grid gap-6 md:grid-cols-2">
           <div>
-            <span className="font-mono text-xs uppercase tracking-widest text-[#888888] block mb-3">
-              Deliverables Shipped
+            <span className="font-mono text-xs uppercase tracking-wider text-[#64748B] dark:text-[#94A3B8] font-bold block mb-3">
+              Included Deliverables
             </span>
             <ul className="space-y-2">
               {study.deliverables.map((item) => (
                 <li
                   key={item}
-                  className="flex items-center gap-2.5 rounded-xs border border-[#111111]/10 dark:border-white/10 bg-white/40 dark:bg-white/5 px-3 py-2 font-mono text-xs text-[#333333] dark:text-[#CCCCCC]"
+                  className="flex items-center gap-2.5 font-sans text-xs text-[#334155] dark:text-[#CBD5E1]"
                 >
-                  <span className="h-1.5 w-1.5 rounded-full bg-[#2F6BFF] shrink-0" />
+                  <span className="h-1.5 w-1.5 rounded-full bg-[#2F6BFF]" />
                   <span>{item}</span>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Stack & Palette */}
-          <div className="space-y-6">
-            <div>
-              <span className="font-mono text-xs uppercase tracking-widest text-[#888888] block mb-3">
-                Technologies Utilized
-              </span>
-              <div className="flex flex-wrap gap-2">
-                {study.stack.map((t) => (
-                  <span
-                    key={t}
-                    className="tag-pill bg-[#2F6BFF]/5 border-[#2F6BFF]/30 text-[#111111] dark:text-white"
-                  >
-                    {t}
-                  </span>
-                ))}
-              </div>
-            </div>
-
-            <div>
-              <span className="font-mono text-xs uppercase tracking-widest text-[#888888] block mb-3">
-                Color Harmonization
-              </span>
-              <div className="grid grid-cols-4 gap-2">
-                {study.palette.map((c) => (
-                  <div
-                    key={c.name}
-                    className="rounded-xs border border-[#111111]/15 dark:border-white/15 p-2 text-center bg-white/40 dark:bg-white/5"
-                  >
-                    <div
-                      className="mx-auto h-5 w-5 rounded-2xs shadow-2xs border border-white/20"
-                      style={{ backgroundColor: c.hex }}
-                    />
-                    <span className="mt-1 block font-mono text-[9px] text-[#888888]">
-                      {c.hex}
-                    </span>
-                  </div>
-                ))}
-              </div>
+          <div>
+            <span className="font-mono text-xs uppercase tracking-wider text-[#64748B] dark:text-[#94A3B8] font-bold block mb-3">
+              Engineering &amp; Design Stack
+            </span>
+            <div className="flex flex-wrap gap-2">
+              {study.stack.map((t) => (
+                <span
+                  key={t}
+                  className="rounded-full border border-[#0F172A]/10 dark:border-white/10 bg-white dark:bg-white/5 px-3.5 py-1 font-sans text-xs text-[#334155] dark:text-[#CBD5E1]"
+                >
+                  {t}
+                </span>
+              ))}
             </div>
           </div>
         </div>
 
-        {/* Client Testimonial Callout */}
-        {study.testimonial && (
-          <div className="mt-10 rounded-xs border border-[#2F6BFF]/30 bg-[#2F6BFF]/5 dark:bg-[#2F6BFF]/10 p-6 md:p-8">
-            <span className="font-mono text-xs uppercase tracking-widest text-[#2F6BFF] font-bold">
-              Client Feedback
-            </span>
-            <blockquote className="serif-display mt-3 text-xl sm:text-2xl font-normal italic text-[#111111] dark:text-white leading-relaxed">
-              &ldquo;{study.testimonial.quote}&rdquo;
-            </blockquote>
-            <div className="mt-4 font-mono text-xs text-[#555555] dark:text-[#AAAAAA]">
-              <span className="font-bold text-[#111111] dark:text-white">
-                {study.testimonial.author}
-              </span>{" "}
-              · {study.testimonial.role}
+        {/* Client Quote */}
+        {study.quote && (
+          <div className="mt-10 rounded-2xl border border-[#2F6BFF]/30 bg-[#2F6BFF]/5 dark:bg-[#2F6BFF]/10 p-6 md:p-8">
+            <p className="text-base sm:text-lg italic text-[#0F172A] dark:text-white leading-relaxed">
+              &ldquo;{study.quote.text}&rdquo;
+            </p>
+            <div className="mt-4 flex items-center justify-between border-t border-[#2F6BFF]/20 pt-4">
+              <span className="heading-display font-bold text-sm text-[#0F172A] dark:text-white">
+                {study.quote.author}
+              </span>
+              <span className="font-sans text-xs text-[#64748B] dark:text-[#CBD5E1]">
+                {study.quote.role}
+              </span>
             </div>
           </div>
         )}
 
-        {/* Bottom Booking CTA */}
-        <div className="mt-10 flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-[#111111]/10 dark:border-white/10 pt-6">
-          <div className="font-mono text-xs text-[#777777]">
-            Want similar impact for your product?
-          </div>
-          <div className="flex items-center gap-3 w-full sm:w-auto">
+        {/* Footer CTA inside Modal */}
+        <div className="mt-12 flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-[#0F172A]/10 dark:border-white/10 pt-6">
+          <span className="font-sans text-xs text-[#64748B]">
+            Need a similar product built for your business?
+          </span>
+          <div className="flex items-center gap-3">
+            <button
+              type="button"
+              onClick={() => {
+                sound.playClick();
+                onClose();
+              }}
+              className="px-5 py-2.5 rounded-full border border-[#0F172A]/15 dark:border-white/20 font-sans text-xs font-semibold hover:border-[#2F6BFF] transition-colors cursor-pointer"
+            >
+              Close
+            </button>
             <a
-              href={`${site.bookingUrl}?project=${study.slug}`}
+              href={site.bookingUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="link-button-solid w-full sm:w-auto text-center"
+              onClick={() => sound.playClick()}
+              className="link-button-solid text-xs py-2.5 px-6"
             >
-              Discuss a Similar Project ↗
+              Start a Project ↗
             </a>
           </div>
         </div>

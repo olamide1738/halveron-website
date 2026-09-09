@@ -42,11 +42,11 @@ const clientIcons = {
 export function ClientLogos({ title = "Trusted by brands & visionary companies" }) {
   if (clients.length === 0) {
     return (
-      <div className="rounded-md border border-dashed border-[#111111]/20 dark:border-white/15 bg-white/40 dark:bg-white/5 px-8 py-10">
+      <div className="rounded-2xl border border-dashed border-[#0F172A]/20 dark:border-white/15 bg-white/40 dark:bg-white/5 px-8 py-10">
         <div className="flex flex-col items-start gap-5 md:flex-row md:items-center md:justify-between">
           <div>
             <GapMotif />
-            <p className="mt-4 max-w-xl text-sm text-[#555555] dark:text-[#CCCCCC]">
+            <p className="mt-4 max-w-xl text-sm text-[#64748B] dark:text-[#94A3B8]">
               We name clients here once engagements complete and we have their permission, not before.
             </p>
           </div>
@@ -64,28 +64,28 @@ export function ClientLogos({ title = "Trusted by brands & visionary companies" 
   return (
     <div className="relative">
       <div className="flex items-center justify-between">
-        <h2 className="font-mono text-xs font-bold uppercase tracking-[0.18em] text-[#2F6BFF]">
+        <h2 className="font-mono text-xs font-bold uppercase tracking-wider text-[#2F6BFF]">
           {title}
         </h2>
-        <span className="hidden sm:inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.14em] text-[#777777] dark:text-[#AAAAAA]">
-          <span className="h-1.5 w-1.5 rounded-full bg-[#2F6BFF]" />
+        <span className="hidden sm:inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-wider text-[#64748B] dark:text-[#94A3B8]">
+          <span className="h-1.5 w-1.5 rounded-full bg-[#2F6BFF] animate-pulse" />
           Active Engagements
         </span>
       </div>
 
-      {/* Infinite Swiss Marquee */}
-      <div className="group relative mt-6 overflow-hidden rounded-md border border-[#111111]/15 dark:border-white/10 bg-white/50 dark:bg-white/5 py-4 shadow-2xs">
+      {/* Infinite Smooth Marquee */}
+      <div className="group relative mt-6 overflow-hidden rounded-2xl border border-[#0F172A]/10 dark:border-white/10 bg-white/60 dark:bg-white/5 py-4 shadow-sm">
         {/* Left & Right Fade Gradients matching section background */}
-        <div className="pointer-events-none absolute left-0 top-0 bottom-0 z-10 w-16 bg-gradient-to-r from-[#F7F2EB] dark:from-[#12151D] to-transparent" />
-        <div className="pointer-events-none absolute right-0 top-0 bottom-0 z-10 w-16 bg-gradient-to-l from-[#F7F2EB] dark:from-[#12151D] to-transparent" />
+        <div className="pointer-events-none absolute left-0 top-0 bottom-0 z-10 w-20 bg-gradient-to-r from-[#F4F4F8] dark:from-[#0E131F] to-transparent" />
+        <div className="pointer-events-none absolute right-0 top-0 bottom-0 z-10 w-20 bg-gradient-to-l from-[#F4F4F8] dark:from-[#0E131F] to-transparent" />
 
         <div className="marquee-track flex w-max gap-4">
           {marqueeList.map((c, idx) => (
             <div
               key={`${c.name}-${idx}`}
-              className="flex items-center gap-3.5 rounded-xs border border-[#111111]/10 dark:border-white/10 bg-white dark:bg-[#121826] px-5 py-3 shadow-2xs transition-all duration-200 hover:border-[#2F6BFF]/40 shrink-0"
+              className="flex items-center gap-3.5 rounded-xl border border-[#0F172A]/10 dark:border-white/10 bg-white dark:bg-[#121826] px-5 py-3.5 shadow-2xs transition-all duration-200 hover:border-[#2F6BFF]/40 shrink-0"
             >
-              <div className="flex h-9 w-9 items-center justify-center rounded-xs bg-[#2F6BFF]/10 text-[#2F6BFF]">
+              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#2F6BFF]/10 text-[#2F6BFF]">
                 {clientIcons[c.name] ?? (
                   <span className="font-mono font-bold text-xs">
                     {c.name.substring(0, 2).toUpperCase()}
@@ -93,10 +93,10 @@ export function ClientLogos({ title = "Trusted by brands & visionary companies" 
                 )}
               </div>
               <div>
-                <h4 className="serif-display text-base font-normal text-[#111111] dark:text-white leading-tight">
+                <h4 className="heading-display text-base font-bold text-[#0F172A] dark:text-white leading-tight">
                   {c.name}
                 </h4>
-                <p className="font-mono text-[10px] uppercase tracking-wider text-[#777777] dark:text-[#AAAAAA]">
+                <p className="font-sans text-xs text-[#64748B] dark:text-[#94A3B8]">
                   {c.scope || c.industry}
                 </p>
               </div>

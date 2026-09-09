@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Section, Eyebrow, SectionHeading } from "../../components/Section";
+import { Section, SectionHeading } from "../../components/Section";
 import { CTASection } from "../../components/CTASection";
 import { TeamGrid } from "../../components/TeamGrid";
 import { ComparisonSection } from "../../components/ComparisonSection";
@@ -16,21 +16,21 @@ export default function AboutPage() {
   return (
     <>
       {/* 1. HERO BANNER */}
-      <section className="relative overflow-hidden bg-[#FEFAF7] dark:bg-[#0B0F17] text-[#111111] dark:text-white pt-24 pb-20 md:pt-36 md:pb-28 border-b border-[#111111]/10 dark:border-white/10 transition-colors duration-300">
+      <section className="relative overflow-hidden bg-[#FAFAFC] dark:bg-[#0B0F17] text-[#0F172A] dark:text-white pt-24 pb-20 md:pt-36 md:pb-28 border-b border-[#0F172A]/10 dark:border-white/10 transition-colors duration-300">
         <div className="container-hal relative z-10">
           <div className="max-w-4xl">
-            <div className="inline-flex items-center gap-2 rounded-xs border border-[#111111]/20 dark:border-white/20 px-3.5 py-1.5 font-mono text-[11px] uppercase tracking-[0.16em] text-[#2F6BFF]">
-              <span className="h-1.5 w-1.5 rounded-full bg-[#2F6BFF]" />
-              <span>03 / About Halveron Studio</span>
+            <div className="inline-flex items-center gap-2 rounded-full border border-[#2F6BFF]/30 bg-[#2F6BFF]/10 px-4 py-1.5 font-mono text-[11px] font-bold uppercase tracking-[0.14em] text-[#2F6BFF]">
+              <span className="h-2 w-2 rounded-full bg-[#2F6BFF] animate-pulse" />
+              <span>About Halveron Studio</span>
             </div>
 
-            <h1 className="serif-display mt-8 text-5xl leading-[1.04] tracking-tight md:text-7xl lg:text-8xl text-[#111111] dark:text-white">
+            <h1 className="heading-display mt-6 text-4xl font-extrabold leading-[1.08] tracking-[-0.03em] sm:text-5xl md:text-6xl lg:text-7xl text-[#0F172A] dark:text-white">
               We turn your ideas into{" "}
-              <span className="serif-italic text-[#2F6BFF]">finished, working</span> products.
+              <span className="text-[#2F6BFF]">high-performing, finished</span> digital products.
             </h1>
 
-            <p className="mt-8 max-w-2xl text-lg md:text-xl font-light text-[#444444] dark:text-[#CCCCCC] leading-relaxed">
-              Halveron is an independent digital product studio and agency. We unite strategy, visual design, mobile apps, websites, and branding under one roof, taking you from napkin sketch to a successful market launch.
+            <p className="mt-6 max-w-2xl text-base sm:text-lg text-[#64748B] dark:text-[#94A3B8] leading-relaxed">
+              Halveron is an independent digital product studio and agency. We unite strategy, visual design, mobile apps, custom websites, and branding under one roof, taking you from napkin sketch to a successful market launch.
             </p>
           </div>
         </div>
@@ -46,48 +46,48 @@ export default function AboutPage() {
 
         <div className="mt-14 grid gap-6 md:grid-cols-3">
           <Reveal delay={0}>
-            <div className="rounded-md border border-[#111111]/15 dark:border-white/10 bg-white dark:bg-[#121826] p-8 flex h-full flex-col justify-between shadow-sm">
+            <div className="agency-card flex h-full flex-col justify-between">
               <div>
                 <span className="font-mono text-xs font-bold text-[#2F6BFF]">
                   01 / The Challenge
                 </span>
-                <h3 className="serif-display mt-5 text-2xl font-normal text-[#111111] dark:text-white">
+                <h3 className="heading-display mt-4 text-xl font-bold text-[#0F172A] dark:text-white">
                   The Disconnected Vendor Problem
                 </h3>
-                <p className="mt-4 text-sm text-[#555555] dark:text-[#CCCCCC] leading-relaxed">
+                <p className="mt-3 text-sm text-[#64748B] dark:text-[#94A3B8] leading-relaxed">
                   Most projects get split between a freelance designer, an offshore coder, and a separate branding agency. Details get lost in translation, quality drops, and nobody takes full responsibility.
                 </p>
               </div>
             </div>
           </Reveal>
 
-          <Reveal delay={60}>
-            <div className="rounded-md border border-[#2F6BFF] bg-white dark:bg-[#121826] p-8 flex h-full flex-col justify-between shadow-md">
+          <Reveal delay={80}>
+            <div className="agency-card flex h-full flex-col justify-between">
               <div>
                 <span className="font-mono text-xs font-bold text-[#2F6BFF]">
-                  02 / The Solution
+                  02 / The Halveron Solution
                 </span>
-                <h3 className="serif-display mt-5 text-2xl font-normal text-[#111111] dark:text-white">
-                  The All-in-One Studio Model
+                <h3 className="heading-display mt-4 text-xl font-bold text-[#0F172A] dark:text-white">
+                  United Senior Makers
                 </h3>
-                <p className="mt-4 text-sm text-[#555555] dark:text-[#CCCCCC] leading-relaxed">
-                  Halveron handles everything together: planning, visual design, custom development, testing, and launch. One friendly point of contact, one shared schedule, and senior accountability.
+                <p className="mt-3 text-sm text-[#64748B] dark:text-[#94A3B8] leading-relaxed">
+                  We united senior brand designers, product strategists, and full-stack software engineers under one roof. You speak directly to the creators building your product.
                 </p>
               </div>
             </div>
           </Reveal>
 
-          <Reveal delay={120}>
-            <div className="rounded-md border border-[#111111]/15 dark:border-white/10 bg-white dark:bg-[#121826] p-8 flex h-full flex-col justify-between shadow-sm">
+          <Reveal delay={160}>
+            <div className="agency-card flex h-full flex-col justify-between">
               <div>
                 <span className="font-mono text-xs font-bold text-[#2F6BFF]">
-                  03 / The Advantage
+                  03 / The Commercial Result
                 </span>
-                <h3 className="serif-display mt-5 text-2xl font-normal text-[#111111] dark:text-white">
-                  Global Quality &amp; Great Value
+                <h3 className="heading-display mt-4 text-xl font-bold text-[#0F172A] dark:text-white">
+                  Fast, Beautiful &amp; High-Converting
                 </h3>
-                <p className="mt-4 text-sm text-[#555555] dark:text-[#CCCCCC] leading-relaxed">
-                  Based in Lagos (UTC+1), we provide seamless real-time communication with Europe, the UK, and US mornings, offering world-class design at up to 50% better value.
+                <p className="mt-3 text-sm text-[#64748B] dark:text-[#94A3B8] leading-relaxed">
+                  Products launched in weeks instead of quarters, with 99+ speed scores, high conversion rates, and 100% intellectual property ownership from day one.
                 </p>
               </div>
             </div>
@@ -98,23 +98,23 @@ export default function AboutPage() {
       {/* 3. CORE PRINCIPLES */}
       <Section className="relative overflow-hidden py-24">
         <SectionHeading
-          eyebrow="What We Stand For"
-          title="Principles we don't compromise on."
-          lead="Building products requires discipline, clear communication, and unyielding code quality."
+          eyebrow="Our Principles"
+          title="How we operate every single day."
+          lead="Four fundamental operating tenets that guide every design file, line of code, and client interaction."
         />
 
         <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {differentiators.map((d, idx) => (
             <Reveal key={d.title} delay={idx * 60}>
-              <div className="swiss-card flex h-full flex-col justify-between">
+              <div className="agency-card flex h-full flex-col justify-between">
                 <div>
-                  <span className="font-mono text-xs font-bold text-[#2F6BFF]">
+                  <span className="font-display text-3xl font-extrabold text-[#2F6BFF]">
                     0{idx + 1}
                   </span>
-                  <h3 className="serif-display mt-4 text-2xl font-normal text-[#111111] dark:text-white">
+                  <h3 className="heading-display mt-4 text-lg font-bold text-[#0F172A] dark:text-white">
                     {d.title}
                   </h3>
-                  <p className="mt-3 text-sm text-[#555555] dark:text-[#CCCCCC] leading-relaxed">
+                  <p className="mt-2 text-sm text-[#64748B] dark:text-[#94A3B8] leading-relaxed">
                     {d.body}
                   </p>
                 </div>
@@ -124,24 +124,26 @@ export default function AboutPage() {
         </div>
       </Section>
 
+      {/* 4. COMPARISON MATRIX */}
+      <ComparisonSection />
 
-      {/* 5. TEAM GRID */}
-      <Section className="relative overflow-hidden py-24">
+      {/* 5. TEAM */}
+      <Section paper className="py-24">
         <SectionHeading
-          eyebrow="Who You'll Work With"
-          title="The senior team, not the pitch team."
-          lead="You meet the engineers and designers who do the work at kickoff, and they stay on your product."
+          eyebrow="Studio Leadership"
+          title="The practitioners behind your product."
+          lead="Direct access to experienced makers with backgrounds in high-growth startups and global product agencies."
         />
-        <div className="mt-12">
+        <div className="mt-14">
           <TeamGrid />
         </div>
       </Section>
 
-      {/* 6. COMPARISON MATRIX */}
-      <ComparisonSection />
-
-      {/* 7. CTA BANNER */}
-      <CTASection title="Let's build something worth owning." />
+      {/* 6. CTA */}
+      <CTASection
+        title="Ready to discuss your project?"
+        lead="Book a free 20-minute strategy call with our principal engineer."
+      />
     </>
   );
 }

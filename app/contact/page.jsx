@@ -1,4 +1,4 @@
-import { Section, Eyebrow, SectionHeading } from "../../components/Section";
+import { Section, SectionHeading } from "../../components/Section";
 import { ContactForm } from "../../components/ContactForm";
 import { Reveal } from "../../components/Reveal";
 import { site, faqs } from "../../lib/site";
@@ -13,22 +13,22 @@ export default function ContactPage() {
   return (
     <>
       {/* 1. HERO BANNER & CONTACT FORM */}
-      <section className="relative overflow-hidden bg-[#FEFAF7] dark:bg-[#0B0F17] text-[#111111] dark:text-white pt-24 pb-20 md:pt-36 md:pb-28 border-b border-[#111111]/10 dark:border-white/10 transition-colors duration-300">
+      <section className="relative overflow-hidden bg-[#FAFAFC] dark:bg-[#0B0F17] text-[#0F172A] dark:text-white pt-24 pb-20 md:pt-36 md:pb-28 border-b border-[#0F172A]/10 dark:border-white/10 transition-colors duration-300">
         <div className="container-hal relative z-10">
           <div className="grid gap-12 lg:grid-cols-2 lg:items-start">
             <div>
-              <div className="inline-flex items-center gap-2 rounded-xs border border-[#111111]/20 dark:border-white/20 px-3.5 py-1.5 font-mono text-[11px] uppercase tracking-[0.16em] text-[#2F6BFF]">
-                <span className="h-1.5 w-1.5 rounded-full bg-[#2F6BFF]" />
-                <span>04 / Inquire Project</span>
+              <div className="inline-flex items-center gap-2 rounded-full border border-[#2F6BFF]/30 bg-[#2F6BFF]/10 px-4 py-1.5 font-mono text-[11px] font-bold uppercase tracking-[0.14em] text-[#2F6BFF]">
+                <span className="h-2 w-2 rounded-full bg-[#2F6BFF] animate-pulse" />
+                <span>Start a Project</span>
               </div>
 
-              <h1 className="serif-display mt-8 text-5xl leading-[1.04] tracking-tight md:text-7xl font-normal text-[#111111] dark:text-white">
+              <h1 className="heading-display mt-6 text-4xl font-extrabold leading-[1.08] tracking-[-0.03em] sm:text-5xl md:text-6xl text-[#0F172A] dark:text-white">
                 Tell us what you&apos;re{" "}
-                <span className="serif-italic text-[#2F6BFF]">building.</span>
+                <span className="text-[#2F6BFF]">building.</span>
               </h1>
 
-              <p className="mt-6 max-w-md text-base md:text-lg text-[#555555] dark:text-[#CCCCCC] leading-relaxed">
-                The fastest way to start is a discovery call. It takes 30 minutes to understand your requirements and give you honest advice on timeline, scope, and fixed pricing.
+              <p className="mt-6 max-w-md text-base md:text-lg text-[#64748B] dark:text-[#94A3B8] leading-relaxed">
+                The fastest way to start is a discovery call. It takes 20 minutes to understand your goals and give you honest advice on timeline, scope, and fixed pricing.
               </p>
 
               <div className="mt-8">
@@ -36,79 +36,79 @@ export default function ContactPage() {
                   href={site.bookingUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="link-button-solid"
+                  className="link-button-solid text-sm py-3 px-6"
                 >
-                  Book a Discovery Call ↗
+                  <span>Book a Discovery Call</span>
+                  <span className="text-white/80">↗</span>
                 </a>
               </div>
 
               {/* Direct Info List */}
-              <div className="mt-12 space-y-4 border-t border-[#111111]/10 dark:border-white/10 pt-8 font-mono text-xs">
-                <div className="flex items-baseline justify-between border-b border-[#111111]/10 dark:border-white/10 pb-3">
-                  <span className="text-[#888888] uppercase">Email</span>
+              <div className="mt-12 space-y-4 border-t border-[#0F172A]/10 dark:border-white/10 pt-8 font-mono text-xs">
+                <div className="flex items-baseline justify-between border-b border-[#0F172A]/10 dark:border-white/10 pb-3">
+                  <span className="text-[#64748B] uppercase">Email</span>
                   <a
                     href={`mailto:${site.email}`}
-                    className="line-btm-ani text-[#111111] dark:text-white font-bold hover:text-[#2F6BFF]"
+                    className="line-btm-ani text-[#0F172A] dark:text-white font-bold hover:text-[#2F6BFF]"
                   >
                     {site.email}
                   </a>
                 </div>
 
-                <div className="flex items-baseline justify-between border-b border-[#111111]/10 dark:border-white/10 pb-3">
-                  <span className="text-[#888888] uppercase">Studio Location</span>
-                  <span className="text-[#111111] dark:text-white">{site.location}</span>
+                <div className="flex items-baseline justify-between border-b border-[#0F172A]/10 dark:border-white/10 pb-3">
+                  <span className="text-[#64748B] uppercase">Studio Location</span>
+                  <span className="text-[#0F172A] dark:text-white">{site.location}</span>
                 </div>
 
-                <div className="flex items-baseline justify-between border-b border-[#111111]/10 dark:border-white/10 pb-3">
-                  <span className="text-[#888888] uppercase">Timezone</span>
-                  <span className="text-[#111111] dark:text-white">UTC+1 · Full EU &amp; US Overlap</span>
+                <div className="flex items-baseline justify-between border-b border-[#0F172A]/10 dark:border-white/10 pb-3">
+                  <span className="text-[#64748B] uppercase">Working Hours</span>
+                  <span className="text-[#0F172A] dark:text-white">{site.hours}</span>
                 </div>
 
-                <div className="flex items-baseline justify-between pb-1">
-                  <span className="text-[#888888] uppercase">Response Time</span>
-                  <span className="text-[#2F6BFF] font-bold">Within 24 Hours</span>
+                <div className="flex items-baseline justify-between pb-3">
+                  <span className="text-[#64748B] uppercase">Response Time</span>
+                  <span className="text-[#2F6BFF] font-bold">&lt; 24 business hours</span>
                 </div>
               </div>
             </div>
 
-            {/* Interactive Brief Form */}
-            <ContactForm />
+            {/* Right Column: Interactive Brief Form */}
+            <div>
+              <div className="mb-4">
+                <span className="font-mono text-xs font-bold uppercase tracking-wider text-[#2F6BFF]">
+                  Or Send Us a Detailed Brief
+                </span>
+              </div>
+              <ContactForm />
+            </div>
           </div>
         </div>
       </section>
 
-      {/* 2. FREQUENTLY ASKED QUESTIONS */}
-      <Section paper className="relative overflow-hidden py-24">
-        <div className="grid gap-12 lg:grid-cols-[1fr_1.6fr]">
-          <div>
-            <Eyebrow>Before You Ask</Eyebrow>
-            <h2 className="serif-display text-4xl leading-tight font-normal text-[#111111] dark:text-white md:text-5xl">
-              Questions we hear often.
-            </h2>
-            <p className="mt-4 max-w-prose text-base text-[#555555] dark:text-[#CCCCCC] leading-relaxed">
-              Everything you need to know about IP ownership, timelines, working across timezones, and project costs.
-            </p>
-          </div>
+      {/* 2. FAQ SECTION */}
+      <Section paper className="py-24">
+        <SectionHeading
+          eyebrow="Before You Reach Out"
+          title="Common questions about kickoff &amp; pricing."
+          lead="Answers to the questions founders ask us most before our first call."
+        />
 
-          <div className="divide-y divide-[#111111]/15 dark:divide-white/10 border-t border-[#111111]/15 dark:border-white/10">
-            {faqs.map((f, idx) => (
-              <Reveal key={f.q} delay={idx * 60}>
-                <details className="group py-6">
-                  <summary className="flex cursor-pointer list-none items-center justify-between gap-6 rounded-xl text-left [&::-webkit-details-marker]:hidden">
-                    <span className="serif-display text-xl md:text-2xl font-normal text-[#111111] dark:text-white group-hover:text-[#2F6BFF] transition-colors">
-                      {f.q}
-                    </span>
-                    <span className="font-mono text-xl text-[#2F6BFF] transition-transform duration-200 group-open:rotate-45">
-                      +
-                    </span>
-                  </summary>
-                  <p className="mt-4 max-w-prose text-sm md:text-base leading-relaxed text-[#555555] dark:text-[#CCCCCC]">
-                    {f.a}
-                  </p>
-                </details>
-              </Reveal>
-            ))}
-          </div>
+        <div className="mt-14 divide-y divide-[#0F172A]/10 dark:divide-white/10 border-t border-[#0F172A]/10 dark:border-white/10">
+          {faqs.slice(0, 4).map((f) => (
+            <details key={f.q} className="group py-6">
+              <summary className="flex cursor-pointer list-none items-center justify-between gap-6 text-left [&::-webkit-details-marker]:hidden">
+                <span className="heading-display text-lg font-bold text-[#0F172A] dark:text-white group-hover:text-[#2F6BFF] transition-colors">
+                  {f.q}
+                </span>
+                <span className="font-mono text-lg text-[#2F6BFF] transition-transform duration-200 group-open:rotate-45">
+                  +
+                </span>
+              </summary>
+              <p className="mt-4 max-w-prose text-sm md:text-base leading-relaxed text-[#64748B] dark:text-[#94A3B8]">
+                {f.a}
+              </p>
+            </details>
+          ))}
         </div>
       </Section>
     </>
