@@ -7,10 +7,9 @@ import { CaseStudyModal } from "./CaseStudyModal";
 
 const CATEGORIES = [
   "All Work",
-  "Eyewear & Optical",
-  "Automotive SaaS",
-  "Education & Training",
-  "Fitness & Equipment",
+  "Architecture & Living",
+  "Artisanal Studio & E-Commerce",
+  "Commercial Architecture",
 ];
 
 export function WorkGrid() {
