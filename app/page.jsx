@@ -6,6 +6,7 @@ import { Testimonials } from "../components/Testimonials";
 import { Reveal } from "../components/Reveal";
 import { PageLoader } from "../components/PageLoader";
 import { FeaturedShowcase } from "../components/FeaturedShowcase";
+import { FAQSection } from "../components/FAQSection";
 import { HeroBackground } from "../components/HeroBackground";
 import { HeroVisual } from "../components/HeroVisual";
 import {
@@ -105,32 +106,6 @@ export default function HomePage() {
                   <span className="text-[#2F6BFF]">↓</span>
                 </Link>
               </div>
-
-              {/* Trust Proof Ribbon */}
-              <div className="mt-12 flex flex-wrap items-center gap-x-6 gap-y-3 border-t border-[#0F172A]/10 dark:border-white/10 pt-6 font-mono text-xs text-[#64748B] dark:text-[#94A3B8]">
-                <div className="flex items-center gap-2">
-                  <div className="flex items-center gap-0.5 text-[#2F6BFF]">
-                    {[...Array(5)].map((_, i) => (
-                      <svg key={i} width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
-                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-                      </svg>
-                    ))}
-                  </div>
-                  <span className="font-bold text-[#0F172A] dark:text-white">5.0 Star Rating</span>
-                </div>
-                <span>·</span>
-                <div>
-                  <span className="font-bold text-[#0F172A] dark:text-white">100+</span> Projects Shipped
-                </div>
-                <span>·</span>
-                <div>
-                  <span className="font-bold text-[#0F172A] dark:text-white">Bespoke</span> WordPress &amp; Next.js
-                </div>
-                <span>·</span>
-                <div>
-                  <span className="font-bold text-[#0F172A] dark:text-white">UK &amp; Global</span> Clients
-                </div>
-              </div>
             </div>
 
             {/* Right Column: Visual Showcase Frame */}
@@ -141,10 +116,10 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 2. CLIENT LOGOS MARQUEE */}
-      <Section paper className="relative border-y border-[#0F172A]/10 dark:border-white/10 py-14">
+      {/* 2. CLIENT LOGOS MARQUEE (FULL WIDTH) */}
+      <section className="relative w-full border-y border-[#0F172A]/10 dark:border-white/10 bg-[#F4F4F8] dark:bg-[#0E131F] py-12 md:py-16 overflow-hidden transition-colors duration-300">
         <ClientLogos title="Trusted by ambitious brands & visionary companies" />
-      </Section>
+      </section>
 
       {/* 3. ABOUT STATEMENT BANNER */}
       <section className="py-20 md:py-28 border-b border-[#0F172A]/10 dark:border-white/10 bg-white dark:bg-[#0E131F]">
@@ -258,44 +233,7 @@ export default function HomePage() {
       />
 
       {/* 8. FAQ SECTION */}
-      <Section>
-        <div className="grid gap-12 md:grid-cols-[1fr_1.6fr]">
-          <div>
-            <div className="inline-flex items-center gap-2 rounded-full border border-[#2F6BFF]/30 bg-[#2F6BFF]/10 px-4 py-1.5 font-mono text-[11px] font-bold uppercase tracking-[0.14em] text-[#2F6BFF] mb-4">
-              <span>FAQ</span>
-            </div>
-            <h2 className="heading-display text-3xl font-extrabold leading-tight md:text-4xl text-[#0F172A] dark:text-white">
-              Frequently asked questions.
-            </h2>
-            <p className="mt-4 text-base text-[#64748B] dark:text-[#94A3B8] leading-relaxed">
-              Have a question about your timeline, budget, or technical stack? We are always here to help.
-            </p>
-            <div className="mt-8">
-              <Link href="/contact" className="link-button">
-                Ask Us Directly ↗
-              </Link>
-            </div>
-          </div>
-
-          <div className="divide-y divide-[#0F172A]/10 dark:divide-white/10 border-t border-[#0F172A]/10 dark:border-white/10">
-            {faqs.map((f) => (
-              <details key={f.q} className="group py-6">
-                <summary className="flex cursor-pointer list-none items-center justify-between gap-6 text-left [&::-webkit-details-marker]:hidden">
-                  <span className="heading-display text-lg font-bold text-[#0F172A] dark:text-white group-hover:text-[#2F6BFF] transition-colors">
-                    {f.q}
-                  </span>
-                  <span className="font-mono text-lg text-[#2F6BFF] transition-transform duration-200 group-open:rotate-45">
-                    +
-                  </span>
-                </summary>
-                <p className="mt-4 max-w-prose text-sm md:text-base leading-relaxed text-[#64748B] dark:text-[#94A3B8]">
-                  {f.a}
-                </p>
-              </details>
-            ))}
-          </div>
-        </div>
-      </Section>
+      <FAQSection />
 
       {/* 9. FINAL CTA */}
       <CTASection

@@ -58,12 +58,13 @@ export function ClientLogos({ title = "Trusted by brands & visionary companies" 
     );
   }
 
-  // Duplicate list for infinite smooth marquee
-  const marqueeList = [...clients, ...clients];
+  // Duplicate list for seamless infinite full-width marquee
+  const marqueeList = [...clients, ...clients, ...clients];
 
   return (
-    <div className="relative">
-      <div className="flex items-center justify-between">
+    <div className="relative w-full">
+      {/* Title & Status Badge inside Container */}
+      <div className="container-hal mb-6 flex items-center justify-between">
         <h2 className="font-mono text-xs font-bold uppercase tracking-wider text-[#2F6BFF]">
           {title}
         </h2>
@@ -73,19 +74,19 @@ export function ClientLogos({ title = "Trusted by brands & visionary companies" 
         </span>
       </div>
 
-      {/* Infinite Smooth Marquee */}
-      <div className="group relative mt-6 overflow-hidden rounded-2xl border border-[#0F172A]/10 dark:border-white/10 bg-white/60 dark:bg-white/5 py-4 shadow-sm">
-        {/* Left & Right Fade Gradients matching section background */}
-        <div className="pointer-events-none absolute left-0 top-0 bottom-0 z-10 w-20 bg-gradient-to-r from-[#F4F4F8] dark:from-[#0E131F] to-transparent" />
-        <div className="pointer-events-none absolute right-0 top-0 bottom-0 z-10 w-20 bg-gradient-to-l from-[#F4F4F8] dark:from-[#0E131F] to-transparent" />
+      {/* Full-Width Infinite Smooth Marquee */}
+      <div className="group relative w-full overflow-hidden py-3">
+        {/* Left & Right Fade Gradients */}
+        <div className="pointer-events-none absolute left-0 top-0 bottom-0 z-10 w-24 sm:w-48 bg-gradient-to-r from-[#F4F4F8] dark:from-[#0E131F] to-transparent" />
+        <div className="pointer-events-none absolute right-0 top-0 bottom-0 z-10 w-24 sm:w-48 bg-gradient-to-l from-[#F4F4F8] dark:from-[#0E131F] to-transparent" />
 
         <div className="marquee-track flex w-max gap-4">
           {marqueeList.map((c, idx) => (
             <div
               key={`${c.name}-${idx}`}
-              className="flex items-center gap-3.5 rounded-xl border border-[#0F172A]/10 dark:border-white/10 bg-white dark:bg-[#121826] px-5 py-3.5 shadow-2xs transition-all duration-200 hover:border-[#2F6BFF]/40 shrink-0"
+              className="flex items-center gap-3.5 rounded-2xl border border-[#0F172A]/10 dark:border-white/10 bg-white dark:bg-[#121826] px-6 py-4 shadow-sm transition-all duration-200 hover:border-[#2F6BFF]/40 shrink-0"
             >
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#2F6BFF]/10 text-[#2F6BFF]">
+              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#2F6BFF]/10 text-[#2F6BFF]">
                 {clientIcons[c.name] ?? (
                   <span className="font-mono font-bold text-xs">
                     {c.name.substring(0, 2).toUpperCase()}
