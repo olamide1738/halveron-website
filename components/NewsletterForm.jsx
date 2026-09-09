@@ -58,14 +58,14 @@ export function NewsletterForm() {
             name="email"
             type="email"
             required
-            placeholder="your-email@company.com"
-            className="min-w-0 flex-1 rounded-xs border border-[#111111]/30 dark:border-white/20 bg-transparent px-3.5 py-2.5 font-mono text-xs text-[#111111] dark:text-white placeholder:text-[#888888] focus:border-[#2F6BFF] focus:outline-none"
+            placeholder="Enter your email"
+            className="min-w-0 flex-1 rounded-full border border-[#0F172A]/15 dark:border-white/15 bg-white/60 dark:bg-white/5 px-4 py-2.5 font-sans text-xs text-[#0F172A] dark:text-white placeholder:text-[#64748B] dark:placeholder:text-[#94A3B8] focus:border-[#2F6BFF] focus:outline-none transition-colors"
           />
           <button
             type="submit"
             disabled={status === "sending"}
             aria-busy={status === "sending"}
-            className="link-button px-4 py-2.5 text-[11px] disabled:opacity-60"
+            className="link-button-solid px-5 py-2.5 text-xs shrink-0 disabled:opacity-60"
           >
             {status === "sending" ? "…" : "Subscribe ↗"}
           </button>
