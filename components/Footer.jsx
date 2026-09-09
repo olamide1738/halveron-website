@@ -41,10 +41,6 @@ export function Footer() {
         <div className="rounded-3xl border border-[#0F172A]/10 dark:border-white/10 bg-white dark:bg-[#101623] p-8 md:p-12 shadow-sm mb-16">
           <div className="grid gap-8 lg:grid-cols-[1.3fr_0.9fr] lg:items-center">
             <div>
-              <div className="inline-flex items-center gap-2 rounded-full border border-[#2F6BFF]/30 bg-[#2F6BFF]/10 px-3.5 py-1 font-mono text-[11px] font-bold uppercase tracking-[0.14em] text-[#2F6BFF] mb-4">
-                <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
-                <span>Available for new projects · 2026</span>
-              </div>
               <h3 className="heading-display text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#0F172A] dark:text-white leading-tight">
                 Have a project in mind? Let&apos;s build something extraordinary.
               </h3>
@@ -173,12 +169,9 @@ export function Footer() {
               <li>
                 <Link
                   href="/careers"
-                  className="group inline-flex items-center gap-2 text-[#475569] dark:text-[#CBD5E1] hover:text-[#2F6BFF] font-medium transition-all hover:translate-x-1"
+                  className="group inline-flex items-center gap-1.5 text-[#475569] dark:text-[#CBD5E1] hover:text-[#2F6BFF] font-medium transition-all hover:translate-x-1"
                 >
                   <span>Careers</span>
-                  <span className="rounded-full border border-emerald-500/30 bg-emerald-500/10 px-2 py-0.5 font-mono text-[10px] font-bold text-emerald-600 dark:text-emerald-400">
-                    We&apos;re Hiring
-                  </span>
                 </Link>
               </li>
             </ul>

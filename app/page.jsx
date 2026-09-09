@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { Section, SectionHeading } from "../components/Section";
-import { CTASection } from "../components/CTASection";
 import { ClientLogos } from "../components/ClientLogos";
 import { Testimonials } from "../components/Testimonials";
 import { Reveal } from "../components/Reveal";
@@ -234,12 +233,6 @@ export default function HomePage() {
 
       {/* 8. FAQ SECTION */}
       <FAQSection />
-
-      {/* 9. FINAL CTA */}
-      <CTASection
-        title="Ready to elevate your brand online?"
-        lead="Contact our friendly team today for a free discovery call and quote tailored to your business."
-      />
     </>
   );
 }
