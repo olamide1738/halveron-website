@@ -4,9 +4,14 @@ import { useState } from "react";
 import { Reveal } from "./Reveal";
 import { caseStudies } from "../lib/case-studies";
 import { CaseStudyModal } from "./CaseStudyModal";
-import { sound } from "../lib/sound";
 
-const CATEGORIES = ["All Work", "Fintech & Payments", "Software & AI", "E-Commerce & Retail", "Logistics & Transport"];
+const CATEGORIES = [
+  "All Work",
+  "Eyewear & Optical",
+  "Automotive SaaS",
+  "Education & Training",
+  "Fitness & Equipment",
+];
 
 export function WorkGrid() {
   const [activeCategory, setActiveCategory] = useState("All Work");
@@ -18,7 +23,6 @@ export function WorkGrid() {
       : caseStudies.filter((s) => s.industry === activeCategory);
 
   const handleOpenStudy = (study) => {
-    sound.playClick();
     setSelectedStudy(study);
   };
 
@@ -32,10 +36,7 @@ export function WorkGrid() {
             <button
               key={cat}
               type="button"
-              onClick={() => {
-                sound.playHover();
-                setActiveCategory(cat);
-              }}
+              onClick={() => setActiveCategory(cat)}
               className={`rounded-full px-5 py-2.5 font-sans text-xs font-semibold transition-all duration-200 cursor-pointer ${
                 isActive
                   ? "bg-[#2F6BFF] text-white shadow-xs"
@@ -67,7 +68,7 @@ export function WorkGrid() {
                       <span className="h-2.5 w-2.5 rounded-full bg-emerald-500/80" />
                     </div>
                     <div className="truncate font-mono text-[10px] text-white/50">
-                      halveron.studio/case/{study.slug}
+                      halveron.com/work/{study.slug}
                     </div>
                     <span className="font-mono text-[10px] text-[#2F6BFF] font-bold">
                       {study.year}
@@ -111,7 +112,7 @@ export function WorkGrid() {
                       {study.service}
                     </span>
                     <span className="font-mono text-xs text-[#64748B]">
-                      Case 0{idx + 1}
+                      Project 0{idx + 1}
                     </span>
                   </div>
 
@@ -123,14 +124,14 @@ export function WorkGrid() {
                     {study.summary}
                   </p>
 
-                  {/* Tech Stack Pills */}
+                  {/* Deliverable Pills */}
                   <div className="mt-5 flex flex-wrap gap-2">
-                    {study.stack.slice(0, 4).map((tag) => (
+                    {study.deliverables.slice(0, 3).map((item) => (
                       <span
-                        key={tag}
+                        key={item}
                         className="rounded-full border border-[#0F172A]/10 dark:border-white/10 bg-[#FAFAFC] dark:bg-white/5 px-3 py-1 font-sans text-xs text-[#475569] dark:text-[#CBD5E1]"
                       >
-                        {tag}
+                        {item}
                       </span>
                     ))}
                   </div>
@@ -144,7 +145,7 @@ export function WorkGrid() {
                   onClick={() => handleOpenStudy(study)}
                   className="link-button w-full text-center"
                 >
-                  <span>Inspect Case Study Details</span>
+                  <span>View Project Case Study</span>
                   <span className="text-[#2F6BFF]">↗</span>
                 </button>
               </div>

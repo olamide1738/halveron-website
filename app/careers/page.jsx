@@ -1,33 +1,35 @@
-import { Section, Eyebrow, SectionHeading } from "../../components/Section";
+import { Section, SectionHeading } from "../../components/Section";
 import { CTASection } from "../../components/CTASection";
 import { Reveal } from "../../components/Reveal";
-import { openings, site, differentiators } from "../../lib/site";
+import { openings, site, whyChooseUs } from "../../lib/site";
 
 export const metadata = {
-  title: "Careers · Senior Product Engineering & Design Roles",
+  title: "Careers · Join Our Creative Digital Agency",
   description:
-    "Join Halveron for senior product engineering and UI/UX design roles based in Lagos, working with founders and companies worldwide.",
+    "Join Halveron for web design and development roles, creating modern digital products for ambitious brands worldwide.",
 };
 
 export default function CareersPage() {
+  const hasOpenings = openings && openings.length > 0;
+
   return (
     <>
       {/* 1. HERO BANNER */}
-      <section className="relative overflow-hidden bg-[#FEFAF7] dark:bg-[#0B0F17] text-[#111111] dark:text-white pt-24 pb-20 md:pt-36 md:pb-28 border-b border-[#111111]/10 dark:border-white/10 transition-colors duration-300">
+      <section className="relative overflow-hidden bg-[#FAFAFC] dark:bg-[#0B0F17] text-[#0F172A] dark:text-white pt-24 pb-20 md:pt-36 md:pb-28 border-b border-[#0F172A]/10 dark:border-white/10 transition-colors duration-300">
         <div className="container-hal relative z-10">
           <div className="max-w-4xl">
-            <div className="inline-flex items-center gap-2 rounded-xs border border-[#111111]/20 dark:border-white/20 px-3.5 py-1.5 font-mono text-[11px] uppercase tracking-[0.16em] text-[#2F6BFF]">
-              <span className="h-1.5 w-1.5 rounded-full bg-[#2F6BFF]" />
-              <span>05 / Careers &amp; Open Roles</span>
+            <div className="inline-flex items-center gap-2 rounded-full border border-[#2F6BFF]/30 bg-[#2F6BFF]/10 px-4 py-1.5 font-mono text-[11px] font-bold uppercase tracking-[0.14em] text-[#2F6BFF]">
+              <span className="h-2 w-2 rounded-full bg-[#2F6BFF] animate-pulse" />
+              <span>Careers at Halveron</span>
             </div>
 
-            <h1 className="serif-display mt-8 text-5xl leading-[1.04] tracking-tight md:text-7xl lg:text-8xl text-[#111111] dark:text-white">
-              Join a team building products that{" "}
-              <span className="serif-italic text-[#2F6BFF]">matter.</span>
+            <h1 className="heading-display mt-6 text-4xl font-extrabold leading-[1.08] tracking-[-0.03em] sm:text-5xl md:text-6xl lg:text-7xl text-[#0F172A] dark:text-white">
+              Join a team building digital experiences that{" "}
+              <span className="text-[#2F6BFF]">matter</span>.
             </h1>
 
-            <p className="mt-8 max-w-2xl text-lg md:text-xl font-light text-[#444444] dark:text-[#CCCCCC] leading-relaxed">
-              We work directly with founders and ambitious companies worldwide, creating modern websites and mobile apps with genuine care, autonomy, and craft.
+            <p className="mt-6 max-w-2xl text-base sm:text-lg text-[#64748B] dark:text-[#94A3B8] leading-relaxed">
+              We work with ambitious companies and visionary founders, creating bespoke websites, custom web applications, and brand identities with care, craft, and autonomy.
             </p>
           </div>
         </div>
@@ -37,39 +39,37 @@ export default function CareersPage() {
       <Section className="relative overflow-hidden py-24">
         <SectionHeading
           eyebrow="Open Roles"
-          title={openings.length > 0 ? "Where we need senior practitioners." : "No open roles right now."}
+          title={hasOpenings ? "Current Opportunities" : "No open roles right now."}
           lead={
-            openings.length > 0
-              ? "Join a high-autonomy studio team shipping production React, Next.js, and Node products for clients in the US, Europe, and Africa."
-              : "We hire in focused bursts as client engagements expand. A speculative note with links to your shipped code or Figma designs is always read by a principal engineer."
+            hasOpenings
+              ? "Join our high-autonomy creative team shipping production web designs and custom applications for clients worldwide."
+              : "We hire in focused bursts as client engagements expand. A speculative note with links to your shipped work or portfolio is always welcomed."
           }
         />
 
         <div className="mt-12">
-          {openings.length > 0 ? (
+          {hasOpenings ? (
             <div className="space-y-6">
               {openings.map((role, idx) => (
                 <Reveal key={role.title} delay={idx * 80}>
-                  <div className="rounded-md border border-[#111111]/15 dark:border-white/10 bg-white dark:bg-[#121826] p-8 shadow-sm transition-all duration-300 md:flex md:items-center md:justify-between hover:border-[#2F6BFF]/50">
+                  <div className="agency-card p-8 md:flex md:items-center md:justify-between">
                     <div>
                       <span className="tag-pill">{[role.type, role.location].filter(Boolean).join(" · ")}</span>
-                      <h3 className="serif-display mt-4 text-3xl font-normal text-[#111111] dark:text-white">
+                      <h3 className="heading-display mt-4 text-2xl font-bold text-[#0F172A] dark:text-white">
                         {role.title}
                       </h3>
                       {role.summary && (
-                        <p className="mt-3 max-w-2xl text-sm text-[#555555] dark:text-[#CCCCCC] leading-relaxed">
+                        <p className="mt-2 max-w-2xl text-sm text-[#64748B] dark:text-[#94A3B8] leading-relaxed">
                           {role.summary}
                         </p>
                       )}
                     </div>
-                    <div className="mt-6 md:mt-0">
+                    <div className="mt-6 md:mt-0 shrink-0">
                       <a
-                        href={`mailto:${site.email}?subject=${encodeURIComponent(
-                          `Application: ${role.title}`,
-                        )}`}
-                        className="link-button-solid shrink-0"
+                        href={`mailto:${site.email}?subject=Application: ${encodeURIComponent(role.title)}`}
+                        className="link-button-solid text-xs py-2.5 px-6"
                       >
-                        Apply for role ↗
+                        Apply Now ↗
                       </a>
                     </div>
                   </div>
@@ -77,21 +77,19 @@ export default function CareersPage() {
               ))}
             </div>
           ) : (
-            <div className="rounded-md border border-[#111111]/15 dark:border-white/10 bg-white dark:bg-[#121826] p-8 md:p-12 text-center shadow-sm">
-              <h3 className="serif-display text-3xl font-normal text-[#111111] dark:text-white">
+            <div className="rounded-2xl border border-dashed border-[#0F172A]/15 dark:border-white/15 bg-white/40 dark:bg-white/5 p-12 text-center max-w-xl mx-auto">
+              <h3 className="heading-display text-xl font-bold text-[#0F172A] dark:text-white">
                 Send a speculative application
               </h3>
-              <p className="mx-auto mt-3 max-w-xl text-base text-[#555555] dark:text-[#CCCCCC] leading-relaxed">
-                Tell us what you&apos;ve built. Links to live repositories, shipped products, or Figma systems say more than a resume.
+              <p className="mt-3 text-sm text-[#64748B] dark:text-[#94A3B8] leading-relaxed">
+                Are you a skilled web designer, full-stack engineer, or SEO specialist? Email us with links to your live projects.
               </p>
-              <div className="mt-8">
+              <div className="mt-6">
                 <a
-                  href={`mailto:${site.email}?subject=${encodeURIComponent(
-                    "Speculative application",
-                  )}`}
-                  className="link-button-solid"
+                  href={`mailto:${site.email}?subject=Speculative Application`}
+                  className="link-button text-xs py-2.5 px-6"
                 >
-                  Email us your work ↗
+                  Send Portfolio to {site.email} ↗
                 </a>
               </div>
             </div>
@@ -99,38 +97,10 @@ export default function CareersPage() {
         </div>
       </Section>
 
-      {/* 3. CULTURE & DIFFERENTIATORS */}
-      <Section paper className="relative overflow-hidden py-24">
-        <SectionHeading
-          eyebrow="Studio Culture"
-          title="The principles we sell, applied internally."
-          lead="These aren't marketing promises, they describe how the team actually operates day to day."
-        />
-
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {differentiators.map((d, idx) => (
-            <Reveal key={d.title} delay={idx * 80}>
-              <div className="swiss-card flex h-full flex-col justify-between">
-                <div>
-                  <span className="font-mono text-xs font-bold text-[#2F6BFF]">
-                    0{idx + 1}
-                  </span>
-                  <h3 className="serif-display mt-4 text-2xl font-normal text-[#111111] dark:text-white">
-                    {d.title}
-                  </h3>
-                  <p className="mt-3 text-sm text-[#555555] dark:text-[#CCCCCC] leading-relaxed">
-                    {d.body}
-                  </p>
-                </div>
-              </div>
-            </Reveal>
-          ))}
-        </div>
-      </Section>
-
+      {/* 3. CTA */}
       <CTASection
-        title="Not actively looking, but curious?"
-        lead="We'd still love to connect. A short note now beats a rush when we open a role."
+        title="Ready to build something exceptional?"
+        lead="Let's talk about your next project or career move. Contact our team today."
       />
     </>
   );

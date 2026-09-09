@@ -1,14 +1,12 @@
 "use client";
 
 import { useEffect } from "react";
-import { sound } from "../lib/sound";
 import { site } from "../lib/site";
 
 export function CaseStudyModal({ study, onClose }) {
   useEffect(() => {
     const handleKeyDown = (e) => {
       if (e.key === "Escape") {
-        sound.playClick();
         onClose();
       }
     };
@@ -28,10 +26,7 @@ export function CaseStudyModal({ study, onClose }) {
       {/* Backdrop */}
       <div
         className="fixed inset-0 bg-black/80 backdrop-blur-md transition-opacity"
-        onClick={() => {
-          sound.playClick();
-          onClose();
-        }}
+        onClick={onClose}
         aria-hidden="true"
       />
 
@@ -50,10 +45,7 @@ export function CaseStudyModal({ study, onClose }) {
 
           <button
             type="button"
-            onClick={() => {
-              sound.playClick();
-              onClose();
-            }}
+            onClick={onClose}
             aria-label="Close case study modal"
             className="flex h-9 w-9 items-center justify-center rounded-full border border-[#0F172A]/15 dark:border-white/20 hover:border-[#2F6BFF] dark:hover:border-[#2F6BFF] bg-transparent font-mono text-[#0F172A] dark:text-white transition-colors cursor-pointer"
           >
@@ -139,7 +131,7 @@ export function CaseStudyModal({ study, onClose }) {
 
           <div>
             <span className="font-mono text-xs uppercase tracking-wider text-[#64748B] dark:text-[#94A3B8] font-bold block mb-3">
-              Engineering &amp; Design Stack
+              Technology Stack
             </span>
             <div className="flex flex-wrap gap-2">
               {study.stack.map((t) => (
@@ -174,15 +166,12 @@ export function CaseStudyModal({ study, onClose }) {
         {/* Footer CTA inside Modal */}
         <div className="mt-12 flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-[#0F172A]/10 dark:border-white/10 pt-6">
           <span className="font-sans text-xs text-[#64748B]">
-            Need a similar product built for your business?
+            Need a similar website or portal built for your business?
           </span>
           <div className="flex items-center gap-3">
             <button
               type="button"
-              onClick={() => {
-                sound.playClick();
-                onClose();
-              }}
+              onClick={onClose}
               className="px-5 py-2.5 rounded-full border border-[#0F172A]/15 dark:border-white/20 font-sans text-xs font-semibold hover:border-[#2F6BFF] transition-colors cursor-pointer"
             >
               Close
@@ -191,7 +180,6 @@ export function CaseStudyModal({ study, onClose }) {
               href={site.bookingUrl}
               target="_blank"
               rel="noopener noreferrer"
-              onClick={() => sound.playClick()}
               className="link-button-solid text-xs py-2.5 px-6"
             >
               Start a Project ↗

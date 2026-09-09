@@ -14,7 +14,7 @@ export function Footer() {
               <div className="flex items-center gap-3 mb-4">
                 <Logomark size={36} />
                 <span className="font-mono text-xs font-bold uppercase tracking-[0.14em] text-[#2F6BFF]">
-                  Bespoke Digital Product Studio
+                  Creative Digital &amp; Web Design Agency
                 </span>
               </div>
               <h2 className="heading-display text-5xl font-extrabold tracking-[-0.04em] sm:text-7xl md:text-8xl lg:text-9xl text-[#0F172A] dark:text-white">
@@ -23,7 +23,7 @@ export function Footer() {
             </div>
             <div className="max-w-xs pb-2">
               <p className="font-sans text-sm text-[#64748B] dark:text-[#94A3B8] leading-relaxed">
-                Turning ambitious ideas into finished, high-performing websites and digital products.
+                We craft visually stunning, user-friendly, and high-performing websites that elevate your brand.
               </p>
             </div>
           </div>
@@ -34,7 +34,26 @@ export function Footer() {
           <div>
             <div className="flex items-center gap-2 font-mono text-xs font-bold uppercase tracking-wider text-[#2F6BFF]">
               <span>01</span>
-              <span>Studio</span>
+              <span>Services</span>
+            </div>
+            <ul className="mt-5 space-y-3 font-sans text-sm">
+              {services.map((s) => (
+                <li key={s.slug}>
+                  <Link
+                    href={`/services#${s.slug}`}
+                    className="line-btm-ani text-[#475569] dark:text-[#CBD5E1] hover:text-[#2F6BFF] font-medium"
+                  >
+                    {s.title}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <div className="flex items-center gap-2 font-mono text-xs font-bold uppercase tracking-wider text-[#2F6BFF]">
+              <span>02</span>
+              <span>Agency</span>
             </div>
             <ul className="mt-5 space-y-3 font-sans text-sm">
               {nav.map((item) => (
@@ -55,25 +74,6 @@ export function Footer() {
                   Careers
                 </Link>
               </li>
-            </ul>
-          </div>
-
-          <div>
-            <div className="flex items-center gap-2 font-mono text-xs font-bold uppercase tracking-wider text-[#2F6BFF]">
-              <span>02</span>
-              <span>Services</span>
-            </div>
-            <ul className="mt-5 space-y-3 font-sans text-sm">
-              {services.slice(0, 5).map((s) => (
-                <li key={s.slug}>
-                  <Link
-                    href={`/services#${s.slug}`}
-                    className="line-btm-ani text-[#475569] dark:text-[#CBD5E1] hover:text-[#2F6BFF] font-medium"
-                  >
-                    {s.title}
-                  </Link>
-                </li>
-              ))}
             </ul>
           </div>
 
@@ -102,7 +102,7 @@ export function Footer() {
                 </a>
               </p>
               <p className="text-xs text-[#94A3B8] pt-2 font-mono">
-                {site.location} · Global Overlap
+                {site.location}
               </p>
             </div>
           </div>
@@ -110,11 +110,11 @@ export function Footer() {
           <div>
             <div className="flex items-center gap-2 font-mono text-xs font-bold uppercase tracking-wider text-[#2F6BFF]">
               <span>04</span>
-              <span>Updates</span>
+              <span>Stay Updated</span>
             </div>
             <div className="mt-5">
               <p className="font-sans text-xs text-[#64748B] dark:text-[#94A3B8] mb-4">
-                Quarterly briefings, design essays, and new project releases.
+                Quarterly design insights, agency news, and new project launches.
               </p>
               <NewsletterForm />
             </div>
@@ -124,7 +124,7 @@ export function Footer() {
         {/* Legal & Copyright */}
         <div className="flex flex-col justify-between gap-4 border-t border-[#0F172A]/10 dark:border-white/10 pt-8 font-mono text-xs text-[#64748B] md:flex-row md:items-center">
           <span>
-            © {new Date().getFullYear()} HALVERON STUDIO. ALL RIGHTS RESERVED.
+            © {new Date().getFullYear()} HALVERON AGENCY LTD. ALL RIGHTS RESERVED.
           </span>
 
           <nav aria-label="Legal" className="flex flex-wrap gap-x-6 gap-y-2">

@@ -6,19 +6,16 @@ import { Section, SectionHeading } from "./Section";
 import { Reveal } from "./Reveal";
 import { caseStudies } from "../lib/case-studies";
 import { CaseStudyModal } from "./CaseStudyModal";
-import { sound } from "../lib/sound";
 
 export function FeaturedShowcase() {
   const [activeTab, setActiveTab] = useState(caseStudies[0]);
   const [modalStudy, setModalStudy] = useState(null);
 
   const handleTabChange = (study) => {
-    sound.playHover();
     setActiveTab(study);
   };
 
   const handleOpenModal = (study) => {
-    sound.playClick();
     setModalStudy(study);
   };
 
@@ -27,9 +24,9 @@ export function FeaturedShowcase() {
       <div className="relative z-10">
         <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
           <SectionHeading
-            eyebrow="Selected Projects"
-            title="Design & engineering crafted for impact."
-            lead="Explore real examples of custom websites, online stores, and web applications we've created and launched."
+            eyebrow="Selected Work"
+            title="Featured client projects."
+            lead="Explore recent examples of bespoke websites, digital portals, and e-commerce stores we've engineered for our clients."
           />
 
           {/* Octave Rounded Tabs */}
@@ -83,7 +80,7 @@ export function FeaturedShowcase() {
 
                   <div className="mt-8">
                     <p className="font-mono text-[11px] uppercase tracking-wider text-[#64748B] dark:text-[#94A3B8]">
-                      Deliverables Included
+                      Included In This Project
                     </p>
                     <ul className="mt-3 flex flex-wrap gap-2">
                       {activeTab.deliverables.slice(0, 3).map((h) => (
@@ -104,10 +101,10 @@ export function FeaturedShowcase() {
                     onClick={() => handleOpenModal(activeTab)}
                     className="link-button-solid"
                   >
-                    Inspect Full Case Study ↗
+                    View Project Details ↗
                   </button>
                   <Link href="/work" className="link-button">
-                    All Case Studies ↓
+                    All Projects ↓
                   </Link>
                 </div>
               </div>
@@ -125,7 +122,7 @@ export function FeaturedShowcase() {
                     <span className="h-2.5 w-2.5 rounded-full bg-emerald-500/80" />
                   </div>
                   <span className="font-mono text-[11px] text-[#94A3B8]">
-                    halveron.studio/case/{activeTab.slug}
+                    halveron.com/work/{activeTab.slug}
                   </span>
                   <span className="font-mono text-xs font-bold text-[#2F6BFF]">
                     {activeTab.year}
@@ -144,7 +141,7 @@ export function FeaturedShowcase() {
                       className="font-mono text-[10px] uppercase tracking-widest font-bold"
                       style={{ color: activeTab.accentColor }}
                     >
-                      Bespoke Architecture
+                      Bespoke Digital Build
                     </span>
                     <h4 className="heading-display mt-2 text-2xl font-bold text-white">
                       {activeTab.service}

@@ -2,14 +2,13 @@ import Link from "next/link";
 import { Section, SectionHeading } from "../../components/Section";
 import { CTASection } from "../../components/CTASection";
 import { TeamGrid } from "../../components/TeamGrid";
-import { ComparisonSection } from "../../components/ComparisonSection";
 import { Reveal } from "../../components/Reveal";
-import { differentiators, site } from "../../lib/site";
+import { whyChooseUs, site } from "../../lib/site";
 
 export const metadata = {
-  title: "About Us · Halveron Digital Product Studio",
+  title: "About Us · Creative Digital & Web Design Agency",
   description:
-    "Halveron is a full-service digital product studio. We unite strategy, UI/UX design, mobile apps, SaaS engineering, and brand systems under one roof.",
+    "Halveron is a creative digital agency specializing in bespoke web design, custom development, and brand identities that achieve business goals.",
 };
 
 export default function AboutPage() {
@@ -21,27 +20,27 @@ export default function AboutPage() {
           <div className="max-w-4xl">
             <div className="inline-flex items-center gap-2 rounded-full border border-[#2F6BFF]/30 bg-[#2F6BFF]/10 px-4 py-1.5 font-mono text-[11px] font-bold uppercase tracking-[0.14em] text-[#2F6BFF]">
               <span className="h-2 w-2 rounded-full bg-[#2F6BFF] animate-pulse" />
-              <span>About Halveron Studio</span>
+              <span>About Halveron Agency</span>
             </div>
 
             <h1 className="heading-display mt-6 text-4xl font-extrabold leading-[1.08] tracking-[-0.03em] sm:text-5xl md:text-6xl lg:text-7xl text-[#0F172A] dark:text-white">
-              We turn your ideas into{" "}
-              <span className="text-[#2F6BFF]">high-performing, finished</span> digital products.
+              We are a creative agency dedicated to{" "}
+              <span className="text-[#2F6BFF]">digital craft and business results</span>.
             </h1>
 
             <p className="mt-6 max-w-2xl text-base sm:text-lg text-[#64748B] dark:text-[#94A3B8] leading-relaxed">
-              Halveron is an independent digital product studio and agency. We unite strategy, visual design, mobile apps, custom websites, and branding under one roof, taking you from napkin sketch to a successful market launch.
+              We believe a well-designed website is more than just an online presence — it is a powerful driver for your commercial success. We partner with ambitious brands to create digital experiences that truly stand out.
             </p>
           </div>
         </div>
       </section>
 
-      {/* 2. THE HALVERON STORY BENTO GRID */}
+      {/* 2. THE HALVERON PHILOSOPHY BENTO */}
       <Section paper className="relative overflow-hidden py-24">
         <SectionHeading
-          eyebrow="Why We Exist"
-          title="One roof, one accountable studio."
-          lead="Great business ideas shouldn't get lost between disconnected freelancers and slow development agencies."
+          eyebrow="Our Approach"
+          title="Contemporary design meets high-performance engineering."
+          lead="We combine aesthetic elegance with technical precision to build digital solutions that captivate visitors and deliver measurable growth."
         />
 
         <div className="mt-14 grid gap-6 md:grid-cols-3">
@@ -49,13 +48,13 @@ export default function AboutPage() {
             <div className="agency-card flex h-full flex-col justify-between">
               <div>
                 <span className="font-mono text-xs font-bold text-[#2F6BFF]">
-                  01 / The Challenge
+                  01 / Client-Centric Focus
                 </span>
                 <h3 className="heading-display mt-4 text-xl font-bold text-[#0F172A] dark:text-white">
-                  The Disconnected Vendor Problem
+                  Tailored to Your Goals
                 </h3>
                 <p className="mt-3 text-sm text-[#64748B] dark:text-[#94A3B8] leading-relaxed">
-                  Most projects get split between a freelance designer, an offshore coder, and a separate branding agency. Details get lost in translation, quality drops, and nobody takes full responsibility.
+                  We don't believe in one-size-fits-all solutions. Every website and digital asset we build is custom-designed around your unique market positioning, target audience, and business objectives.
                 </p>
               </div>
             </div>
@@ -65,13 +64,13 @@ export default function AboutPage() {
             <div className="agency-card flex h-full flex-col justify-between">
               <div>
                 <span className="font-mono text-xs font-bold text-[#2F6BFF]">
-                  02 / The Halveron Solution
+                  02 / Mobile-Led &amp; Accessible
                 </span>
                 <h3 className="heading-display mt-4 text-xl font-bold text-[#0F172A] dark:text-white">
-                  United Senior Makers
+                  Flawless on Every Screen
                 </h3>
                 <p className="mt-3 text-sm text-[#64748B] dark:text-[#94A3B8] leading-relaxed">
-                  We united senior brand designers, product strategists, and full-stack software engineers under one roof. You speak directly to the creators building your product.
+                  With over 60% of modern web traffic happening on smartphones, we design with a mobile-first mindset. Your site delivers seamless interaction, crisp typography, and instant load speeds everywhere.
                 </p>
               </div>
             </div>
@@ -81,13 +80,13 @@ export default function AboutPage() {
             <div className="agency-card flex h-full flex-col justify-between">
               <div>
                 <span className="font-mono text-xs font-bold text-[#2F6BFF]">
-                  03 / The Commercial Result
+                  03 / End-to-End Partnership
                 </span>
                 <h3 className="heading-display mt-4 text-xl font-bold text-[#0F172A] dark:text-white">
-                  Fast, Beautiful &amp; High-Converting
+                  From Concept to Long-Term Care
                 </h3>
                 <p className="mt-3 text-sm text-[#64748B] dark:text-[#94A3B8] leading-relaxed">
-                  Products launched in weeks instead of quarters, with 99+ speed scores, high conversion rates, and 100% intellectual property ownership from day one.
+                  We guide you through every phase: from brand discovery and interactive prototyping to development, launch, SEO optimization, and ongoing managed hosting and technical support.
                 </p>
               </div>
             </div>
@@ -95,27 +94,27 @@ export default function AboutPage() {
         </div>
       </Section>
 
-      {/* 3. CORE PRINCIPLES */}
+      {/* 3. WHY CHOOSE US */}
       <Section className="relative overflow-hidden py-24">
         <SectionHeading
-          eyebrow="Our Principles"
-          title="How we operate every single day."
-          lead="Four fundamental operating tenets that guide every design file, line of code, and client interaction."
+          eyebrow="Why Choose Us"
+          title="What sets Halveron apart."
+          lead="Four fundamental pillars that define our working relationships with founders and marketing directors worldwide."
         />
 
         <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {differentiators.map((d, idx) => (
-            <Reveal key={d.title} delay={idx * 60}>
+          {whyChooseUs.map((w, idx) => (
+            <Reveal key={w.title} delay={idx * 60}>
               <div className="agency-card flex h-full flex-col justify-between">
                 <div>
                   <span className="font-display text-3xl font-extrabold text-[#2F6BFF]">
                     0{idx + 1}
                   </span>
                   <h3 className="heading-display mt-4 text-lg font-bold text-[#0F172A] dark:text-white">
-                    {d.title}
+                    {w.title}
                   </h3>
                   <p className="mt-2 text-sm text-[#64748B] dark:text-[#94A3B8] leading-relaxed">
-                    {d.body}
+                    {w.body}
                   </p>
                 </div>
               </div>
@@ -124,25 +123,22 @@ export default function AboutPage() {
         </div>
       </Section>
 
-      {/* 4. COMPARISON MATRIX */}
-      <ComparisonSection />
-
-      {/* 5. TEAM */}
+      {/* 4. TEAM LEADERSHIP */}
       <Section paper className="py-24">
         <SectionHeading
-          eyebrow="Studio Leadership"
-          title="The practitioners behind your product."
-          lead="Direct access to experienced makers with backgrounds in high-growth startups and global product agencies."
+          eyebrow="Leadership"
+          title="Meet the team behind Halveron."
+          lead="Senior creative designers, full-stack engineers, and digital strategists with a proven track record."
         />
         <div className="mt-14">
           <TeamGrid />
         </div>
       </Section>
 
-      {/* 6. CTA */}
+      {/* 5. CTA */}
       <CTASection
-        title="Ready to discuss your project?"
-        lead="Book a free 20-minute strategy call with our principal engineer."
+        title="Want to work with our team?"
+        lead="Contact us today for a free discovery conversation and let's explore how we can help your brand grow."
       />
     </>
   );
