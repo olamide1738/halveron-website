@@ -59,7 +59,7 @@ export function FeaturedShowcase() {
   };
 
   return (
-    <Section paper className="relative overflow-hidden py-24">
+    <Section paper className="relative py-24">
       <div className="relative z-10">
         {/* Section Header with Tabs & Controls */}
         <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
@@ -136,15 +136,17 @@ export function FeaturedShowcase() {
           </div>
         </div>
 
-        {/* Interactive Slider Track Container */}
-        <div
-          className="relative mt-12 overflow-hidden rounded-3xl"
-          onMouseEnter={() => setIsPaused(true)}
-          onMouseLeave={() => setIsPaused(false)}
-          onTouchStart={onTouchStart}
-          onTouchMove={onTouchMove}
-          onTouchEnd={onTouchEnd}
-        >
+        {/* Interactive Slider Container with Outside Navigation Arrows */}
+        <div className="relative mt-12">
+          {/* Inner Carousel Track Box */}
+          <div
+            className="overflow-hidden rounded-3xl"
+            onMouseEnter={() => setIsPaused(true)}
+            onMouseLeave={() => setIsPaused(false)}
+            onTouchStart={onTouchStart}
+            onTouchMove={onTouchMove}
+            onTouchEnd={onTouchEnd}
+          >
           {/* Slides Carousel Track */}
           <div
             className="flex transition-transform duration-600 ease-[cubic-bezier(0.16,1,0.3,1)]"
@@ -279,47 +281,48 @@ export function FeaturedShowcase() {
               </div>
             ))}
           </div>
-
-          {/* Floating Prev / Next Navigation Arrows (Desktop overlay) */}
-          <button
-            type="button"
-            onClick={handlePrev}
-            aria-label="Previous project"
-            className="hidden md:flex absolute left-4 top-1/2 -translate-y-1/2 z-20 h-11 w-11 items-center justify-center rounded-full border border-[#0F172A]/10 dark:border-white/15 bg-white/90 dark:bg-[#0B0F17]/90 backdrop-blur-md text-[#0F172A] dark:text-white shadow-lg hover:scale-110 hover:border-[#2F6BFF] hover:text-[#2F6BFF] transition-all cursor-pointer"
-          >
-            <svg
-              width="18"
-              height="18"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2.2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <path d="M15 18l-6-6 6-6" />
-            </svg>
-          </button>
-          <button
-            type="button"
-            onClick={handleNext}
-            aria-label="Next project"
-            className="hidden md:flex absolute right-4 top-1/2 -translate-y-1/2 z-20 h-11 w-11 items-center justify-center rounded-full border border-[#0F172A]/10 dark:border-white/15 bg-white/90 dark:bg-[#0B0F17]/90 backdrop-blur-md text-[#0F172A] dark:text-white shadow-lg hover:scale-110 hover:border-[#2F6BFF] hover:text-[#2F6BFF] transition-all cursor-pointer"
-          >
-            <svg
-              width="18"
-              height="18"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2.2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <path d="M9 18l6-6-6-6" />
-            </svg>
-          </button>
         </div>
+
+        {/* Navigation Arrows OUTSIDE the box */}
+        <button
+          type="button"
+          onClick={handlePrev}
+          aria-label="Previous project"
+          className="hidden md:flex absolute -left-5 lg:-left-7 xl:-left-14 2xl:-left-16 top-1/2 -translate-y-1/2 z-20 h-12 w-12 items-center justify-center rounded-full border border-[#0F172A]/10 dark:border-white/15 bg-white dark:bg-[#121826] text-[#0F172A] dark:text-white shadow-xl hover:scale-110 hover:border-[#2F6BFF] hover:text-[#2F6BFF] hover:shadow-glow transition-all cursor-pointer"
+        >
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2.2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <path d="M15 18l-6-6 6-6" />
+          </svg>
+        </button>
+        <button
+          type="button"
+          onClick={handleNext}
+          aria-label="Next project"
+          className="hidden md:flex absolute -right-5 lg:-right-7 xl:-right-14 2xl:-right-16 top-1/2 -translate-y-1/2 z-20 h-12 w-12 items-center justify-center rounded-full border border-[#0F172A]/10 dark:border-white/15 bg-white dark:bg-[#121826] text-[#0F172A] dark:text-white shadow-xl hover:scale-110 hover:border-[#2F6BFF] hover:text-[#2F6BFF] hover:shadow-glow transition-all cursor-pointer"
+        >
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2.2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <path d="M9 18l6-6-6-6" />
+          </svg>
+        </button>
+      </div>
 
         {/* Slide Indicator Dots & Pagination */}
         <div className="mt-8 flex items-center justify-center gap-2.5">
