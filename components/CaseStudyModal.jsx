@@ -72,6 +72,17 @@ export function CaseStudyModal({ study, onClose }) {
           </p>
         </div>
 
+        {/* Project Visual Showcase */}
+        {study.image && (
+          <div className="mt-8 overflow-hidden rounded-2xl border border-[#0F172A]/10 dark:border-white/10 shadow-lg">
+            <img
+              src={study.image}
+              alt={`${study.title} Project Mockup`}
+              className="w-full h-auto max-h-[460px] object-cover object-top"
+            />
+          </div>
+        )}
+
         {/* Quantifiable Results Grid */}
         <div className="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-3 border-y border-[#0F172A]/10 dark:border-white/10 py-6">
           {study.metrics.map((m) => (

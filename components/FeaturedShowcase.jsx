@@ -215,13 +215,13 @@ export function FeaturedShowcase() {
                     </div>
                   </div>
 
-                  {/* Right Column: Interactive Browser Frame */}
+                  {/* Right Column: Interactive Browser Frame with Real Project Image */}
                   <div
                     onClick={() => setModalStudy(study)}
-                    className="relative overflow-hidden rounded-2xl border border-[#0F172A]/15 dark:border-white/15 bg-[#0B0F17] p-6 shadow-xl text-white cursor-pointer group transition-transform duration-300 hover:scale-[1.01]"
+                    className="relative overflow-hidden rounded-2xl border border-[#0F172A]/15 dark:border-white/15 bg-[#0B0F17] shadow-xl text-white cursor-pointer group transition-all duration-500 hover:shadow-glow hover:border-[#2F6BFF]/50"
                   >
                     {/* Browser Header */}
-                    <div className="flex items-center justify-between border-b border-white/10 pb-4">
+                    <div className="flex items-center justify-between border-b border-white/10 bg-[#0B0F17]/95 px-5 py-3 backdrop-blur-md">
                       <div className="flex items-center gap-2">
                         <span className="h-2.5 w-2.5 rounded-full bg-rose-500/80" />
                         <span className="h-2.5 w-2.5 rounded-full bg-amber-500/80" />
@@ -235,45 +235,28 @@ export function FeaturedShowcase() {
                       </span>
                     </div>
 
-                    {/* Content Frame */}
-                    <div className="mt-6 space-y-4">
-                      <div
-                        className="rounded-xl border border-white/10 p-6 backdrop-blur-md transition-all duration-300 group-hover:border-[#2F6BFF]/40"
-                        style={{
-                          background: `radial-gradient(circle at 70% 30%, ${study.accentColor}25 0%, rgba(255,255,255,0.03) 70%)`,
-                        }}
-                      >
-                        <span
-                          className="font-mono text-[10px] uppercase tracking-widest font-bold"
-                          style={{ color: study.accentColor }}
-                        >
-                          Bespoke Digital Build
-                        </span>
-                        <h4 className="heading-display mt-2 text-2xl font-bold text-white">
-                          {study.service}
-                        </h4>
-                        <p className="mt-2 text-xs text-[#CBD5E1] leading-relaxed">
-                          Fluid responsive layout, instant page transitions, and pixel-level craft.
-                        </p>
-                      </div>
+                    {/* Real Project Visual Mockup */}
+                    <div className="relative aspect-[16/10] w-full overflow-hidden bg-[#101623]">
+                      <img
+                        src={study.image}
+                        alt={`${study.title} Website Showcase`}
+                        loading="lazy"
+                        className="h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#0B0F17]/85 via-transparent to-transparent opacity-60 transition-opacity group-hover:opacity-30" />
 
-                      <div className="grid grid-cols-2 gap-3">
-                        <div className="rounded-xl border border-white/10 bg-white/5 p-4">
-                          <span className="block font-mono text-[10px] uppercase text-[#94A3B8]">
-                            Top Key Result
+                      {/* Floating Key Outcome Tag */}
+                      <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between gap-2">
+                        {study.metrics[0] && (
+                          <span className="tag-pill bg-[#0B0F17]/90 text-white border-white/20 backdrop-blur-md text-xs font-bold">
+                            <span className="text-[#2F6BFF] font-black mr-1">✦</span>
+                            {study.metrics[0].label}: {study.metrics[0].value}
                           </span>
-                          <span className="heading-display mt-1 block text-lg font-bold text-white">
-                            {study.metrics[0]?.value || "100% Bespoke"}
-                          </span>
-                        </div>
-                        <div className="rounded-xl border border-white/10 bg-white/5 p-4">
-                          <span className="block font-mono text-[10px] uppercase text-[#94A3B8]">
-                            Performance
-                          </span>
-                          <span className="heading-display mt-1 block text-lg font-bold text-[#2F6BFF]">
-                            {study.metrics[1]?.value || "< 0.8s"}
-                          </span>
-                        </div>
+                        )}
+                        <span className="tag-pill bg-[#2F6BFF] text-white border-[#2F6BFF] text-xs font-bold shadow-xs flex items-center gap-1 group-hover:translate-x-0.5 transition-transform">
+                          <span>View Study</span>
+                          <span>↗</span>
+                        </span>
                       </div>
                     </div>
                   </div>

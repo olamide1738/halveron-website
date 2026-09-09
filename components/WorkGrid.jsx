@@ -74,21 +74,15 @@ export function WorkGrid() {
                     </span>
                   </div>
 
-                  {/* Aesthetic Visual Preview */}
-                  <div
-                    className="flex h-full w-full items-center justify-center p-8 pt-12 transition-transform duration-700 group-hover:scale-105"
-                    style={{
-                      background: `radial-gradient(circle at 50% 50%, ${study.accentColor}30 0%, #0B0F17 80%)`,
-                    }}
-                  >
-                    <div className="text-center">
-                      <div className="heading-display text-3xl sm:text-4xl font-extrabold text-white">
-                        {study.title}
-                      </div>
-                      <div className="mt-2 font-mono text-xs uppercase tracking-wider text-[#CBD5E1]">
-                        {study.service}
-                      </div>
-                    </div>
+                  {/* Actual Project Mockup Image */}
+                  <div className="relative h-full w-full overflow-hidden bg-[#101623]">
+                    <img
+                      src={study.image}
+                      alt={`${study.title} Case Study`}
+                      loading="lazy"
+                      className="h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#0B0F17]/90 via-black/25 to-transparent opacity-70 group-hover:opacity-40 transition-opacity" />
                   </div>
 
                   {/* Industry & Metric Badge */}
