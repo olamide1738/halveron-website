@@ -8,26 +8,12 @@ export function ThemeToggle() {
 
   useEffect(() => {
     setMounted(true);
-    // 1. Read stored preference or system preference
+    // Read stored preference, strictly defaulting to light mode
     const stored = localStorage.getItem("color-scheme");
-    const systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    const initialTheme = stored || (systemDark ? "dark" : "light");
+    const initialTheme = stored === "dark" ? "dark" : "light";
 
     applyTheme(initialTheme);
     setTheme(initialTheme);
-
-    // 2. Listen to system preference changes if no manual override
-    const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
-    const handleChange = (e) => {
-      if (!localStorage.getItem("color-scheme")) {
-        const newTheme = e.matches ? "dark" : "light";
-        applyTheme(newTheme);
-        setTheme(newTheme);
-      }
-    };
-    mediaQuery.addEventListener("change", handleChange);
-
-    return () => mediaQuery.removeEventListener("change", handleChange);
   }, []);
 
   function applyTheme(newTheme) {
@@ -57,7 +43,7 @@ export function ThemeToggle() {
 
   if (!mounted) {
     return (
-      <div className="h-9 w-9 rounded-xs border border-[#111111]/20 dark:border-white/20 bg-transparent" />
+      <div className="h-9 w-9 rounded-full border border-[#0F172A]/15 dark:border-white/20 bg-transparent" />
     );
   }
 
@@ -68,7 +54,7 @@ export function ThemeToggle() {
       onClick={toggleTheme}
       aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
       title={isDark ? "Switch to light mode" : "Switch to dark mode"}
-      className="group relative flex h-9 w-9 items-center justify-center rounded-xs border border-[#111111]/20 dark:border-white/20 hover:border-[#111111] dark:hover:border-white bg-transparent text-[#111111] dark:text-white transition-all duration-150 cursor-pointer"
+      className="group relative flex h-9 w-9 items-center justify-center rounded-full border border-[#0F172A]/15 dark:border-white/20 hover:border-[#0F172A] dark:hover:border-white bg-transparent text-[#0F172A] dark:text-white transition-all duration-150 cursor-pointer"
     >
       {isDark ? (
         /* Sun Icon for Dark Mode */
@@ -97,7 +83,7 @@ export function ThemeToggle() {
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
-          className="text-[#444444] transition-transform duration-200 group-hover:-rotate-12 group-hover:text-[#2F6BFF]"
+          className="text-[#475569] transition-transform duration-200 group-hover:-rotate-12 group-hover:text-[#2F6BFF]"
         >
           <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9z" />
         </svg>

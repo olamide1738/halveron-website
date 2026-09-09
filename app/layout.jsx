@@ -39,22 +39,22 @@ export default function RootLayout({ children }) {
           href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
           rel="stylesheet"
         />
-        <meta name="color-scheme" content="light dark" />
+        <meta name="color-scheme" content="light" />
         <script
           dangerouslySetInnerHTML={{
             __html: `
               (function() {
                 try {
                   var stored = localStorage.getItem('color-scheme');
-                  var systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-                  var theme = stored || (systemDark ? 'dark' : 'light');
-                  if (theme === 'dark') {
+                  if (stored === 'dark') {
                     document.documentElement.classList.add('dark');
+                    var meta = document.querySelector('meta[name="color-scheme"]');
+                    if (meta) meta.content = 'dark';
                   } else {
                     document.documentElement.classList.remove('dark');
+                    var meta = document.querySelector('meta[name="color-scheme"]');
+                    if (meta) meta.content = 'light';
                   }
-                  var meta = document.querySelector('meta[name="color-scheme"]');
-                  if (meta) meta.content = theme;
                 } catch (e) {}
               })();
             `,
