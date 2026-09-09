@@ -47,6 +47,27 @@ const serviceIcons = {
       <line x1="6" y1="18" x2="6.01" y2="18" />
     </svg>
   ),
+  "ui-ux-design": (
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <rect x="3" y="3" width="18" height="18" rx="2" />
+      <path d="M3 9h18" />
+      <path d="M9 21V9" />
+    </svg>
+  ),
+  "cro-analytics": (
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <line x1="18" y1="20" x2="18" y2="10" />
+      <line x1="12" y1="20" x2="12" y2="4" />
+      <line x1="6" y1="20" x2="6" y2="14" />
+    </svg>
+  ),
+  "headless-cms": (
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <polygon points="12 2 2 7 12 12 22 7 12 2" />
+      <polyline points="2 17 12 22 22 17" />
+      <polyline points="2 12 12 17 22 12" />
+    </svg>
+  ),
 };
 
 // Associated technical stack tags for each service
@@ -57,6 +78,9 @@ const serviceTech = {
   ecommerce: ["Shopify Storefront API", "Stripe Checkout", "Product Configurator", "Inventory Sync", "Apple Pay / 1-Click", "Tax Automation"],
   seo: ["Technical Audits", "Schema.org Markup", "Keyword Architecture", "Core Web Vitals", "Speed Audits", "Google Search Console"],
   "hosting-support": ["Vercel & AWS Cloud", "Global Edge CDN", "Automated Daily Backups", "99.9% Uptime SLA", "Proactive Security", "Monthly Retainers"],
+  "ui-ux-design": ["Figma", "User Journey Maps", "Design Systems", "Prototyping", "Micro-Interactions", "WCAG 2.1"],
+  "cro-analytics": ["Hotjar & Clarity", "Google Analytics 4", "A/B Split Testing", "Funnel Optimization", "Heuristic Audits"],
+  "headless-cms": ["Sanity.io", "Strapi", "Contentful", "GraphQL APIs", "Webhook Automation", "Custom Schemas"],
 };
 
 // Partnership engagement models
@@ -252,115 +276,96 @@ export function ServicesView() {
         </div>
       </div>
 
-      {/* 3. RESTRUCTURED SERVICES BENTO SHOWCASE */}
+      {/* 3. RESTRUCTURED SERVICES 3 BY 3 GRID SHOWCASE */}
       <Section className="relative py-20 md:py-28">
-        <div className="space-y-12">
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {filteredServices.map((s, idx) => (
             <article
               key={s.slug}
               id={s.slug}
-              className="rounded-3xl border border-[#0F172A]/10 dark:border-white/10 bg-white dark:bg-[#101623] p-8 md:p-12 shadow-card dark:shadow-card-dark transition-all duration-300 scroll-mt-28"
+              className="group relative flex flex-col justify-between rounded-3xl border border-[#0F172A]/10 dark:border-white/10 bg-white dark:bg-[#101623] p-7 sm:p-8 shadow-card dark:shadow-card-dark transition-all duration-300 hover:border-[#2F6BFF]/50 hover:shadow-glow hover:-translate-y-1.5 scroll-mt-28"
             >
-              <div className="grid gap-10 lg:grid-cols-[1.1fr_1.3fr] lg:items-start">
-                {/* Left Column: Core Description & Highlights */}
-                <div>
-                  <div className="flex items-center justify-between border-b border-[#0F172A]/10 dark:border-white/10 pb-4">
-                    <div className="flex items-center gap-3">
-                      <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#2F6BFF]/10 text-[#2F6BFF]">
-                        {serviceIcons[s.slug] || serviceIcons["web-design"]}
-                      </div>
-                      <span className="font-mono text-sm font-bold text-[#2F6BFF]">
-                        0{idx + 1}
-                      </span>
+              <div>
+                {/* Card Top: Number, Tag & Icon */}
+                <div className="flex items-center justify-between border-b border-[#0F172A]/10 dark:border-white/10 pb-4">
+                  <div className="flex items-center gap-3">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#2F6BFF]/10 text-[#2F6BFF] transition-all duration-300 group-hover:scale-105 group-hover:bg-[#2F6BFF] group-hover:text-white">
+                      {serviceIcons[s.slug] || serviceIcons["web-design"]}
                     </div>
-                    <span className="tag-pill">Core Capability</span>
-                  </div>
-
-                  <h2 className="heading-display mt-6 text-2xl md:text-3xl font-bold text-[#0F172A] dark:text-white">
-                    {s.title}
-                  </h2>
-
-                  <p className="mt-2.5 font-sans text-sm font-bold text-[#2F6BFF]">
-                    {s.summary}
-                  </p>
-
-                  <p className="mt-4 text-base text-[#64748B] dark:text-[#94A3B8] leading-relaxed">
-                    {s.detail}
-                  </p>
-
-                  {/* Technical Tooling & Tags */}
-                  <div className="mt-6">
-                    <span className="block font-mono text-[11px] uppercase tracking-wider text-[#64748B] dark:text-[#94A3B8] mb-2.5">
-                      Tooling &amp; Standards
+                    <span className="font-mono text-xs font-bold text-[#2F6BFF]">
+                      0{idx + 1}
                     </span>
-                    <div className="flex flex-wrap gap-2">
-                      {(serviceTech[s.slug] || []).map((t) => (
-                        <span
-                          key={t}
-                          className="rounded-full border border-[#0F172A]/10 dark:border-white/10 bg-[#FAFAFC] dark:bg-white/5 px-3 py-1 font-mono text-[11px] font-medium text-[#475569] dark:text-[#CBD5E1]"
-                        >
-                          {t}
-                        </span>
-                      ))}
-                    </div>
                   </div>
-
-                  <div className="mt-8 pt-6 border-t border-[#0F172A]/10 dark:border-white/10 flex flex-wrap items-center gap-4">
-                    <Link
-                      href={`/contact?service=${s.slug}`}
-                      className="link-button-solid text-xs py-3 px-6"
-                    >
-                      <span>Inquire About {s.title}</span>
-                      <span className="text-white/80">↗</span>
-                    </Link>
-                    <Link
-                      href="/work"
-                      className="link-button text-xs py-3 px-6"
-                    >
-                      <span>Related Case Studies</span>
-                      <span className="text-[#2F6BFF]">↓</span>
-                    </Link>
-                  </div>
+                  <span className="tag-pill text-[10px]">Core Capability</span>
                 </div>
 
-                {/* Right Column: Deliverables Checklist */}
-                <div className="rounded-2xl border border-[#0F172A]/10 dark:border-white/10 bg-[#FAFAFC] dark:bg-white/5 p-6 md:p-8">
-                  <div className="flex items-center justify-between border-b border-[#0F172A]/10 dark:border-white/10 pb-4">
-                    <span className="font-mono text-xs font-bold uppercase tracking-wider text-[#0F172A] dark:text-white">
-                      Included Deliverables &amp; Outcomes
+                {/* Title & Summary */}
+                <h2 className="heading-display mt-5 text-xl sm:text-2xl font-bold text-[#0F172A] dark:text-white group-hover:text-[#2F6BFF] transition-colors">
+                  {s.title}
+                </h2>
+
+                <p className="mt-2 text-xs font-bold text-[#2F6BFF]">
+                  {s.summary}
+                </p>
+
+                <p className="mt-3 text-xs sm:text-sm text-[#64748B] dark:text-[#94A3B8] leading-relaxed">
+                  {s.detail}
+                </p>
+
+                {/* Key Deliverables Checklist */}
+                <div className="mt-6 pt-5 border-t border-[#0F172A]/10 dark:border-white/10">
+                  <div className="flex items-center justify-between mb-3">
+                    <span className="font-mono text-[10px] font-bold uppercase tracking-wider text-[#0F172A] dark:text-white">
+                      Key Deliverables
                     </span>
-                    <span className="font-mono text-xs text-[#2F6BFF] font-bold">
-                      {s.deliverables.length} Key Outputs
+                    <span className="font-mono text-[10px] font-bold text-[#2F6BFF]">
+                      {s.deliverables.length} Outputs
                     </span>
                   </div>
-
-                  <ul className="mt-6 space-y-3.5">
+                  <ul className="space-y-2">
                     {s.deliverables.map((d) => (
                       <li
                         key={d}
-                        className="flex items-start gap-3 text-sm text-[#334155] dark:text-[#CBD5E1]"
+                        className="flex items-start gap-2 text-xs text-[#334155] dark:text-[#CBD5E1]"
                       >
-                        <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#2F6BFF]/15 text-[#2F6BFF] mt-0.5">
-                          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                        <span className="flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-[#2F6BFF]/15 text-[#2F6BFF] mt-0.5">
+                          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
                             <polyline points="20 6 9 17 4 12" />
                           </svg>
                         </span>
-                        <span className="leading-snug">{d}</span>
+                        <span className="leading-tight">{d}</span>
                       </li>
                     ))}
                   </ul>
+                </div>
 
-                  {/* Guaranteed Quality Tag */}
-                  <div className="mt-8 rounded-xl border border-[#2F6BFF]/20 bg-[#2F6BFF]/5 p-4">
-                    <div className="flex items-center gap-2 text-xs font-bold text-[#2F6BFF]">
-                      <span className="h-1.5 w-1.5 rounded-full bg-[#2F6BFF]" />
-                      <span>Direct Maker Communication</span>
-                    </div>
-                    <p className="mt-1 text-xs text-[#64748B] dark:text-[#94A3B8] leading-relaxed">
-                      You will collaborate directly with our lead designers and engineers throughout the engagement. No account managers or communication silos.
-                    </p>
+                {/* Tooling & Standards */}
+                <div className="mt-5 pt-4 border-t border-[#0F172A]/10 dark:border-white/10">
+                  <span className="block font-mono text-[10px] uppercase tracking-wider text-[#64748B] dark:text-[#94A3B8] mb-2">
+                    Tooling &amp; Standards
+                  </span>
+                  <div className="flex flex-wrap gap-1.5">
+                    {(serviceTech[s.slug] || []).map((t) => (
+                      <span
+                        key={t}
+                        className="rounded-full border border-[#0F172A]/10 dark:border-white/10 bg-[#FAFAFC] dark:bg-white/5 px-2.5 py-0.5 font-mono text-[10px] font-medium text-[#475569] dark:text-[#CBD5E1]"
+                      >
+                        {t}
+                      </span>
+                    ))}
                   </div>
                 </div>
+              </div>
+
+              {/* Action Buttons */}
+              <div className="mt-6 pt-5 border-t border-[#0F172A]/10 dark:border-white/10 flex items-center justify-between gap-3">
+                <Link
+                  href={`/contact?service=${s.slug}`}
+                  className="link-button-solid text-xs py-2.5 px-4 w-full text-center"
+                >
+                  <span>Inquire About {s.title.split(" ")[0]}</span>
+                  <span className="text-white/80">↗</span>
+                </Link>
               </div>
             </article>
           ))}
