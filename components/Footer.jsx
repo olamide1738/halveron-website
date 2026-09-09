@@ -192,13 +192,13 @@ export function Footer() {
 
         {/* 3. Massive Architectural Wordmark */}
         <div className="overflow-hidden pt-12 pb-4 select-none pointer-events-none text-center">
-          <span className="font-display font-black text-[14vw] sm:text-[15vw] tracking-[-0.05em] leading-none text-center text-[#0F172A]/[0.04] dark:text-white/[0.04] uppercase transition-colors block">
+          <span className="font-display font-black text-[14vw] sm:text-[15vw] tracking-[-0.05em] leading-none text-center text-[#2F6BFF]/[0.09] dark:text-[#2F6BFF]/[0.14] uppercase transition-colors block">
             HALVERON
           </span>
         </div>
 
         {/* 4. Bottom Legal & Back to Top Utility Bar */}
-        <div className="flex flex-col justify-between gap-4 border-t border-[#0F172A]/10 dark:border-white/10 pt-8 font-mono text-xs text-[#64748B] md:flex-row md:items-center">
+        <div className="flex flex-col justify-between gap-4 border-t border-[#0F172A]/10 dark:border-white/10 pt-8 font-mono text-xs text-[#64748B] dark:text-[#94A3B8] md:flex-row md:items-center">
           <div className="flex flex-wrap items-center gap-x-4 gap-y-1">
             <span>
               © {new Date().getFullYear()} {legal.entityName.toUpperCase()}.
