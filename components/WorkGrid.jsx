@@ -57,10 +57,10 @@ export function WorkGrid() {
                 {/* Visual Project Frame */}
                 <div
                   onClick={() => handleOpenStudy(study)}
-                  className="relative aspect-[16/10] w-full overflow-hidden rounded-xl border border-[#0F172A]/10 dark:border-white/10 bg-[#0B0F17] cursor-pointer"
+                  className="relative aspect-[16/10] w-full overflow-hidden rounded-xl border border-[#0F172A]/10 dark:border-white/10 bg-[#0B0F17] cursor-pointer [isolation:isolate]"
                 >
                   {/* Browser Chrome Header */}
-                  <div className="absolute top-0 left-0 right-0 z-20 flex items-center justify-between border-b border-white/10 bg-[#0B0F17]/90 px-4 py-2.5 backdrop-blur-md">
+                  <div className="absolute top-0 left-0 right-0 z-20 flex items-center justify-between border-b border-white/10 bg-[#0B0F17]/90 px-4 py-2.5 backdrop-blur-md rounded-t-xl">
                     <div className="flex items-center gap-1.5">
                       <span className="h-2.5 w-2.5 rounded-full bg-rose-500/80" />
                       <span className="h-2.5 w-2.5 rounded-full bg-amber-500/80" />

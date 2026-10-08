@@ -218,10 +218,10 @@ export function FeaturedShowcase() {
                   {/* Right Column: Interactive Browser Frame with Real Project Image */}
                   <div
                     onClick={() => setModalStudy(study)}
-                    className="relative overflow-hidden rounded-2xl border border-[#0F172A]/15 dark:border-white/15 bg-[#0B0F17] shadow-xl text-white cursor-pointer group transition-all duration-500 hover:shadow-glow hover:border-[#2F6BFF]/50"
+                    className="relative overflow-hidden rounded-2xl border border-[#0F172A]/15 dark:border-white/15 bg-[#0B0F17] shadow-xl text-white cursor-pointer group transition-all duration-500 hover:shadow-glow hover:border-[#2F6BFF]/50 [isolation:isolate]"
                   >
                     {/* Browser Header */}
-                    <div className="flex items-center justify-between border-b border-white/10 bg-[#0B0F17]/95 px-5 py-3 backdrop-blur-md">
+                    <div className="flex items-center justify-between border-b border-white/10 bg-[#0B0F17]/95 px-5 py-3 backdrop-blur-md rounded-t-2xl">
                       <div className="flex items-center gap-2">
                         <span className="h-2.5 w-2.5 rounded-full bg-rose-500/80" />
                         <span className="h-2.5 w-2.5 rounded-full bg-amber-500/80" />
@@ -236,7 +236,7 @@ export function FeaturedShowcase() {
                     </div>
 
                     {/* Real Project Visual Mockup */}
-                    <div className="relative aspect-[16/10] w-full overflow-hidden bg-[#101623]">
+                    <div className="relative aspect-[16/10] w-full overflow-hidden bg-[#101623] rounded-b-2xl">
                       <img
                         src={study.image}
                         alt={`${study.title} Website Showcase`}
