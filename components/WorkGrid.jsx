@@ -7,9 +7,7 @@ import { CaseStudyModal } from "./CaseStudyModal";
 
 const CATEGORIES = [
   "All Work",
-  "Bio-Architecture & Living Walls",
-  "Luxury Fashion & Couture",
-  "Architecture & Landscape",
+  ...Array.from(new Set(caseStudies.map((s) => s.industry))),
 ];
 
 export function WorkGrid() {
